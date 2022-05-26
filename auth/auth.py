@@ -11,6 +11,6 @@ def login():
     return render_template('auth/login.html')
 
 
-@BLP_auth.route('signup')
+@BLP_auth.route('/signup')
 def signup():
     return render_template('auth/registration.html')
