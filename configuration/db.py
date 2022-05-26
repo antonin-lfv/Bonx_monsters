@@ -1,10 +1,10 @@
-from configuration.config import *
+from configuration.utils import *
 
 
 def create_user_db():
     """users database"""
     if not exists('users.db'):
-        user_db = sl.connect('users.db')
+        user_db = sl.connect('users.db', check_same_thread=False)
         with user_db:
             user_db.execute("""
                 CREATE TABLE USER (
@@ -13,15 +13,15 @@ def create_user_db():
                     email VARCHAR(50),
                     password VARCHAR(50),
                     token TEXT,
-                    level INTEGER,
-                    id_deck INTEGER,
-                    id_archivements INTEGER
+                    level INTEGER
                 );
             """)
         return user_db
     else:
-        return sl.connect('users.db')
+        return sl.connect('users.db', check_same_thread=False)
 
+
+user_db = create_user_db()
 
 # ===== monsters database
-monster_db = sl.connect('monsters.db')
+monster_db = sl.connect('monsters.db', check_same_thread=False)

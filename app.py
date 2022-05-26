@@ -1,5 +1,3 @@
-from configuration.config import *
-from configuration.utils import *
 from configuration.db import *
 
 from auth.auth import BLP_auth
@@ -11,8 +9,9 @@ app.config.from_object(app_config)
 # ===== Blueprint
 app.register_blueprint(BLP_auth)
 app.register_blueprint(BLP_general)
-# ===== database connection
-user_db = create_user_db()
+# ===== database creation if empty
+create_user_db()
+
 
 # ===== error page
 @app.errorhandler(404)
