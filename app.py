@@ -4,7 +4,7 @@ from configuration.utils import *
 from auth.auth import BLP_auth
 from general.general import BLP_general
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates', static_folder='assets')
 app.config.from_object(app_config)
 
 
