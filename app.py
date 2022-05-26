@@ -14,7 +14,6 @@ app.register_blueprint(BLP_general)
 # ===== database connection
 user_db = create_user_db()
 
-
 # ===== error page
 @app.errorhandler(404)
 def forbidden(error):
