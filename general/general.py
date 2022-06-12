@@ -10,3 +10,8 @@ BLP_general = Blueprint('BLP_general', __name__,
 @login_required
 def home():
     return render_template('general/index.html', name=current_user.name)
+
+@BLP_general.route('/profile', methods=['POST', 'GET'])
+@login_required
+def profile():
+    return render_template('general/profile.html', user=current_user)
