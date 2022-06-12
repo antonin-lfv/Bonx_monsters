@@ -1,1 +1,1 @@
-from configuration.config import *
+

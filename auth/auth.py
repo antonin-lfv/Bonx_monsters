@@ -1,5 +1,5 @@
-from configuration.config import *
-from configuration.db import *
+from configuration.importations import *
+from app import db
 
 BLP_auth = Blueprint('BLP_auth', __name__,
                      template_folder='templates',
@@ -11,14 +11,13 @@ BLP_auth = Blueprint('BLP_auth', __name__,
 def login():
     if request.method == "POST":
         if (email := request.form.get("login_email")) and (password := request.form.get("login_password")):
-            with user_db:
-                user = user_db.execute(f"SELECT id FROM USER WHERE USER.email = '{email}' AND USER.password = '{password}'")
-            if user.fetchall():
-                # Authenticated - add token in session & db
-                token = user_db.execute(f"SELECT token FROM USER WHERE USER.email = '{email}'").fetchall()[0][0]
-                print(token)
-                session['token_user'] = token
-                return redirect(url_for('BLP_general.home'))
+            user = User.query.filter_by(email=email).first()
+            # if user already exists
+            if not user or not check_password_hash(user.password, password):
+                flash('Please check your login details and try again.')
+                return render_template('auth/login.html')
+            login_user(user)
+            return redirect(url_for('BLP_general.home'))
     return render_template('auth/login.html')
 
 
@@ -26,21 +25,24 @@ def login():
 def registration():
     if request.method == "POST":
         if (email := request.form.get("signup_email")) and (password := request.form.get("signup_password")) and (name := request.form.get("signup_name")):
-            # check if user not already exists
-            if not user_db.execute(f"SELECT id FROM USER WHERE USER.email = '{email}'").fetchall():
-                # ajout
-                token = URLSafeTimedSerializer(app_config.SECRET_KEY).dumps(email, salt='email-confirm-key')
-                user_db.execute(f"""
-                INSERT INTO USER (name, email, password, token, level)
-                VALUES ('{name}', '{email}', '{password}', '{token}', 1)
-                """)
-                user_db.commit()
+            user = User.query.filter_by(email=email).first()
+            # if user already exists
+            if user:
                 return render_template('auth/login.html')
-
+            # else - creation of the user
+            # create a new user with the form data. Hash the password so the plaintext version isn't saved.
+            new_user = User()
+            new_user.email = email
+            new_user.name = name
+            new_user.password = generate_password_hash(password, method='sha256')
+            # add the new user to the database
+            db.session.add(new_user)
+            db.session.commit()
+            return render_template('auth/login.html')
     return render_template('auth/registration.html')
 
 
 @BLP_auth.route('/logout', methods=["GET", "POST"])
 def logout():
-    del session
+    logout_user()
     return redirect(url_for('BLP_auth.login'))
