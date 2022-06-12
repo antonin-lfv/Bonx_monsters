@@ -24,17 +24,18 @@ def login():
 @BLP_auth.route('/signup', methods=["GET", "POST"])
 def registration():
     if request.method == "POST":
-        if (email := request.form.get("signup_email")) and (password := request.form.get("signup_password")) and (name := request.form.get("signup_name")):
+        if (email := request.form.get("signup_email")) and (password := request.form.get("signup_password")) and (
+        name := request.form.get("signup_name")):
             user = User.query.filter_by(email=email).first()
             # if user already exists
             if user:
                 return render_template('auth/login.html')
             # else - creation of the user
-            # create a new user with the form data. Hash the password so the plaintext version isn't saved.
             new_user = User()
             new_user.email = email
             new_user.name = name
             new_user.password = generate_password_hash(password, method='sha256')
+            new_user.level = 0
             # add the new user to the database
             db.session.add(new_user)
             db.session.commit()

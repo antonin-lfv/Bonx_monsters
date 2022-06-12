@@ -2,6 +2,7 @@ from configuration.config import app_config
 from flask import Flask, render_template
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
+from os import path
 
 db = SQLAlchemy()
 
@@ -15,9 +16,11 @@ def create_app():
     from general.general import BLP_general
     app.register_blueprint(BLP_auth)
     app.register_blueprint(BLP_general)
-    # init SQLAlchemy
+    # ===== init SQLAlchemy
     db.init_app(app)
-    # Login manager
+    if not path.exists("db.sqlite"):
+        db.create_all(app=app)
+    # ===== Login manager
     login_manager = LoginManager()
     login_manager.login_view = 'BLP_auth.login'
     login_manager.init_app(app)
