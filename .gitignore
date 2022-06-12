@@ -1,3 +1,4 @@
 test.py
 users.db
 monsters.db
+db.sqlite
