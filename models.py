@@ -11,4 +11,9 @@ class User(UserMixin, db.Model):
 
 
 class Monster(db.Model):
+    """Default version of each monster"""
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    defense = db.Column(db.Integer)
+    attack = db.Column(db.Integer)
+    img_path = db.Column(db.String(1000))
