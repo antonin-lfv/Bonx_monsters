@@ -1,0 +1,39 @@
+{
+    "meta": "All monsters - level 1",
+    "Red wizard": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy025b.png",
+        "amount": 1
+    },
+    "Yellow wizard": {
+        "level": 1,
+        "defense": 130,
+        "attack": 15,
+        "power": 1000,
+        "rarity": "rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy025a.png",
+        "amount": 1
+    },
+    "Lord bacus": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "legendary",
+        "img_path": "assets/monsters_pack_1/pipo-boss004.png",
+        "amount": 1
+    },
+    "Black mage": {
+        "level": 1,
+        "defense": 150,
+        "attack": 70,
+        "power": 2000,
+        "rarity": "legendary",
+        "img_path": "assets/monsters_pack_1/pipo-boss001.png",
+        "amount": 1
+    }
+}
