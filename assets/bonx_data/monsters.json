@@ -1,23 +1,5 @@
 {
     "meta": "All monsters - level 1",
-    "Red wizard": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
-        "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy025b.png",
-        "amount": 1
-    },
-    "Yellow wizard": {
-        "level": 1,
-        "defense": 130,
-        "attack": 15,
-        "power": 1000,
-        "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy025a.png",
-        "amount": 1
-    },
     "Lord bacus": {
         "level": 1,
         "defense": 300,
@@ -35,5 +17,616 @@
         "rarity": "Legendary",
         "img_path": "assets/monsters_pack_1/pipo-boss001.png",
         "amount": 1
-    }
+    },
+    "Enemy043": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Legendary",
+        "img_path": "assets/monsters_pack_1/pipo-enemy043.png",
+        "amount": 1
+    },
+    "Enemy026": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy026.png",
+        "amount": 1
+    },
+    "Enemy026a": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy026a.png",
+        "amount": 1
+    },
+    "Enemy026b": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy026b.png",
+        "amount": 1
+    },
+    "Enemy021": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy021.png",
+        "amount": 1
+    },
+    "Enemy021a": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy021a.png",
+        "amount": 1
+    },
+    "Enemy021b": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy021b.png",
+        "amount": 1
+    },
+    "Enemy033": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy033.png",
+        "amount": 1
+    },
+    "Enemy033a": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy033a.png",
+        "amount": 1
+    },
+    "Enemy033b": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy033b.png",
+        "amount": 1
+    },
+"Enemy044": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy044.png",
+        "amount": 1
+    },
+    "Enemy044b": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy044b.png",
+        "amount": 1
+    },    
+    "Enemy044c": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy044c.png",
+        "amount": 1
+    },
+    "Enemy044d": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy044d.png",
+        "amount": 1
+    },
+    "Enemy044e": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy044e.png",
+        "amount": 1
+    },
+    "Enemy044f": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy044f.png",
+        "amount": 1
+    },
+    "Enemy045": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy045.png",
+        "amount": 1
+    },
+    "Enemy045a": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy045a.png",
+        "amount": 1
+    },
+    "Enemy045b": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy045b.png",
+        "amount": 1
+    },
+    "Enemy040": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy040.png",
+        "amount": 1
+    },
+    "Enemy040a": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy040a.png",
+        "amount": 1
+    },
+    "Enemy040b": {
+        "level": 1,
+        "defense": 200,
+        "attack": 40,
+        "power": 1500,
+        "rarity": "Epic",
+        "img_path": "assets/monsters_pack_1/pipo-enemy040b.png",
+        "amount": 1
+    },
+    "Enemy032": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy032.png",
+        "amount": 1
+    },
+    "Enemy032a": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy032a.png",
+        "amount": 1
+    },
+    "Enemy032b": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy032b.png",
+        "amount": 1
+    },
+    "Enemy037a": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy037a.png",
+        "amount": 1
+    },
+    "Enemy038": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy038.png",
+        "amount": 1
+    },
+    "Enemy038a": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy038a.png",
+        "amount": 1
+    },
+    "Enemy038b": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy038b.png",
+        "amount": 1
+    },
+    "Enemy042": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy042.png",
+        "amount": 1
+    },
+    "Enemy042a": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy042a.png",
+        "amount": 1
+    },
+    "Enemy042b": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy042b.png",
+        "amount": 1
+    },
+    "Red wizard": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy025b.png",
+        "amount": 1
+    },
+    "Yellow wizard": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy025a.png",
+        "amount": 1
+    },
+    "Enemy006": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy006.png",
+        "amount": 1
+    },
+    "Enemy006b": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy006b.png",
+        "amount": 1
+    },
+    "Enemy019": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy019.png",
+        "amount": 1
+    },
+    "Enemy019b": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy019b.png",
+        "amount": 1
+    },
+    "Enemy020": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy020.png",
+        "amount": 1
+    },
+    "Enemy020b": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy020b.png",
+        "amount": 1
+    },
+    "Enemy022": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy022.png",
+        "amount": 1
+    },
+    "Enemy022a": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy022a.png",
+        "amount": 1
+    },
+    "Enemy022b": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy022b.png",
+        "amount": 1
+    },
+    "Enemy023": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy023.png",
+        "amount": 1
+    },
+    "Enemy023a": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy023a.png",
+        "amount": 1
+    },
+    "Enemy023b": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy023b.png",
+        "amount": 1
+    },
+    "Enemy024": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy024.png",
+        "amount": 1
+    },
+    "Enemy024a": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy024a.png",
+        "amount": 1
+    },
+    "Enemy024b": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy024b.png",
+        "amount": 1
+    },
+    "Enemy025": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy025.png",
+        "amount": 1
+    },
+    "Enemy027": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy027.png",
+        "amount": 1
+    },
+    "Enemy027a": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy027a.png",
+        "amount": 1
+    },
+    "Enemy027b": {
+        "level": 1,
+        "defense": 100,
+        "attack": 10,
+        "power": 1000,
+        "rarity": "Rare",
+        "img_path": "assets/monsters_pack_1/pipo-enemy027b.png",
+        "amount": 1
+    },
+    "Enemy028": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy028.png",
+        "amount": 1
+    },
+    "Enemy028a": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy028a.png",
+        "amount": 1
+    },
+    "Enemy028b": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy028b.png",
+        "amount": 1
+    },
+    "Enemy039": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy039.png",
+        "amount": 1
+    },
+    "Enemy039a": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy039a.png",
+        "amount": 1
+    },
+    "Enemy039b": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy039b.png",
+        "amount": 1
+    },
+    "Enemy041b": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy041b.png",
+        "amount": 1
+    },
+"Enemy007b": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy007b.png",
+        "amount": 1
+    },
+    "Enemy010b": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy010b.png",
+        "amount": 1
+    },
+    "Enemy011a": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy011a.png",
+        "amount": 1
+    },
+    "Enemy011b": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy011b.png",
+        "amount": 1
+    },
+    "Enemy015": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy015.png",
+        "amount": 1
+    },
+    "Enemy015b": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy015b.png",
+        "amount": 1
+    },
+    "Enemy016b": {
+        "level": 1,
+        "defense": 300,
+        "attack": 50,
+        "power": 2000,
+        "rarity": "Common",
+        "img_path": "assets/monsters_pack_1/pipo-enemy016b.png",
+        "amount": 1
+    },
 }
+
+
+
+
+
+
+
+
