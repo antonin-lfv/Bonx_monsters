@@ -83,8 +83,8 @@
                                 <div class="counterup_inner d-flex justify-content-center">
                                     <div class="single_counterup one">
                                         <div class="counterup_text">
-                                            <h2 class="color1">{{ int(user.power/1000) }}</h2>
-                                            <span>LEVEL</span>
+                                            <h2 class="color1">{{ user.coins }}</h2>
+                                            <span>COINS</span>
                                         </div>
                                     </div>
                                     <div class="single_counterup three">
@@ -95,13 +95,13 @@
                                     </div>
                                     <div class="single_counterup two">
                                         <div class="counterup_text">
-                                            <h2 class="color2">16</h2>
+                                            <h2 class="color2">{{ user.nb_games }}</h2>
                                             <span>TOTAL GAMES</span>
                                         </div>
                                     </div>
                                     <div class="single_counterup four">
                                         <div class="counterup_text">
-                                            <h2 class="color4">20</h2>
+                                            <h2 class="color4">{{ user.nb_wins }}</h2>
                                             <span>TOTAL WINS</span>
                                         </div>
                                     </div>
@@ -124,11 +124,8 @@
                             <div class="top">
                                 <a class="image" href=""><img src="{{ url_for('static', filename=m.img_path) }}" height="480" width="480" alt=""></a>
                                 <div class="overlay">
-                                    <div class="social-link">
+                                    <div>
                                         <a target="_blank"><i class=""></i> {{ m.amount }} {% if m.amount == 1 %} card {% else %} cards {% endif %}</a> 
-                                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="icofont-youtube-play"></i></a> 
-                                        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i class="icofont-twitter"></i></a> 
-                                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="icofont-facebook"></i></a> 
                                     </div>
                                 </div>
                             </div>
