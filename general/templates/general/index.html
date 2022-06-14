@@ -4,7 +4,7 @@
 <!-- Head -->
 {% include 'includes/head_page.html' %}
 
-<body class="body__bg" data-bgimg="assets/img/bg/body-bg.webp">
+<body class="body__bg" data-bgimg="{{ url_for('static', filename='img/bg/body-bg.webp') }}">
 
     {% include 'includes/navbar.html' %}
 
@@ -42,9 +42,9 @@
                 <div class="gaming_world_inner">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="single_gaming_world wow fadeInUp" data-bgimg="assets/img/others/gaming-world-bg1.webp" data-wow-delay="0.1s" data-wow-duration="1.1s">
+                            <div class="single_gaming_world wow fadeInUp" data-bgimg="{{ url_for('static', filename='img/others/gaming-world-bg1.webp') }}" data-wow-delay="0.1s" data-wow-duration="1.1s">
                                 <div class="gaming_world_thumb">
-                                    <img width="141" height="157" src="assets/img/others/gaming-world1.webp" alt="">
+                                    <img width="141" height="157" src="{{ url_for('static', filename='img/others/gaming-world1.webp') }}" alt="">
                                 </div>
                                 <div class="gaming_world_text">
                                     <h3>Live Streaming</h3>
@@ -55,9 +55,9 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="single_gaming_world wow fadeInUp" data-bgimg="assets/img/others/gaming-world-bg2.webp" data-wow-delay="0.2s" data-wow-duration="1.2s">
+                            <div class="single_gaming_world wow fadeInUp" data-bgimg="{{ url_for('static', filename='img/others/gaming-world-bg2.webp') }}" data-wow-delay="0.2s" data-wow-duration="1.2s">
                                 <div class="gaming_world_thumb">
-                                    <img width="156" height="157" src="assets/img/others/gaming-world2.webp" alt="">
+                                    <img width="156" height="157" src="{{ url_for('static', filename='img/others/gaming-world2.webp') }}" alt="">
                                 </div>
                                 <div class="gaming_world_text">
                                     <h3>Game News</h3>
@@ -68,9 +68,9 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="single_gaming_world wow fadeInUp" data-bgimg="assets/img/others/gaming-world-bg3.webp" data-wow-delay="0.3s" data-wow-duration="1.3s">
+                            <div class="single_gaming_world wow fadeInUp" data-bgimg="{{ url_for('static', filename='img/others/gaming-world-bg3.webp') }}" data-wow-delay="0.3s" data-wow-duration="1.3s">
                                 <div class="gaming_world_thumb">
-                                    <img width="151" height="156" src="assets/img/others/gaming-world3.webp" alt="">
+                                    <img width="151" height="156" src="{{ url_for('static', filename='img/others/gaming-world3.webp') }}" alt="">
                                 </div>
                                 <div class="gaming_world_text">
                                     <h3>Game Tournaments</h3>

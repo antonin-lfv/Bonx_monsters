@@ -6,7 +6,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Legendary",
-        "img_path": "assets/monsters_pack_1/pipo-boss004.png",
+        "img_path": "monsters_pack_1/pipo-boss004.png",
         "amount": 1
     },
     "Black mage": {
@@ -15,7 +15,7 @@
         "attack": 70,
         "power": 2000,
         "rarity": "Legendary",
-        "img_path": "assets/monsters_pack_1/pipo-boss001.png",
+        "img_path": "monsters_pack_1/pipo-boss001.png",
         "amount": 1
     },
     "Enemy043": {
@@ -24,7 +24,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Legendary",
-        "img_path": "assets/monsters_pack_1/pipo-enemy043.png",
+        "img_path": "monsters_pack_1/pipo-enemy043.png",
         "amount": 1
     },
     "Enemy026": {
@@ -33,7 +33,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy026.png",
+        "img_path": "/monsters_pack_1/pipo-enemy026.png",
         "amount": 1
     },
     "Enemy026a": {
@@ -42,7 +42,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy026a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy026a.png",
         "amount": 1
     },
     "Enemy026b": {
@@ -51,7 +51,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy026b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy026b.png",
         "amount": 1
     },
     "Enemy021": {
@@ -60,7 +60,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy021.png",
+        "img_path": "/monsters_pack_1/pipo-enemy021.png",
         "amount": 1
     },
     "Enemy021a": {
@@ -69,7 +69,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy021a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy021a.png",
         "amount": 1
     },
     "Enemy021b": {
@@ -78,7 +78,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy021b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy021b.png",
         "amount": 1
     },
     "Enemy033": {
@@ -87,7 +87,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy033.png",
+        "img_path": "/monsters_pack_1/pipo-enemy033.png",
         "amount": 1
     },
     "Enemy033a": {
@@ -96,7 +96,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy033a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy033a.png",
         "amount": 1
     },
     "Enemy033b": {
@@ -105,7 +105,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy033b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy033b.png",
         "amount": 1
     },
 "Enemy044": {
@@ -114,7 +114,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy044.png",
+        "img_path": "/monsters_pack_1/pipo-enemy044.png",
         "amount": 1
     },
     "Enemy044b": {
@@ -123,7 +123,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy044b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy044b.png",
         "amount": 1
     },    
     "Enemy044c": {
@@ -132,7 +132,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy044c.png",
+        "img_path": "/monsters_pack_1/pipo-enemy044c.png",
         "amount": 1
     },
     "Enemy044d": {
@@ -141,7 +141,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy044d.png",
+        "img_path": "/monsters_pack_1/pipo-enemy044d.png",
         "amount": 1
     },
     "Enemy044e": {
@@ -150,7 +150,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy044e.png",
+        "img_path": "/monsters_pack_1/pipo-enemy044e.png",
         "amount": 1
     },
     "Enemy044f": {
@@ -159,7 +159,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy044f.png",
+        "img_path": "/monsters_pack_1/pipo-enemy044f.png",
         "amount": 1
     },
     "Enemy045": {
@@ -168,7 +168,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy045.png",
+        "img_path": "/monsters_pack_1/pipo-enemy045.png",
         "amount": 1
     },
     "Enemy045a": {
@@ -177,7 +177,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy045a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy045a.png",
         "amount": 1
     },
     "Enemy045b": {
@@ -186,7 +186,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy045b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy045b.png",
         "amount": 1
     },
     "Enemy040": {
@@ -195,7 +195,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy040.png",
+        "img_path": "/monsters_pack_1/pipo-enemy040.png",
         "amount": 1
     },
     "Enemy040a": {
@@ -204,7 +204,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy040a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy040a.png",
         "amount": 1
     },
     "Enemy040b": {
@@ -213,7 +213,7 @@
         "attack": 40,
         "power": 1500,
         "rarity": "Epic",
-        "img_path": "assets/monsters_pack_1/pipo-enemy040b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy040b.png",
         "amount": 1
     },
     "Enemy032": {
@@ -222,7 +222,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy032.png",
+        "img_path": "/monsters_pack_1/pipo-enemy032.png",
         "amount": 1
     },
     "Enemy032a": {
@@ -231,7 +231,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy032a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy032a.png",
         "amount": 1
     },
     "Enemy032b": {
@@ -240,7 +240,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy032b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy032b.png",
         "amount": 1
     },
     "Enemy037a": {
@@ -249,7 +249,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy037a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy037a.png",
         "amount": 1
     },
     "Enemy038": {
@@ -258,7 +258,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy038.png",
+        "img_path": "/monsters_pack_1/pipo-enemy038.png",
         "amount": 1
     },
     "Enemy038a": {
@@ -267,7 +267,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy038a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy038a.png",
         "amount": 1
     },
     "Enemy038b": {
@@ -276,7 +276,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy038b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy038b.png",
         "amount": 1
     },
     "Enemy042": {
@@ -285,7 +285,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy042.png",
+        "img_path": "/monsters_pack_1/pipo-enemy042.png",
         "amount": 1
     },
     "Enemy042a": {
@@ -294,7 +294,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy042a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy042a.png",
         "amount": 1
     },
     "Enemy042b": {
@@ -303,7 +303,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy042b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy042b.png",
         "amount": 1
     },
     "Red wizard": {
@@ -312,7 +312,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy025b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy025b.png",
         "amount": 1
     },
     "Yellow wizard": {
@@ -321,7 +321,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy025a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy025a.png",
         "amount": 1
     },
     "Enemy006": {
@@ -330,7 +330,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy006.png",
+        "img_path": "/monsters_pack_1/pipo-enemy006.png",
         "amount": 1
     },
     "Enemy006b": {
@@ -339,7 +339,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy006b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy006b.png",
         "amount": 1
     },
     "Enemy019": {
@@ -348,7 +348,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy019.png",
+        "img_path": "/monsters_pack_1/pipo-enemy019.png",
         "amount": 1
     },
     "Enemy019b": {
@@ -357,7 +357,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy019b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy019b.png",
         "amount": 1
     },
     "Enemy020": {
@@ -366,7 +366,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy020.png",
+        "img_path": "/monsters_pack_1/pipo-enemy020.png",
         "amount": 1
     },
     "Enemy020b": {
@@ -375,7 +375,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy020b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy020b.png",
         "amount": 1
     },
     "Enemy022": {
@@ -384,7 +384,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy022.png",
+        "img_path": "/monsters_pack_1/pipo-enemy022.png",
         "amount": 1
     },
     "Enemy022a": {
@@ -393,7 +393,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy022a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy022a.png",
         "amount": 1
     },
     "Enemy022b": {
@@ -402,7 +402,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy022b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy022b.png",
         "amount": 1
     },
     "Enemy023": {
@@ -411,7 +411,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy023.png",
+        "img_path": "/monsters_pack_1/pipo-enemy023.png",
         "amount": 1
     },
     "Enemy023a": {
@@ -420,7 +420,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy023a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy023a.png",
         "amount": 1
     },
     "Enemy023b": {
@@ -429,7 +429,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy023b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy023b.png",
         "amount": 1
     },
     "Enemy024": {
@@ -438,7 +438,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy024.png",
+        "img_path": "/monsters_pack_1/pipo-enemy024.png",
         "amount": 1
     },
     "Enemy024a": {
@@ -447,7 +447,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy024a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy024a.png",
         "amount": 1
     },
     "Enemy024b": {
@@ -456,7 +456,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy024b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy024b.png",
         "amount": 1
     },
     "Enemy025": {
@@ -465,7 +465,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy025.png",
+        "img_path": "/monsters_pack_1/pipo-enemy025.png",
         "amount": 1
     },
     "Enemy027": {
@@ -474,7 +474,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy027.png",
+        "img_path": "/monsters_pack_1/pipo-enemy027.png",
         "amount": 1
     },
     "Enemy027a": {
@@ -483,7 +483,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy027a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy027a.png",
         "amount": 1
     },
     "Enemy027b": {
@@ -492,7 +492,7 @@
         "attack": 10,
         "power": 1000,
         "rarity": "Rare",
-        "img_path": "assets/monsters_pack_1/pipo-enemy027b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy027b.png",
         "amount": 1
     },
     "Enemy028": {
@@ -501,7 +501,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy028.png",
+        "img_path": "/monsters_pack_1/pipo-enemy028.png",
         "amount": 1
     },
     "Enemy028a": {
@@ -510,7 +510,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy028a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy028a.png",
         "amount": 1
     },
     "Enemy028b": {
@@ -519,7 +519,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy028b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy028b.png",
         "amount": 1
     },
     "Enemy039": {
@@ -528,7 +528,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy039.png",
+        "img_path": "/monsters_pack_1/pipo-enemy039.png",
         "amount": 1
     },
     "Enemy039a": {
@@ -537,7 +537,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy039a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy039a.png",
         "amount": 1
     },
     "Enemy039b": {
@@ -546,7 +546,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy039b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy039b.png",
         "amount": 1
     },
     "Enemy041b": {
@@ -555,7 +555,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy041b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy041b.png",
         "amount": 1
     },
 "Enemy007b": {
@@ -564,7 +564,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy007b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy007b.png",
         "amount": 1
     },
     "Enemy010b": {
@@ -573,7 +573,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy010b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy010b.png",
         "amount": 1
     },
     "Enemy011a": {
@@ -582,7 +582,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy011a.png",
+        "img_path": "/monsters_pack_1/pipo-enemy011a.png",
         "amount": 1
     },
     "Enemy011b": {
@@ -591,7 +591,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy011b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy011b.png",
         "amount": 1
     },
     "Enemy015": {
@@ -600,7 +600,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy015.png",
+        "img_path": "/monsters_pack_1/pipo-enemy015.png",
         "amount": 1
     },
     "Enemy015b": {
@@ -609,7 +609,7 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy015b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy015b.png",
         "amount": 1
     },
     "Enemy016b": {
@@ -618,9 +618,9 @@
         "attack": 50,
         "power": 2000,
         "rarity": "Common",
-        "img_path": "assets/monsters_pack_1/pipo-enemy016b.png",
+        "img_path": "/monsters_pack_1/pipo-enemy016b.png",
         "amount": 1
-    },
+    }
 }
 
 
