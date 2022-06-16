@@ -12,12 +12,7 @@
                         <nav>  
                             <ul class="d-flex">
                                 <li><a href="{{ url_for('BLP_general.home') }}">Home</a></li>
-                                <li><a href="match.html">Match</a>
-                                    <ul class="sub_menu">
-                                        <li><a href="match.html">Match Page</a></li>
-                                        <li><a href="match-details.html">Match Details</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="{{ url_for('BLP_general.match_history') }}">Match</a></li>
                                 <li><a href="monsters.html">Monsters</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                                 <li><a href="{{ url_for('BLP_general.profile') }}">Profil</a></li>

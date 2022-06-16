@@ -43,6 +43,12 @@ def monster_details(id_monster):
     return render_template('general/monster_details.html', monster=monster)
 
 
+
+@BLP_general.route('/match_history', methods=['POST', 'GET'])
+def match_history():
+    return render_template('general/match_history.html')
+
+
 @BLP_general.route('/about', methods=['POST', 'GET'])
 def about():
     return render_template('general/about.html')
