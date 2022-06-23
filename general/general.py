@@ -20,14 +20,14 @@ def home():
 @BLP_general.route('/profile', methods=['POST', 'GET'])
 @login_required
 def profile():
-    # ===== some monsters
+    # ===== add some monsters
     create_and_add_new_monster_from_json("Yellow wizard", current_user.id)
     create_and_add_new_monster_from_json("Red wizard", current_user.id)
     create_and_add_new_monster_from_json("Lord bacus", current_user.id)
     create_and_add_new_monster_from_json("Black mage", current_user.id)
     update_power_user(id_user=current_user.id)
-    # ===== some matches
-    create_and_add_new_match_in_history(id_user=current_user.id, opponent="Boss 1", reward_coin=1000, win="y")
+    # ===== add some matches
+    create_and_add_new_match_in_history(id_user=current_user.id, opponent="Lord bacus", reward_coin=10000, win="y")
     update_match_history_user(id_user=current_user.id)
 
     monsters = Monster.query.filter_by(user_id=current_user.id).all()
@@ -37,16 +37,18 @@ def profile():
 @login_required
 def monster_details(id_monster):
     monster = Monster.query.filter_by(user_id=current_user.id, id=id_monster).first()
-    print(monster)
-    print(id_monster)
-    print(monster.img_path)
     return render_template('general/monster_details.html', monster=monster)
 
 
 
 @BLP_general.route('/match_history', methods=['POST', 'GET'])
 def match_history():
-    return render_template('general/match_history.html')
+    ten_last_games_history = Match.query.filter_by(user_id=current_user.id).order_by(Match.id.desc()).limit(10).all()
+    opponents = []
+    for game in ten_last_games_history:
+        # TODO créer les monstres contre qui se battre, et adapter leur niveau à celui du joueur
+        opponents.append(Monster.query.filter_by(name=game.opponent).first())
+    return render_template('general/match_history.html', games_history=ten_last_games_history, opponents=opponents, zip=zip)
 
 
 @BLP_general.route('/about', methods=['POST', 'GET'])

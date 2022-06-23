@@ -2078,7 +2078,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .upcoming_gaming_text {
-  width: 42%;
+  width: 60%;
 }
 @media only screen and (max-width: 767px) {
   .upcoming_gaming_text {
