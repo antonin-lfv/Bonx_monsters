@@ -19,7 +19,8 @@ def create_app():
     # ===== init SQLAlchemy
     db.init_app(app)
     if not path.exists("db.sqlite"):
-        db.create_all(app=app)
+        with app.app_context():
+            db.create_all()
     # ===== Login manager
     login_manager = LoginManager()
     login_manager.login_view = 'BLP_auth.login'

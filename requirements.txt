@@ -1,10 +1,10 @@
-flask==2.1.2
-flask-login==0.6.1
+flask
+flask-login
 flask_sqlalchemy
 flask-nav
-numpy==1.22.4
-pandas==1.4.2
-plotly==5.8.2
-jsons==1.6.3
+numpy
+pandas
+plotly
+jsons
 pip
-requests==2.28.0
+requests
