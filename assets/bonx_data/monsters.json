@@ -1,632 +1,348 @@
 {
-    "meta": "All monsters - level 1",
+    "meta": "All monsters",
     "Lord bacus": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
         "rarity": "Legendary",
         "img_path": "monsters_pack_1/pipo-boss004.png",
-        "amount": 1
+        "description": "Lord Bacus is a legendary monster of immense power and prestige. With a body that appears to be made of solid gold, Lord Bacus commands the respect and admiration of all those who encounter him. His massive size and muscular frame are matched only by his fierce intellect and cunning tactics. \nLord Bacus wields a scepter of pure energy, which he uses to channel his formidable magical abilities. He is known to possess the power to manipulate reality itself, shaping the world to his will with ease. Despite his fearsome reputation, Lord Bacus is a benevolent ruler who seeks only to protect his domain and those who reside within it. Those who earn his favor are granted great rewards, while those who oppose him face his wrath."
     },
     "Black mage": {
-        "level": 1,
-        "defense": 150,
-        "attack": 70,
-        "power": 2000,
         "rarity": "Legendary",
         "img_path": "monsters_pack_1/pipo-boss001.png",
-        "amount": 1
+        "description": "The Black Mage is a legendary monster of great power and darkness. With a body shrouded in black robes and a face hidden behind a sinister mask, the Black Mage radiates an aura of dread and malevolence. This creature is a master of dark magic and can manipulate the very fabric of reality to serve its twisted will. \nIts spells are capable of devastating entire armies and reducing cities to rubble. Its true origins are shrouded in mystery, but it is said that the Black Mage was once a mortal who delved too deep into the forbidden arts of magic and became consumed by its power. Now, it seeks to spread chaos and destruction wherever it goes, leaving a trail of death and despair in its wake."
     },
-    "Enemy043": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Kraken": {
         "rarity": "Legendary",
         "img_path": "monsters_pack_1/pipo-enemy043.png",
-        "amount": 1
+        "description": "The Kraken is a legendary sea monster that strikes fear into the hearts of sailors and adventurers alike. Its massive size and incredible strength make it a force to be reckoned with, capable of dragging entire ships down to the depths of the ocean with ease. Its tentacles, each the size of a ship's mast, are lined with suckers that can crush bones and tear flesh. \nThe Kraken's skin is impenetrable, and its massive eyes can see through the murky depths of the ocean with ease. Legends say that the Kraken can summon massive storms and tidal waves, and that its roar can be heard for miles. Many brave souls have sought to slay the Kraken and claim its treasures, but few have succeeded, and those who have emerged victorious carry scars that will last a lifetime."
     },
-    "Enemy026": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "White knight": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy026.png",
-        "amount": 1
+        "description": "The White Knight is an epic monster of noble bearing and unwavering honor. Adorned in gleaming armor that shines like the sun, this majestic creature commands respect and admiration wherever it goes. Its powerful physique and towering height are matched only by its chivalrous demeanor and unbreakable will. \nThe White Knight wields a sword of pure light, which it uses to vanquish darkness and defend the innocent. Though fearsome in battle, this creature's heart is pure and selfless, and it will stop at nothing to protect those in need. Those who seek the White Knight's aid are sure to find a steadfast ally in their fight against evil."
     },
-    "Enemy026a": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Red knight": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy026a.png",
-        "amount": 1
+        "description": "The Red Knight is an epic monster of great strength and ferocity, feared by many who have encountered it. Its body is covered in bright red scales, which are said to be as hard as steel, providing formidable protection against attacks. The Red Knight is a master of close combat, wielding a razor-sharp sword with deadly precision. \nIts eyes glow with an intense red light, striking fear into the hearts of its enemies. Despite its fearsome reputation, the Red Knight is known to be a fiercely honorable creature, always keeping its word and never backing down from a challenge. Those who seek to face it in battle should be prepared for a fight that will test their limits and push them to their very brink."
     },
-    "Enemy026b": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Dark knight": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy026b.png",
-        "amount": 1
+        "description": "The Dark Knight is an epic monster shrouded in darkness and mystery. Clad in black armor and wielding a fearsome sword wreathed in shadow, this imposing figure strikes fear into the hearts of even the bravest warriors. The Dark Knight is said to be imbued with incredible strength and speed, making him a formidable opponent in battle. \nHis origins are unknown, and his motives are even more enigmatic. Some say he serves a dark lord, while others believe he acts alone, seeking only to satisfy his own desires. Despite his reputation as a harbinger of doom, some brave souls have dared to seek him out, hoping to learn the secrets of his power... and survive to tell the tale."
     },
-    "Enemy021": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Green dragon": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy021.png",
-        "amount": 1
+        "description": "The Green Dragon is an epic monster of incredible strength and cunning. Its scales shimmer with an emerald sheen, blending perfectly with the dense foliage of its forest habitat. With wings that span the length of several trees and razor-sharp claws, the Green Dragon is a force to be reckoned with. \nIts breath is a toxic cloud of poisonous gas that can bring even the hardiest of adventurers to their knees. Despite its fearsome reputation, the Green Dragon is a solitary creature that prefers to keep to itself, only venturing out to hunt or defend its territory. Those who seek to challenge the Green Dragon do so at their own peril, as its wrath is swift and deadly."
     },
-    "Enemy021a": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Red dragon": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy021a.png",
-        "amount": 1
+        "description": "The Red Dragon is an epic monster of tremendous strength and power. It is a massive creature, with wings that span the length of a football field and a fiery breath that can incinerate entire cities. Its scales are as red as blood, and they shimmer in the light of the sun, making it a fearsome sight to behold. \nThe Red Dragon is known for its cunning and intelligence, often setting elaborate traps for its prey. It is fiercely territorial and will defend its lair with all its might, making it a formidable foe for even the most experienced warriors. Despite its ferocity, some believe that there is a way to communicate with the Red Dragon, and those who succeed in doing so can gain its loyalty and protection."
     },
-    "Enemy021b": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Purple dragon": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy021b.png",
-        "amount": 1
+        "description": "The Purple Dragon is an epic creature of legend and myth, known for its immense power and regal bearing. Its majestic body is covered in shimmering purple scales that seem to glow with an otherworldly light, and its wingspan is so vast that it can blot out the sun. \nWith razor-sharp talons and a powerful tail, the Purple Dragon is a fearsome foe to any who dare to challenge it. Yet, despite its ferocity, the Purple Dragon is a creature of great wisdom and benevolence, often serving as a guardian and protector to those in need. Its breath is said to be infused with magical properties, able to heal the sick and wounded, and its gaze is said to grant visions of the future. To encounter a Purple Dragon is a rare and wondrous event, a true blessing from the gods."
     },
-    "Enemy033": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Golden rooky": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy033.png",
-        "amount": 1
+        "description": "The Golden Rooky is an epic monster that appears to be a towering wall with two massive arms. Its body is made entirely of shimmering gold, giving it an appearance of immense wealth and power. Despite its seemingly immobile form, the Golden Rooky is an incredibly agile and powerful monster, capable of crushing its enemies with its enormous strength. \nIts arms are capable of smashing through even the toughest defenses, and its golden body is nearly impervious to damage. Those who have faced the Golden Rooky in battle know that it is a formidable opponent, capable of turning the tide of any conflict with ease. Its presence on the battlefield is enough to strike fear into the hearts of even the bravest warriors."
     },
-    "Enemy033a": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Diamand rooky": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy033a.png",
-        "amount": 1
+        "description": "Diamond Rooky is an epic monster that appears to be a massive wall with a pair of powerful arms. Its entire body is made of an incredibly hard and durable diamond-like substance, making it nearly impervious to most forms of attack. Despite its bulky appearance, Diamond Rooky is surprisingly fast and agile, capable of unleashing devastating blows with its mighty arms. \nIts unique appearance makes it an excellent defender, and it can quickly take down any opponent foolish enough to underestimate it. Diamond Rooky is a rare sight in the wild, but those who have encountered it know to fear its unbreakable defense and powerful attacks."
     },
-    "Enemy033b": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Ruby rooky": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy033b.png",
-        "amount": 1
+        "description": "The Ruby Rooky is an epic monster that appears to be a massive wall with a pair of powerful arms protruding from its sides. Despite its seemingly immovable nature, the Ruby Rooky is a fearsome opponent that should not be underestimated. Its body is made of a dense, ruby-colored crystal that is nearly impenetrable, and its arms possess incredible strength and dexterity. \nThe Ruby Rooky can use its arms to grab and crush its enemies with ease, or to create a powerful shockwave that can send foes flying. Although it lacks traditional limbs, the Ruby Rooky is surprisingly agile, able to slide and pivot around the battlefield with ease. Those who face the Ruby Rooky in battle must be prepared for a relentless and unyielding foe."
     },
-"Enemy044": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Pink hydra": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy044.png",
-        "amount": 1
+        "description": "The Pink Hydra is a formidable and majestic creature that resembles a dragon in many ways. However, this beast possesses several unique characteristics that set it apart from its more common kin. The Pink Hydra boasts multiple heads, each of which possesses a powerful breath weapon that can incinerate foes with ease. \nIts scales are a vibrant pink color, providing a striking contrast to its fearsome appearance. The Pink Hydra is a master of both physical combat and magical spells, making it a truly versatile foe. Its epic rarity only serves to underscore the fact that this monster is not to be taken lightly, and any adventurer who faces it in combat would do well to approach with caution."
     },
-    "Enemy044b": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Angry hydra": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy044b.png",
-        "amount": 1
-    },    
-    "Enemy044c": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+        "description": "The Angry Hydra is an epic monster that resembles a fearsome dragon. its head is ferocious and aggressive. With razor-sharp teeth and claws, the Angry Hydra is a force to be reckoned with. Its scales are thick and impenetrable, protecting it from most attacks. Despite its fearsome appearance, the Angry Hydra is not invincible. \nIts weakness lies in its many heads - if one is severed, two more grow in its place. To defeat the Angry Hydra, one must be swift and strategic, attacking each head separately while avoiding its deadly breath attacks."
+    },
+    "Green hydra": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy044c.png",
-        "amount": 1
+        "description": "The Green Hydra is a formidable monster, resembling a dragon in both appearance and power. With its shimmering green scales and multiple heads, this Epic creature is a force to be reckoned with. Each head possesses its own consciousness and vicious set of teeth, making the Green Hydra a daunting opponent in battle. \nIts venomous breath can immobilize even the strongest of foes, and its agility allows it to move with surprising speed and grace. Despite its ferocity, the Green Hydra is a creature of intelligence and cunning, often using its wits to outmaneuver its enemies. Those who dare to face this monster should be prepared for a grueling and dangerous fight."
     },
-    "Enemy044d": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Fire hydra": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy044d.png",
-        "amount": 1
+        "description": "The Fire Hydra is an epic monster that resembles a fierce dragon, with a body covered in shimmering scales and a powerful set of wings. Its most distinctive feature is its many heads, each capable of spewing streams of searing flames that can reduce even the sturdiest of structures to ash. \nThe Fire Hydra is a highly intelligent creature, with a keen sense of strategy and a deep understanding of its own strengths and weaknesses. It is a fierce opponent, able to withstand even the most brutal attacks and retaliate with devastating force. Those brave enough to face the Fire Hydra in battle must be prepared to contend with its deadly breath and cunning tactics if they hope to emerge victorious."
     },
-    "Enemy044e": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Ice hydra": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy044e.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy044f": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Sulphur hydra": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy044f.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy045": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Green harpy": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy045.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy045a": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Brown harpy": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy045a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy045b": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Ice harpy": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy045b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy040": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Red grimlock": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy040.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy040a": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Green grimlock": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy040a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy040b": {
-        "level": 1,
-        "defense": 200,
-        "attack": 40,
-        "power": 1500,
+    "Dark grimlock": {
         "rarity": "Epic",
         "img_path": "/monsters_pack_1/pipo-enemy040b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy032": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Red chest": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy032.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy032a": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Silver chest": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy032a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy032b": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Lapis chest": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy032b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy037a": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Bear": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy037a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy038": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Purple pumpkin": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy038.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy038a": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Green pumpkin": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy038a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy038b": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Dark pumpkin": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy038b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy042": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Ice lantern": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy042.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy042a": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Pink lantern": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy042a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy042b": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Black lantern": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy042b.png",
-        "amount": 1
+        "description": ""
     },
     "Red wizard": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy025b.png",
-        "amount": 1
+        "description": "The Red Wizard is a rare and formidable monster known for its mastery of fire magic. Clad in flowing red robes and wielding a staff wreathed in flames, this creature is a sight to behold. Its eyes gleam with a fierce intelligence, and its movements are graceful and fluid. \nThe Red Wizard is able to summon pillars of flame and hurl fiery projectiles at its foes, incinerating them with ease. Its control over fire also allows it to manipulate the environment, creating walls of flame to block enemies or burning down obstacles in its path. Those who face the Red Wizard in battle must be cautious, for its power is not to be underestimated."
     },
     "Yellow wizard": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy025a.png",
-        "amount": 1
+        "description": "The Yellow Wizard is a rare monster known for its mastery of elemental magic. With its distinctive yellow robes and tall pointed hat, this creature commands the power of lightning and thunder. \nThe Yellow Wizard's spellcasting abilities are fearsome to behold, with bolts of electricity crackling from its fingertips and thunderclaps echoing through the air. It is said that the Yellow Wizard can summon lightning strikes from clear blue skies, and its wrath can level entire cities. Though rare, the Yellow Wizard is highly sought after by those seeking to harness its powerful magic for their own purposes. However, few have ever been successful in taming this wild and unpredictable creature."
     },
-    "Enemy006": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Light treant": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy006.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy006b": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Dark treant": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy006b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy019": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Red groot": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy019.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy019b": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Dark groot": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy019b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy020": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Blue cyclops": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy020.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy020b": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Ice cyclops": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy020b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy022": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Brown owl": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy022.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy022a": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Fire owl": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy022a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy022b": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Obsidian owl": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy022b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy023": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Fire tricera": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy023.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy023a": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Maleficient tricera": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy023a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy023b": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Light tricera": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy023b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy024": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Maleficient doll": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy024.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy024a": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Fire doll": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy024a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy024b": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Dark doll": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy024b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy025": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Dark wizard": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy025.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy027": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Blue spider": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy027.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy027a": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Red spider": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy027a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy027b": {
-        "level": 1,
-        "defense": 100,
-        "attack": 10,
-        "power": 1000,
+    "Light spider": {
         "rarity": "Rare",
         "img_path": "/monsters_pack_1/pipo-enemy027b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy028": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Red scorp": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy028.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy028a": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Ice scorp": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy028a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy028b": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Dark scorp": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy028b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy039": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Light skeleton": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy039.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy039a": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Golden skeleton": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy039a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy039b": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Red skeleton": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy039b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy041b": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Knight cat": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy041b.png",
-        "amount": 1
+        "description": ""
     },
-"Enemy007b": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Creeper vine": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy007b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy010b": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Banshee": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy010b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy011a": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Purple villager": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy011a.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy011b": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Red villager": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy011b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy015": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Green fungoid": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy015.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy015b": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Dark fungoid": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy015b.png",
-        "amount": 1
+        "description": ""
     },
-    "Enemy016b": {
-        "level": 1,
-        "defense": 300,
-        "attack": 50,
-        "power": 2000,
+    "Gecko": {
         "rarity": "Common",
         "img_path": "/monsters_pack_1/pipo-enemy016b.png",
-        "amount": 1
+        "description": ""
     }
 }
-
-
-
-
-
-
-
-

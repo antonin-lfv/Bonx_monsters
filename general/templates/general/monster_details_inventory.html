@@ -14,9 +14,9 @@
         <div class="row">
             <div class="col-12">
                 <div class="breadcrumbs_text text-center">
-                    <h1>{{ monster.name }}</h1>
+                    <h1>{{ name }}</h1>
                     <ul class="d-flex justify-content-center">
-                        <li><a href="{{ url_for('BLP_general.profile') }}">Profil </a></li>
+                        <li><a href="{{ url_for('BLP_general.profile') }}">Monsters </a></li>
                         <li> <span>//</span></li>
                         <li>  monster details </li>
                     </ul>
@@ -36,17 +36,17 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about_thumb wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1.1s">
-                        <img width="550" height="550" src="{{ url_for('static', filename=monster.img_path) }}" alt="">
+                        <img width="550" height="550" src="{{ url_for('static', filename=monster['img_path']) }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about_sidebar wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1.2s">
                         <div class="about_title">
-                            <h5>ABOUT {{ monster.name }}</h5>
-                            <h2>{{ monster.name }}</h2>
+                            <h5>ABOUT {{ name }}</h5>
+                            <h2>{{ name }}</h2>
                         </div>
                         <div class="about_desc">
-                            {% for d in monster.description.split('\n') %}
+                            {% for d in monster['description'].split('\n') %}
                                 <p>{{ d }}</p>
                             {% endfor %}
                         </div>

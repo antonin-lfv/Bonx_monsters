@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<!-- Head -->
+{% include 'includes/head_page.html' %}
+
+<body class="body__bg" data-bgimg="{{ url_for('static', filename='img/bg/body-bg.webp') }}">
+
+{% include 'includes/navbar.html' %}
+
+<!-- breadcrumbs area start -->
+<div class="breadcrumbs_aree breadcrumbs_bg mb-140" data-bgimg="assets/img/bg/breadcrumbs-bg.webp">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs_text text-center">
+                    <h1>monster gallery</h1>
+                    <ul class="d-flex justify-content-center">
+                        <li><a href="index.html">Home </a></li>
+                        <li><span>//</span></li>
+                        <li> monsters</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumbs area end -->
+
+<!-- page wrapper start -->
+<div class="page_wrapper">
+    <!-- player list section start -->
+    <section class="player_list_section mb-150">
+        <div class="container">
+            <div class="row mb-n50">
+                <!-- cards -->
+                {% for name, info in monsters.items() %}
+                    <div class="col-lg-4 col-md-6 col-12 mb-50">
+                        <!--  Single Player List Start-->
+                        <div class="player_list_single_item wow fadeInLeft">
+                            <div class="top">
+                                <a class="image"
+                                   href="{{ url_for('BLP_general.monster_details_inventory', name_monster=name) }}">
+                                    <img src="{{ url_for('static', filename=info['img_path']) }}"
+                                         height="480" width="480" alt=""></a>
+                            </div>
+                            <div class="content">
+                                <h4 class="title"><a
+                                        href="{{ url_for('BLP_general.monster_details_inventory', name_monster=name) }}">{{ name }}</a>
+                                </h4>
+                                <h6 class="level-text">{{ info['rarity'] }}</h6>
+
+                                <div class="content-shape-img">
+                                    <img width="351" height="126"
+                                         src="{{ url_for('static', filename='img/others/tam-text-shape.webp') }}"
+                                         alt="">
+                                    <img width="351" height="126"
+                                         src="{{ url_for('static', filename='img/others/tam-text-shape2.webp') }}"
+                                         alt="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--  Single Player List End-->
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- player list section end -->
+</div>
+<!-- page wrapper end -->
+
+<!-- Footer -->
+{% include 'includes/footer_page.html' %}
+
+<!-- JS -->
+{% include 'includes/JS_src.html' %}
+
+
+</body>
+
+</html>

@@ -6629,7 +6629,7 @@ section.error_section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   border: 6px solid rgba(255, 255, 255, 0.4);
   border-radius: 38px;
   padding: 10px;
