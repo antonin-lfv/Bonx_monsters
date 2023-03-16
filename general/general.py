@@ -75,7 +75,8 @@ def monster_details_inventory(name_monster):
     All monsters
     """
     monster = all_monsters_from_json()[name_monster]
-    return render_template('general/monster_details_inventory.html', monster=monster, name=name_monster)
+    return render_template('general/monster_details_inventory.html', monster=monster, name=name_monster,
+                           GameConfig=GameConfig)
 
 
 @BLP_general.route('/match_history', methods=['POST', 'GET'])

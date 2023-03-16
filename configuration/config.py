@@ -35,7 +35,7 @@ class GameConfig(Config):
     LEGENDARY_RATIO_CARD_TO_UPGRADE: ratio of legendary cards to upgrade defense and attack
     """
     MAX_COINS = 1000000
-    MAX_LEVEL = 100
+    MAX_LEVEL = 999
     MONSTER_CONGIF = {
         "Common": {
             "Defense": 30,
