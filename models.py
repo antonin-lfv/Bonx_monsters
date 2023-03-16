@@ -26,7 +26,7 @@ class Monster(db.Model):
     img_path = db.Column(db.String(1000))
     description = db.Column(db.String(1000))
     amount = db.Column(db.Integer)  # number of this monster in the deck
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # id of the user that owns this monster
 
 
 class Match(db.Model):

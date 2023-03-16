@@ -32,8 +32,19 @@ def profile():
     # ===== add some matches
     create_and_add_new_match_in_history(id_user=current_user.id, opponent="Lord bacus", reward_coin=10000, win="y")
     update_match_history_user(id_user=current_user.id)
+    update_power_user(id_user=current_user.id)
 
-    monsters = Monster.query.filter_by(user_id=current_user.id).all()
+    # get Legendary monsters
+    legendary_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Legendary").all()
+    # get Epic monsters
+    epic_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Epic").all()
+    # get Rare monsters
+    rare_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Rare").all()
+    # get Common monsters
+    common_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Common").all()
+    # get all monsters
+    monsters = legendary_monsters + epic_monsters + rare_monsters + common_monsters
+
     return render_template('general/profile.html', user=current_user, monsters=monsters, len=len, int=int)
 
 
@@ -61,6 +72,7 @@ def monster_details_inventory(name_monster):
 
 
 @BLP_general.route('/match_history', methods=['POST', 'GET'])
+@login_required
 def match_history():
     ten_last_games_history = Match.query.filter_by(user_id=current_user.id).order_by(Match.id.desc()).limit(10).all()
     opponents = []
@@ -71,6 +83,13 @@ def match_history():
                            zip=zip)
 
 
+@BLP_general.route('/battle', methods=['POST', 'GET'])
+@login_required
+def battle():
+    return render_template('general/battle.html')
+
+
 @BLP_general.route('/about', methods=['POST', 'GET'])
+@login_required
 def about():
     return render_template('general/about.html')
