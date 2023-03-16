@@ -15,11 +15,11 @@ def create_and_add_new_monster_from_json(monster_name, id_user):
     if m := Monster.query.filter_by(user_id=id_user, name=monster_name).first():
         # if exists
         m.amount += 1
-        if m.amount > GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]:
+        if m.amount >= GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]:
             m.amount = 0
             m.level += 1
-            m.defense *= GameConfig.MONSTER_CONGIF[m.rarity]["Ratio of Cards to Upgrade"]
-            m.attack *= GameConfig.MONSTER_CONGIF[m.rarity]["Ratio of Cards to Upgrade"]
+            m.defense *= round(GameConfig.MONSTER_CONGIF[m.rarity]["Ratio of Cards to Upgrade"], 1)
+            m.attack *= round(GameConfig.MONSTER_CONGIF[m.rarity]["Ratio of Cards to Upgrade"], 1)
             m.power *= m.level
         db.session.commit()
     else:
@@ -32,9 +32,9 @@ def create_and_add_new_monster_from_json(monster_name, id_user):
         new_monster.rarity = monsters[monster_name]["rarity"]
         new_monster.img_path = monsters[monster_name]["img_path"]
         new_monster.description = monsters[monster_name]["description"]
-        new_monster.defense = GameConfig["defense"][new_monster.rarity]
-        new_monster.attack = GameConfig["attack"][new_monster.rarity]
-        new_monster.power = GameConfig["power"][new_monster.rarity]
+        new_monster.defense = GameConfig.MONSTER_CONGIF[new_monster.rarity]["Defense"]
+        new_monster.attack = GameConfig.MONSTER_CONGIF[new_monster.rarity]["Attack"]
+        new_monster.power = GameConfig.MONSTER_CONGIF[new_monster.rarity]["Power"]
         new_monster.user_id = id_user
         db.session.add(new_monster)
         db.session.commit()

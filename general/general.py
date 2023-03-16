@@ -4,6 +4,7 @@ from os.path import exists
 from app import db
 from models import User, Monster, Match
 from configuration.utils import *
+from configuration.config import GameConfig
 
 from configuration.utils import all_monsters_from_json, create_and_add_new_match_in_history, \
     create_and_add_new_monster_from_json
@@ -60,13 +61,19 @@ def monsters():
 @BLP_general.route('/monster_details/<name_monster>', methods=['POST', 'GET'])
 @login_required
 def monster_details(name_monster):
+    """
+    Monsters of the user
+    """
     monster = Monster.query.filter_by(user_id=current_user.id, name=name_monster).first()
-    return render_template('general/monster_details.html', monster=monster)
+    return render_template('general/monster_details.html', monster=monster, GameConfig=GameConfig)
 
 
 @BLP_general.route('/monster_details_inventory/<name_monster>', methods=['POST', 'GET'])
 @login_required
 def monster_details_inventory(name_monster):
+    """
+    All monsters
+    """
     monster = all_monsters_from_json()[name_monster]
     return render_template('general/monster_details_inventory.html', monster=monster, name=name_monster)
 

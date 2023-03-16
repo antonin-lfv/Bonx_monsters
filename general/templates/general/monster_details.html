@@ -6,10 +6,11 @@
 
 <body class="body__bg" data-bgimg="{{ url_for('static', filename='img/bg/body-bg.webp') }}">
 
-    {% include 'includes/navbar.html' %}
+{% include 'includes/navbar.html' %}
 
 <!-- breadcrumbs area start -->
-<div class="breadcrumbs_aree breadcrumbs_bg mb-140" data-bgimg="{{ url_for('static', filename='img/bg/breadcrumbs-bg.webp') }}">
+<div class="breadcrumbs_aree breadcrumbs_bg mb-140"
+     data-bgimg="{{ url_for('static', filename='img/bg/breadcrumbs-bg.webp') }}">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -17,8 +18,8 @@
                     <h1>{{ monster.name }}</h1>
                     <ul class="d-flex justify-content-center">
                         <li><a href="{{ url_for('BLP_general.profile') }}">Profil </a></li>
-                        <li> <span>//</span></li>
-                        <li>  monster details </li>
+                        <li><span>//</span></li>
+                        <li> monster details</li>
                     </ul>
                 </div>
             </div>
@@ -46,12 +47,15 @@
                             <h2>{{ monster.name }}</h2>
                         </div>
                         <div class="about_desc">
+                            <h3>Level {{ monster.level }}</h3>
                             {% for d in monster.description.split('\n') %}
                                 <p>{{ d }}</p>
                             {% endfor %}
                         </div>
                         <div class="about_btn">
-                            <a class="btn btn-link wow" href="all-game.html">Play Now <img width="20" height="20" src="{{ url_for('static', filename='img/icon/arrrow-icon.webp') }}" alt=""> </a>
+                            <a class="btn btn-link wow" href="all-game.html">Play Now <img width="20" height="20"
+                                                                                           src="{{ url_for('static', filename='img/icon/arrrow-icon.webp') }}"
+                                                                                           alt=""> </a>
                         </div>
                     </div>
                 </div>
@@ -68,26 +72,26 @@
                     <div class="counterup_inner d-flex justify-content-center">
                         <div class="single_counterup one">
                             <div class="counterup_text">
-                                <h2 class="counterup color1">8697</h2>
-                                <span>TWITCH STREAMS</span>
+                                <h2 class="color1">{{ monster.defense }}</h2>
+                                <span>Defense</span>
                             </div>
                         </div>
                         <div class="single_counterup two">
                             <div class="counterup_text">
-                                <h2 class="counterup color2">428</h2>
-                                <span>TOTAL GAMES</span>
+                                <h2 class="color2">{{ monster.attack }}</h2>
+                                <span>Attack</span>
                             </div>
                         </div>
                         <div class="single_counterup three">
                             <div class="counterup_text">
-                                <h2 class="counterup color3">5367</h2>
-                                <span>YOUTUBE STREAMS</span>
+                                <h2 class="color3">{{ monster.power }}</h2>
+                                <span>Power</span>
                             </div>
                         </div>
                         <div class="single_counterup four">
                             <div class="counterup_text">
-                                <h2 class="counterup color4">249</h2>
-                                <span>PRO TEAM</span>
+                                <h2 class="color4">{{ monster.amount }}/{{ GameConfig.MONSTER_CONGIF[monster.rarity]["Number of Cards to Upgrade"] }}</h2>
+                                <span>Cards</span>
                             </div>
                         </div>
                     </div>
@@ -110,7 +114,8 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="gamer_single_team wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1.1s">
                             <div class="gamer_team_thumb">
-                                <a href="#"><img width="357" height="424" src="{{ url_for('static', filename='img/others/team1.webp') }}" alt=""></a>
+                                <a href="#"><img width="357" height="424"
+                                                 src="{{ url_for('static', filename='img/others/team1.webp') }}" alt=""></a>
                                 <div class="gamer_team_text">
                                     <h3><a href="#">Tasia Mancuso</a></h3>
                                     <span>CEO & Founder</span>
@@ -121,7 +126,8 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="gamer_single_team wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1.2s">
                             <div class="gamer_team_thumb">
-                                <a href="#"><img width="357" height="424" src="{{ url_for('static', filename='img/others/team2.webp') }}" alt=""></a>
+                                <a href="#"><img width="357" height="424"
+                                                 src="{{ url_for('static', filename='img/others/team2.webp') }}" alt=""></a>
                                 <div class="gamer_team_text">
                                     <h3><a href="#">Rosaline Emmons</a></h3>
                                     <span>Team Leader</span>
@@ -132,7 +138,8 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="gamer_single_team wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1.3s">
                             <div class="gamer_team_thumb">
-                                <a href="#"><img width="357" height="424" src="{{ url_for('static', filename='img/others/team3.webp') }}" alt=""></a>
+                                <a href="#"><img width="357" height="424"
+                                                 src="{{ url_for('static', filename='img/others/team3.webp') }}" alt=""></a>
                                 <div class="gamer_team_text">
                                     <h3><a href="#">Wilburn Behrens</a></h3>
                                     <span>Team Member</span>
@@ -152,8 +159,8 @@
 </div>
 <!-- page wrapper end -->
 
-    <!-- Footer -->
-    {% include 'includes/footer_page.html' %}
+<!-- Footer -->
+{% include 'includes/footer_page.html' %}
 
 <!-- JS -->
 {% include 'includes/JS_src.html' %}
