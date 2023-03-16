@@ -20,9 +20,9 @@ def home():
     return render_template('general/index.html', name=current_user.name)
 
 
-@BLP_general.route('/profile', methods=['POST', 'GET'])
+@BLP_general.route('/profil', methods=['POST', 'GET'])
 @login_required
-def profile():
+def profil():
     # ===== add some monsters
     create_and_add_new_monster_from_json("Yellow wizard", current_user.id)
     create_and_add_new_monster_from_json("Red wizard", current_user.id)
@@ -46,7 +46,7 @@ def profile():
     # get all monsters
     monsters = legendary_monsters + epic_monsters + rare_monsters + common_monsters
 
-    return render_template('general/profile.html', user=current_user, monsters=monsters, len=len, int=int)
+    return render_template('general/profil.html', user=current_user, monsters=monsters, len=len, int=int)
 
 
 @BLP_general.route('/monsters', methods=['POST', 'GET'])

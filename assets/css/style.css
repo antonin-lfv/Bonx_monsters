@@ -149,6 +149,49 @@ figure {
   margin: 0;
 }
 
+.object_moving {
+  position: relative;
+  -webkit-animation: movebounce-up 9s infinite;
+  animation: movebounce-up 9s infinite;
+}
+
+@-webkit-keyframes movebounce-up {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  50% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes movebounce-up {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  50% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+
+
+
 @-webkit-keyframes animateUpDown {
   0% {
     -webkit-transform: translateY(0px);

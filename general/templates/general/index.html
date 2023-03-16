@@ -20,14 +20,14 @@
                             <div class="hero_content">
                                 <h1 class="wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1.1s">Bonx Monsters</h1>
                                 <p class="wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1.2s">Get monsters and battle with them </p>
-                                <a class="btn btn-link wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1.3s" href="{{ url_for('BLP_general.home') }}">Play Now <img width="20" height="20" src="{{ url_for('static', filename='assets/img/icon/arrrow-icon.webp') }}" alt=""> </a>
+                                <a class="btn btn-link wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1.3s" href="{{ url_for('BLP_general.battle') }}">Play Now <img width="20" height="20" src="{{ url_for('static', filename='assets/img/icon/arrrow-icon.webp') }}" alt=""> </a>
                             </div>
                         </div>
                     </div>
                 </div>    
             </div>
             <div class="hero_position_img">
-                <img width="926" height="772" src="{{ url_for('static', filename='img/bg/bonx_bg_monsters.webp') }}" alt="">
+                <img class="object_moving" width="926" height="772" src="{{ url_for('static', filename='img/bg/bonx_bg_monsters.webp') }}" alt="">
             </div>
         </section>
         <!--slider area end-->

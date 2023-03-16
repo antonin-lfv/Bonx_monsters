@@ -17,7 +17,7 @@
                 <div class="breadcrumbs_text text-center">
                     <h1>{{ monster.name }}</h1>
                     <ul class="d-flex justify-content-center">
-                        <li><a href="{{ url_for('BLP_general.profile') }}">Profil </a></li>
+                        <li><a href="{{ url_for('BLP_general.profil') }}">Profil </a></li>
                         <li><span>//</span></li>
                         <li> monster details</li>
                     </ul>
@@ -37,7 +37,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about_thumb wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1.1s">
-                        <img width="550" height="550" src="{{ url_for('static', filename=monster.img_path) }}" alt="">
+                        <img class="object_moving" width="550" height="550" src="{{ url_for('static', filename=monster.img_path) }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
