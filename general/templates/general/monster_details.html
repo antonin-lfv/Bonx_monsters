@@ -47,7 +47,7 @@
                             <h2>{{ monster.name }}</h2>
                         </div>
                         <div class="about_desc">
-                            <h3>Level {{ monster.level }}</h3>
+                            <h3>Level {% if monster.level == GameConfig.MAX_MONSTER_LEVEL %}{{ MAX (monster.level) }}{% else %}{{ monster.level }}{% endif %}</h3>
                             {% for d in monster.description.split('\n') %}
                                 <p>{{ d }}</p>
                             {% endfor %}

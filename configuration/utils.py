@@ -15,11 +15,13 @@ def create_and_add_new_monster_from_json(monster_name, id_user):
     if m := Monster.query.filter_by(user_id=id_user, name=monster_name).first():
         # if exists
         m.amount += 1
-        if m.amount >= GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]:
+        if m.amount >= GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"] and \
+                m.level < GameConfig.MAX_MONSTER_LEVEL:
+            # if monster can be upgraded, so if amount >= number of cards to upgrade and level < max level
             m.amount = 0
             m.level += 1
-            m.defense *= round(GameConfig.MONSTER_CONGIF[m.rarity]["Ratio of Cards to Upgrade"], 1)
-            m.attack *= round(GameConfig.MONSTER_CONGIF[m.rarity]["Ratio of Cards to Upgrade"], 1)
+            m.defense = round(m.defense*GameConfig.MONSTER_CONGIF[m.rarity]["Ratio to Upgrade"], 1)
+            m.attack = round(m.attack*GameConfig.MONSTER_CONGIF[m.rarity]["Ratio to Upgrade"], 1)
             m.power *= m.level
         db.session.commit()
     else:
@@ -41,7 +43,9 @@ def create_and_add_new_monster_from_json(monster_name, id_user):
 
 
 def create_and_add_new_match_in_history(id_user, opponent, reward_coin, win):
-    """Add match in history + add coins in user wallet"""
+    """
+    Add match in history + add coins in user wallet
+    """
     new_match = Match()
     new_match.opponent = opponent  # string
     new_match.reward_coin = reward_coin  # int
@@ -50,11 +54,15 @@ def create_and_add_new_match_in_history(id_user, opponent, reward_coin, win):
     db.session.add(new_match)
     user = User.query.filter_by(id=id_user).first()
     user.coins += new_match.reward_coin
-    user.coins = min(user.coins, GameConfig.MAX_COINS)  # max coins = 1 000 000
+    user.coins = min(user.coins, GameConfig.MAX_COINS)
     db.session.commit()
 
 
 def update_power_user(id_user):
+    """
+    Update the power of the user
+    :param id_user: id of the user
+    """
     monsters = Monster.query.filter_by(user_id=id_user).all()
     user = User.query.filter_by(id=id_user).first()
     total_power = 0
@@ -65,6 +73,10 @@ def update_power_user(id_user):
 
 
 def update_match_history_user(id_user):
+    """
+    Update the number of games and the number of wins of the user
+    :param id_user: id of the user
+    """
     user = User.query.filter_by(id=id_user).first()
     history = Match.query.filter_by(user_id=id_user).all()
     user.nb_games = len(history)
