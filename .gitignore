@@ -2,3 +2,5 @@ test.py
 users.db
 monsters.db
 db.sqlite
+instance/db.sqlite
+temp-plot.html

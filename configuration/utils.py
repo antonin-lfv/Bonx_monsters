@@ -2,6 +2,7 @@ import json
 from app import db
 from models import User, Monster, Match
 from configuration.config import GameConfig
+import math
 
 
 def all_monsters_from_json():
@@ -14,15 +15,22 @@ def create_and_add_new_monster_from_json(monster_name, id_user):
     """Create and add monster if user don't already have it, else amount += 1"""
     if m := Monster.query.filter_by(user_id=id_user, name=monster_name).first():
         # if exists
-        m.amount += 1
+        m.amount += 4000
         if m.amount >= GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"] and \
                 m.level < GameConfig.MAX_MONSTER_LEVEL:
             # if monster can be upgraded, so if amount >= number of cards to upgrade and level < max level
-            m.amount = 0
-            m.level += 1
-            m.defense = round(m.defense*GameConfig.MONSTER_CONGIF[m.rarity]["Ratio to Upgrade"], 1)
-            m.attack = round(m.attack*GameConfig.MONSTER_CONGIF[m.rarity]["Ratio to Upgrade"], 1)
-            m.power *= m.level
+            levels_to_add = m.amount // GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]
+            m.level += levels_to_add
+            m.level = min(m.level, GameConfig.MAX_MONSTER_LEVEL)
+            m.defense = int(math.sqrt(m.level) * GameConfig.MONSTER_CONGIF[m.rarity]["Update defense"] +
+                            GameConfig.MONSTER_CONGIF[m.rarity]["Defense"])
+            m.attack = int(math.sqrt(m.level) * GameConfig.MONSTER_CONGIF[m.rarity]["Update attack"] +
+                           GameConfig.MONSTER_CONGIF[m.rarity]["Attack"])
+            m.power = GameConfig.MONSTER_CONGIF[m.rarity]["Power"] * m.level
+            m.amount = m.amount % GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]
+        if m.level == GameConfig.MAX_MONSTER_LEVEL:
+            # if monster is max level
+            m.amount = GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]
         db.session.commit()
     else:
         # if not exists in db => create and add

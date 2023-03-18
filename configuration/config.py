@@ -38,32 +38,36 @@ class GameConfig(Config):
     MAX_MONSTER_LEVEL = 200
     MONSTER_CONGIF = {
         "Common": {
-            "Defense": 30,
+            "Defense": 70,
             "Attack": 40,
-            "Power": 500,
+            "Power": 100,
             "Number of Cards to Upgrade": 10,
-            "Ratio to Upgrade": 1.2
+            "Update defense": 1050,
+            "Update attack": 200
         },
         "Rare": {
-            "Defense": 40,
+            "Defense": 90,
             "Attack": 50,
-            "Power": 1000,
+            "Power": 200,
             "Number of Cards to Upgrade": 20,
-            "Ratio to Upgrade": 1.25
+            "Update defense": 1250,
+            "Update attack": 400
         },
         "Epic": {
-            "Defense": 50,
+            "Defense": 110,
             "Attack": 60,
-            "Power": 2000,
+            "Power": 300,
             "Number of Cards to Upgrade": 30,
-            "Ratio to Upgrade": 1.3
+            "Update defense": 1450,
+            "Update attack": 600
         },
         "Legendary": {
-            "Defense": 60,
-            "Attack": 70,
-            "Power": 3000,
+            "Defense": 150,
+            "Attack": 80,
+            "Power": 500,
             "Number of Cards to Upgrade": 40,
-            "Ratio to Upgrade": 1.15
+            "Update defense": 1850,
+            "Update attack": 1000
         }
     }
 

@@ -24,11 +24,14 @@ def home():
 @login_required
 def profil():
     # ===== add some monsters
-    create_and_add_new_monster_from_json("Yellow wizard", current_user.id)
+    for monster_name, _ in all_monsters_from_json().items():
+        if monster_name != "meta":
+            create_and_add_new_monster_from_json(monster_name, current_user.id)
+    """create_and_add_new_monster_from_json("Yellow wizard", current_user.id)
     create_and_add_new_monster_from_json("Red wizard", current_user.id)
     create_and_add_new_monster_from_json("Lord bacus", current_user.id)
     create_and_add_new_monster_from_json("Black mage", current_user.id)
-    create_and_add_new_monster_from_json("Dark scorp", current_user.id)
+    create_and_add_new_monster_from_json("Dark scorp", current_user.id)"""
     update_power_user(id_user=current_user.id)
     # ===== add some matches
     create_and_add_new_match_in_history(id_user=current_user.id, opponent="Lord bacus", reward_coin=10000, win="y")

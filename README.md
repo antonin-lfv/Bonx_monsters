@@ -108,27 +108,27 @@ Statistiques des monstres :
 - Commun :
     - Défense : 30 (level 1)
     - Attaque : 40 (level 1)
-    - Puissance : 500 (level 1) (puissance = niveau * puissance)
+    - Puissance : 100 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 10
-    - Ratio de cartes à améliorer : 1.2 (Pour multiplier la défense et l'attaque)
+    - Ratio de cartes à améliorer : à trouver (Pour multiplier la défense et l'attaque)
 - Rare :
     - Défense : 40 (level 1)
     - Attaque : 50 (level 1)
-    - Puissance : 1000 (level 1) (puissance = niveau * puissance)
+    - Puissance : 1000 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 20
-    - Ratio de cartes à améliorer : 1.25 (Pour multiplier la défense et l'attaque)
+    - Ratio de cartes à améliorer : à trouver (Pour multiplier la défense et l'attaque)
 - Épique :
     - Défense : 50 (level 1)
     - Attaque : 60 (level 1)
-    - Puissance : 2000 (level 1) (puissance = niveau * puissance)
+    - Puissance : 2000 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 30
-    - Ratio de cartes à améliorer : 1.3 (Pour multiplier la défense et l'attaque)
+    - Ratio de cartes à améliorer : à trouver (Pour multiplier la défense et l'attaque)
 - Légendaire :
     - Défense : 60 (level 1)
     - Attaque : 70 (level 1)
-    - Puissance : 3000 (level 1) (puissance = niveau * puissance)
+    - Puissance : 3000 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 40
-    - Ratio de cartes à améliorer : 1.15 (Pour multiplier la défense et l'attaque)
+    - Ratio de cartes à améliorer : à trouver (Pour multiplier la défense et l'attaque)
 
 
 # Combats
