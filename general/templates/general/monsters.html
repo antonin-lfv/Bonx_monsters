@@ -33,6 +33,24 @@
     <section class="player_list_section mb-150">
         <div class="container">
             <div class="row mb-n50">
+                <div class="row text-center mb-25">
+                    <h2 class="wow fadeInUp mb-25" data-wow-delay="0.2s" data-wow-duration="1.2s">inventory</h2>
+                    <div class="widget_tags mt-25">
+                        <ul>
+                            <li><a href="{{ url_for('BLP_general.monsters') }}"
+                                   {% if rarity=="All" %}style="background-color: #b154f0"{% endif %}>All</a></li>
+                            <li><a href="{{ url_for('BLP_general.monsters', rarity="Legendary") }}"
+                                   {% if rarity=="Legendary" %}style="background-color: #b154f0"{% endif %}>Legendary</a>
+                            </li>
+                            <li><a href="{{ url_for('BLP_general.monsters', rarity="Epic") }}"
+                                   {% if rarity=="Epic" %}style="background-color: #b154f0"{% endif %}>Epic</a></li>
+                            <li><a href="{{ url_for('BLP_general.monsters', rarity="Rare") }}"
+                                   {% if rarity=="Rare" %}style="background-color: #b154f0"{% endif %}>Rare</a></li>
+                            <li><a href="{{ url_for('BLP_general.monsters', rarity="Common") }}"
+                                   {% if rarity=="Common" %}style="background-color: #b154f0"{% endif %}>Common</a></li>
+                        </ul>
+                    </div>
+                </div>
                 <!-- cards -->
                 {% for name, info in monsters.items() %}
                     <div class="col-lg-4 col-md-6 col-12 mb-50">

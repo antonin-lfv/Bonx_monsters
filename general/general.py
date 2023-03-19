@@ -20,13 +20,24 @@ def home():
     return render_template('general/index.html', name=current_user.name)
 
 
-@BLP_general.route('/monsters', methods=['POST', 'GET'])
+@BLP_general.route('/monsters', defaults={"rarity": "All"}, methods=['POST', 'GET'])
+@BLP_general.route('/monsters/<string:rarity>/', methods=['POST', 'GET'])
 @login_required
-def monsters():
+def monsters(rarity):
     monsters = all_monsters_from_json()
     # delete the first key of the dict monsters
     monsters.pop('meta')
-    return render_template('general/monsters.html', monsters=monsters, len=len, int=int)
+    # filter monsters by rarity
+    if rarity == "Legendary":
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Legendary"}
+    elif rarity == "Epic":
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Epic"}
+    elif rarity == "Rare":
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Rare"}
+    elif rarity == "Common":
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Common"}
+
+    return render_template('general/monsters.html', monsters=monsters, len=len, int=int, rarity=rarity)
 
 
 @BLP_general.route('/monster_details/<name_monster>', methods=['POST', 'GET'])
@@ -65,19 +76,26 @@ def match_history():
 @BLP_general.route('/battle', methods=['POST', 'GET'])
 @login_required
 def battle():
+    """
+    Page to choose the opponent
+    :return:
+    """
     return render_template('general/battle.html')
 
 
-@BLP_general.route('/game_page', methods=['POST', 'GET'])
+@BLP_general.route('/game_page/<string:opponent>/', methods=['POST', 'GET'])
 @login_required
-def game_page():
-    # TODO : identify opponent in url
-    return render_template('general/game_page.html')
+def game_page(opponent):
+    bosses = all_bosses_from_json()
+    if opponent in bosses.keys():
+        # We fight a boss
+        return render_template('general/game_page.html', opponent=opponent, boss_info=[bosses[opponent]])
 
 
-@BLP_general.route('/profil', methods=['POST', 'GET'])
+@BLP_general.route('/profil', defaults={'rarity': 'All'}, methods=['POST', 'GET'])
+@BLP_general.route('/profil/<string:rarity>/', methods=['POST', 'GET'])
 @login_required
-def profil():
+def profil(rarity):
     # ===== add some monsters
     for monster_name, _ in all_monsters_from_json().items():
         if monster_name != "meta":
@@ -101,10 +119,19 @@ def profil():
     rare_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Rare").all()
     # get Common monsters
     common_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Common").all()
-    # get all monsters
-    monsters = legendary_monsters + epic_monsters + rare_monsters + common_monsters
+    # get all monsters filtered by rarity selected
+    if rarity == "Legendary":
+        monsters = legendary_monsters
+    elif rarity == "Epic":
+        monsters = epic_monsters
+    elif rarity == "Rare":
+        monsters = rare_monsters
+    elif rarity == "Common":
+        monsters = common_monsters
+    else:
+        monsters = legendary_monsters + epic_monsters + rare_monsters + common_monsters
 
-    return render_template('general/profil.html', user=current_user, monsters=monsters, len=len, int=int)
+    return render_template('general/profil.html', user=current_user, monsters=monsters, len=len, int=int, rarity=rarity)
 
 
 @BLP_general.route('/about', methods=['POST', 'GET'])

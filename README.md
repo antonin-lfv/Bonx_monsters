@@ -164,9 +164,10 @@ C'est un combat tour par tour, et le joueur peut choisir d'attaquer ou de se dé
 # TODO
 - Ajouter des stats, ou des infos sur le jeu sur la page Home
 - Ajouter la date sur l'historique des combats
-- jouter un filtre par rareté dans la liste des monstres du jeu, ajouter une mention "owned" sur les monstres possédés
+- Ajouter un filtre par rareté dans la liste des monstres du jeu FAIT!
+- Ajouter un filtre par rareté dans la liste des monstres du joueur FAIT!
 - Créer le système de donjons et de boss, et le système de combat
-- Créer ouvertures de coffres
+- Créer ouvertures de coffres/ récompenses aléatoires
 - Ajouter un système de capacités pour les monstres (attaque spéciale, défense spéciale, etc.)
 
 
