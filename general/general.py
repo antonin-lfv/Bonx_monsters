@@ -20,38 +20,6 @@ def home():
     return render_template('general/index.html', name=current_user.name)
 
 
-@BLP_general.route('/profil', methods=['POST', 'GET'])
-@login_required
-def profil():
-    # ===== add some monsters
-    for monster_name, _ in all_monsters_from_json().items():
-        if monster_name != "meta":
-            create_and_add_new_monster_from_json(monster_name, current_user.id)
-    """create_and_add_new_monster_from_json("Yellow wizard", current_user.id)
-    create_and_add_new_monster_from_json("Red wizard", current_user.id)
-    create_and_add_new_monster_from_json("Lord bacus", current_user.id)
-    create_and_add_new_monster_from_json("Black mage", current_user.id)
-    create_and_add_new_monster_from_json("Dark scorp", current_user.id)"""
-    update_power_user(id_user=current_user.id)
-    # ===== add some matches
-    create_and_add_new_match_in_history(id_user=current_user.id, opponent="Lord bacus", reward_coin=10000, win="y")
-    update_match_history_user(id_user=current_user.id)
-    update_power_user(id_user=current_user.id)
-
-    # get Legendary monsters
-    legendary_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Legendary").all()
-    # get Epic monsters
-    epic_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Epic").all()
-    # get Rare monsters
-    rare_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Rare").all()
-    # get Common monsters
-    common_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Common").all()
-    # get all monsters
-    monsters = legendary_monsters + epic_monsters + rare_monsters + common_monsters
-
-    return render_template('general/profil.html', user=current_user, monsters=monsters, len=len, int=int)
-
-
 @BLP_general.route('/monsters', methods=['POST', 'GET'])
 @login_required
 def monsters():
@@ -98,6 +66,45 @@ def match_history():
 @login_required
 def battle():
     return render_template('general/battle.html')
+
+
+@BLP_general.route('/game_page', methods=['POST', 'GET'])
+@login_required
+def game_page():
+    # TODO : identify opponent in url
+    return render_template('general/game_page.html')
+
+
+@BLP_general.route('/profil', methods=['POST', 'GET'])
+@login_required
+def profil():
+    # ===== add some monsters
+    for monster_name, _ in all_monsters_from_json().items():
+        if monster_name != "meta":
+            create_and_add_new_monster_from_json(monster_name, current_user.id)
+    """create_and_add_new_monster_from_json("Yellow wizard", current_user.id)
+    create_and_add_new_monster_from_json("Red wizard", current_user.id)
+    create_and_add_new_monster_from_json("Lord bacus", current_user.id)
+    create_and_add_new_monster_from_json("Black mage", current_user.id)
+    create_and_add_new_monster_from_json("Dark scorp", current_user.id)"""
+    update_power_user(id_user=current_user.id)
+    # ===== add some matches
+    create_and_add_new_match_in_history(id_user=current_user.id, opponent="Lord bacus", reward_coin=10000, win="y")
+    update_match_history_user(id_user=current_user.id)
+    update_power_user(id_user=current_user.id)
+
+    # get Legendary monsters
+    legendary_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Legendary").all()
+    # get Epic monsters
+    epic_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Epic").all()
+    # get Rare monsters
+    rare_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Rare").all()
+    # get Common monsters
+    common_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Common").all()
+    # get all monsters
+    monsters = legendary_monsters + epic_monsters + rare_monsters + common_monsters
+
+    return render_template('general/profil.html', user=current_user, monsters=monsters, len=len, int=int)
 
 
 @BLP_general.route('/about', methods=['POST', 'GET'])

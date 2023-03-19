@@ -1,0 +1,21 @@
+{
+  "meta": "All bosses",
+  "Grommash": {
+    "level": 100,
+    "defense": 100000,
+    "attack": 1000,
+    "img_path": "Bosses/1_ORK/IDLE/IDLE_000.png"
+  },
+  "Gronk": {
+    "level": 200,
+    "defense": 1000000,
+    "attack": 3000,
+    "img_path": "Bosses/2_ORK/IDLE/IDLE_000.png"
+  },
+  "Throgg": {
+    "level": 300,
+    "defense": 10000000,
+    "attack": 10000,
+    "img_path": "Bosses/3_ORK/IDLE/IDLE_000.png"
+  }
+}

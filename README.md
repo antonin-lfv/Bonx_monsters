@@ -35,7 +35,8 @@ Page qui regroupe tous les monstres du jeu :
 - Template : battle.html
 - Blueprint : general
 
-Page de combat :
+Page de choix d'un combat :
+- Choix entre 3 bosses et des donjons
 
 ## Profil
 
@@ -166,6 +167,7 @@ C'est un combat tour par tour, et le joueur peut choisir d'attaquer ou de se dé
 - jouter un filtre par rareté dans la liste des monstres du jeu, ajouter une mention "owned" sur les monstres possédés
 - Créer le système de donjons et de boss, et le système de combat
 - Créer ouvertures de coffres
+- Ajouter un système de capacités pour les monstres (attaque spéciale, défense spéciale, etc.)
 
 
 # Liens
