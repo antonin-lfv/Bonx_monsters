@@ -36,7 +36,7 @@ Page qui regroupe tous les monstres du jeu :
 - Blueprint : general
 
 Page de choix d'un combat :
-- Choix entre 3 bosses et des donjons
+- Choix entre 3 bosses ou des donjons
 
 ## Profil
 
@@ -47,9 +47,7 @@ Page de choix d'un combat :
 Page de profil du joueur :
 - Informations sur le joueur (nom, niveau, pièces, nombre de monstres, nombre de combats, nombre de victoires)
 - Liste des monstres du joueur avec leur niveau, leur rareté, leur nom, l'image et le nombre de cartes en hover
-- TODO : Ajouter un filtre par rareté ? Ajouter un filtre par niveau ? 
-Ajouter un filtre par attaque ? Ajouter un filtre par défense ?
-
+- Possibilité de filtrer les monstres par rareté
 
 ## About us
 
@@ -88,7 +86,7 @@ Pour progresser il doit combattre des monstres.
 - Le joueur gagne un monstre aléatoire (commun, rare, épique, légendaire) (le niveau est à déterminer)
 
 Le joueur :
-- Peut acheter des monstres avec ses pièces (à implémenter)
+- Peut acheter des cartes de monstres avec ses pièces (à implémenter)
 - Le niveau du joueur correspond à la puissance divisée par 3000
 - La puissance du joueur est calculée par la somme de la puissance de chacun de ses monstres
 - A un nombre de pièces, de victoires et de combats
@@ -111,42 +109,38 @@ Statistiques des monstres :
     - Attaque : 40 (level 1)
     - Puissance : 100 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 10
-    - Ratio de cartes à améliorer : à trouver (Pour multiplier la défense et l'attaque)
 - Rare :
     - Défense : 40 (level 1)
     - Attaque : 50 (level 1)
     - Puissance : 1000 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 20
-    - Ratio de cartes à améliorer : à trouver (Pour multiplier la défense et l'attaque)
 - Épique :
     - Défense : 50 (level 1)
     - Attaque : 60 (level 1)
     - Puissance : 2000 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 30
-    - Ratio de cartes à améliorer : à trouver (Pour multiplier la défense et l'attaque)
 - Légendaire :
     - Défense : 60 (level 1)
     - Attaque : 70 (level 1)
     - Puissance : 3000 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 40
-    - Ratio de cartes à améliorer : à trouver (Pour multiplier la défense et l'attaque)
 
 
 # Combats
 Il y a 2 types de combats :
-- Combat dans un donjon, qui consiste à combattre une série de monstres de niveaux de plus en plus élevés
+- Combat dans un donjon, qui consiste à combattre une horde de monstres
 - Combat contre un boss, qui consiste à combattre un monstre de niveau très élevé. Le but est de le battre en un seul combat.
+(récompenses en fonction du nombre de pv retirés)
 
 ## Donjon
-Le donjon est composé de 10 niveaux. Le joueur doit battre tous les monstres de chaque niveau pour passer au niveau suivant.
-Le joueur commence au niveau 1, et doit battre tous les monstres du niveau 1 pour passer au niveau 2, etc.
-Il existe 50 donjons différents, et le joueur peut choisir le donjon dans lequel il veut combattre.
-Le joueur peut quitter le donjon à tout moment. Il se bat avec 3 monstres de son choix.
+Le donjon est composé de 6 monstres
+Il existe 50 donjons différents, et le joueur peut choisir le donjon dans lequel il veut combattre seulement s'il a battu le donjon précédent.
+Il se bat avec 6 monstres de son choix.
 
 ## Boss
-Le boss est un monstre de niveau très élevé. Le joueur doit le battre en un seul combat.
+Le boss est un monstre de niveau très élevé. Le joueur doit le battre en un seul combat. (ou faire le plus de dégâts possible)
 Il existe 3 boss différents, et le joueur peut choisir le boss qu'il veut combattre.
-Le joueur peut quitter le combat contre le boss à tout moment. Il se bat avec 3 monstres de son choix.
+Le joueur peut quitter le combat contre le boss à tout moment. Il se bat avec 6 monstres de son choix.
 
 ## Récompenses
 À chaque combat, le joueur reçoit une récompense en pièces. Le montant de la récompense est calculé en fonction du niveau du monstre battu.
@@ -163,12 +157,13 @@ C'est un combat tour par tour, et le joueur peut choisir d'attaquer ou de se dé
 
 # TODO
 - Ajouter des stats, ou des infos sur le jeu sur la page Home
-- Ajouter la date sur l'historique des combats
-- Ajouter un filtre par rareté dans la liste des monstres du jeu FAIT!
-- Ajouter un filtre par rareté dans la liste des monstres du joueur FAIT!
+- [X] Ajouter un filtre par rareté dans la liste des monstres du jeu
+- [X] Ajouter un filtre par rareté dans la liste des monstres du joueur
 - Créer le système de donjons et de boss, et le système de combat
 - Créer ouvertures de coffres/ récompenses aléatoires
 - Ajouter un système de capacités pour les monstres (attaque spéciale, défense spéciale, etc.)
+- Créer un shop pour acheter des cartes de monstres avec des pièces (à implémenter)
+- Ajouter des messages lors du login, de l'inscription etc
 
 
 # Liens

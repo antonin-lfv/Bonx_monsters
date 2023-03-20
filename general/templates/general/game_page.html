@@ -49,6 +49,22 @@
     </div>
     <!-- breadcrumbs area end -->
 
+    <!-- HTML code for the pop-up window -->
+    <div id="monster-popup"
+         style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1; pointer-events: auto;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <h2 style="text-align: center">Choose 6 Monsters</h2>
+            <div id="monster-selection" style="height: 600px; overflow: auto; text-align: center">
+                {% for monster in monsters[:20] %}
+                    <img src="{{ url_for('static', filename=monster.img_path) }}"
+                         onclick="selectMonster('{{ monster.name }}')"
+                         width="25%"
+                         style="pointer-events: auto;">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
     <!--match details section area start-->
     <section class="match_details_section mb-125">
         <div class="container">
@@ -139,6 +155,44 @@
 
 <!-- JS -->
 {% include 'includes/JS_src.html' %}
+
+<script>
+    // Before the page is loaded, display a popup that will ask the user to choose 6 monsters. the popu has a size
+    // of almost the entire screen. The user can choose 6 monsters by clicking on them. When the user clicks on
+    // the "Start" button, the popup disappears and the game starts.
+
+    // JavaScript code to display the pop-up window
+    window.addEventListener('load', function () {
+        const popup = document.getElementById('monster-popup');
+        popup.style.display = 'block';
+    });
+
+    monster_list = []
+
+    // JavaScript function to select a monster
+    function selectMonster(monster) {
+        // Add selected monster to a list of chosen monsters
+        // Use an array to store the chosen monsters
+        // You can add your code here
+        // Remove the selected monster from the list of available monsters
+        const monsterSelection = document.getElementById('monster-selection');
+        const monsterImage = monsterSelection.querySelector(`img[onclick="selectMonster('${monster}')"]`);
+        monsterImage.parentNode.removeChild(monsterImage);
+        console.log(monster)
+        monster_list.push(monster)
+        if (monster_list.length === 6) {
+            startGame()
+        }
+    }
+
+    // JavaScript function to start the game
+    function startGame() {
+        // Hide the pop-up window
+        const popup = document.getElementById('monster-popup');
+        popup.style.display = 'none';
+    }
+
+</script>
 
 
 </body>

@@ -54,6 +54,7 @@ def create_and_add_new_monster_from_json(monster_name, id_user):
         new_monster.user_id = id_user
         db.session.add(new_monster)
         db.session.commit()
+    update_power_user(id_user)
 
 
 def create_and_add_new_match_in_history(id_user, opponent, reward_coin, win):
@@ -69,7 +70,17 @@ def create_and_add_new_match_in_history(id_user, opponent, reward_coin, win):
     user = User.query.filter_by(id=id_user).first()
     user.coins += new_match.reward_coin
     user.coins = min(user.coins, GameConfig.MAX_COINS)
+    # update nb games and nb wins of user
+    history = Match.query.filter_by(user_id=id_user).all()
+    user.nb_games = len(history)
+    nb_wins = 0
+    for m in history:
+        if m.win == "y":
+            nb_wins += 1
+    user.nb_wins = nb_wins
     db.session.commit()
+    # update power of user
+    update_power_user(id_user)
 
 
 def update_power_user(id_user):
@@ -83,20 +94,4 @@ def update_power_user(id_user):
     for m in monsters:
         total_power += m.power
     user.power = total_power
-    db.session.commit()
-
-
-def update_match_history_user(id_user):
-    """
-    Update the number of games and the number of wins of the user
-    :param id_user: id of the user
-    """
-    user = User.query.filter_by(id=id_user).first()
-    history = Match.query.filter_by(user_id=id_user).all()
-    user.nb_games = len(history)
-    nb_wins = 0
-    for m in history:
-        if m.win == "y":
-            nb_wins += 1
-    user.nb_wins = nb_wins
     db.session.commit()

@@ -67,7 +67,6 @@ def match_history():
     ten_last_games_history = Match.query.filter_by(user_id=current_user.id).order_by(Match.id.desc()).limit(10).all()
     opponents = []
     for game in ten_last_games_history:
-        # TODO créer les monstres contre qui se battre, et adapter leur niveau à celui du joueur
         opponents.append(Monster.query.filter_by(name=game.opponent).first())
     return render_template('general/match_history.html', games_history=ten_last_games_history, opponents=opponents,
                            zip=zip)
@@ -86,10 +85,23 @@ def battle():
 @BLP_general.route('/game_page/<string:opponent>/', methods=['POST', 'GET'])
 @login_required
 def game_page(opponent):
+    """
+    Page to fight
+    :param opponent: name of the opponent
+    """
+    # Get all the bosses
     bosses = all_bosses_from_json()
+    # Get the users' monsters to display them in the game page to choose the monsters to fight with
+    monsters = Monster.query.filter_by(user_id=current_user.id).all()
     if opponent in bosses.keys():
         # We fight a boss
-        return render_template('general/game_page.html', opponent=opponent, boss_info=[bosses[opponent]])
+        return render_template('general/game_page.html',
+                               opponent=opponent,
+                               boss_info=[bosses[opponent]],
+                               monsters=monsters)
+    else:
+        # We fight in a dungeon
+        ...
 
 
 @BLP_general.route('/profil', defaults={'rarity': 'All'}, methods=['POST', 'GET'])
@@ -105,11 +117,8 @@ def profil(rarity):
     create_and_add_new_monster_from_json("Lord bacus", current_user.id)
     create_and_add_new_monster_from_json("Black mage", current_user.id)
     create_and_add_new_monster_from_json("Dark scorp", current_user.id)"""
-    update_power_user(id_user=current_user.id)
     # ===== add some matches
     create_and_add_new_match_in_history(id_user=current_user.id, opponent="Lord bacus", reward_coin=10000, win="y")
-    update_match_history_user(id_user=current_user.id)
-    update_power_user(id_user=current_user.id)
 
     # get Legendary monsters
     legendary_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Legendary").all()
