@@ -2,17 +2,17 @@
     "meta": "All monsters",
     "Lord bacus": {
         "rarity": "Legendary",
-        "img_path": "monsters_pack_1/pipo-boss004.png",
+        "img_path": "/monsters_pack_1/pipo-boss004.png",
         "description": "Lord Bacus is a legendary monster of immense power and prestige. With a body that appears to be made of solid gold, Lord Bacus commands the respect and admiration of all those who encounter him. His massive size and muscular frame are matched only by his fierce intellect and cunning tactics. \nLord Bacus wields a scepter of pure energy, which he uses to channel his formidable magical abilities. He is known to possess the power to manipulate reality itself, shaping the world to his will with ease. Despite his fearsome reputation, Lord Bacus is a benevolent ruler who seeks only to protect his domain and those who reside within it. Those who earn his favor are granted great rewards, while those who oppose him face his wrath."
     },
     "Black mage": {
         "rarity": "Legendary",
-        "img_path": "monsters_pack_1/pipo-boss001.png",
+        "img_path": "/monsters_pack_1/pipo-boss001.png",
         "description": "The Black Mage is a legendary monster of great power and darkness. With a body shrouded in black robes and a face hidden behind a sinister mask, the Black Mage radiates an aura of dread and malevolence. This creature is a master of dark magic and can manipulate the very fabric of reality to serve its twisted will. \nIts spells are capable of devastating entire armies and reducing cities to rubble. Its true origins are shrouded in mystery, but it is said that the Black Mage was once a mortal who delved too deep into the forbidden arts of magic and became consumed by its power. Now, it seeks to spread chaos and destruction wherever it goes, leaving a trail of death and despair in its wake."
     },
     "Kraken": {
         "rarity": "Legendary",
-        "img_path": "monsters_pack_1/pipo-enemy043.png",
+        "img_path": "/monsters_pack_1/pipo-enemy043.png",
         "description": "The Kraken is a legendary sea monster that strikes fear into the hearts of sailors and adventurers alike. Its massive size and incredible strength make it a force to be reckoned with, capable of dragging entire ships down to the depths of the ocean with ease. Its tentacles, each the size of a ship's mast, are lined with suckers that can crush bones and tear flesh. \nThe Kraken's skin is impenetrable, and its massive eyes can see through the murky depths of the ocean with ease. Legends say that the Kraken can summon massive storms and tidal waves, and that its roar can be heard for miles. Many brave souls have sought to slay the Kraken and claim its treasures, but few have succeeded, and those who have emerged victorious carry scars that will last a lifetime."
     },
     "White knight": {

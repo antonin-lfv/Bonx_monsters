@@ -51,11 +51,11 @@
 
     <!-- HTML code for the pop-up window -->
     <div id="monster-popup"
-         style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1; pointer-events: auto;">
+         style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); z-index: 1; pointer-events: auto;">
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
             <h2 style="text-align: center">Choose 6 Monsters</h2>
             <div id="monster-selection" style="height: 600px; overflow: auto; text-align: center">
-                {% for monster in monsters[:20] %}
+                {% for monster in monsters %}
                     <img src="{{ url_for('static', filename=monster.img_path) }}"
                          onclick="selectMonster('{{ monster.name }}')"
                          width="25%"
@@ -82,43 +82,49 @@
                                     <div class="single_players">
                                         <div class="players_thumb">
                                             <a href="#"><img width="170" height="170"
-                                                             src="{{ url_for('static', filename='img/others/players1.webp') }}"
-                                                             alt=""></a>
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
                                         </div>
                                     </div>
                                     <div class="single_players">
                                         <div class="players_thumb">
                                             <a href="#"><img width="170" height="170"
-                                                             src="{{ url_for('static', filename='img/others/players1.webp') }}"
-                                                             alt=""></a>
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
                                         </div>
                                     </div>
                                     <div class="single_players">
                                         <div class="players_thumb">
                                             <a href="#"><img width="170" height="170"
-                                                             src="{{ url_for('static', filename='img/others/players1.webp') }}"
-                                                             alt=""></a>
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
                                         </div>
                                     </div>
                                     <div class="single_players">
                                         <div class="players_thumb">
                                             <a href="#"><img width="170" height="170"
-                                                             src="{{ url_for('static', filename='img/others/players1.webp') }}"
-                                                             alt=""></a>
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
                                         </div>
                                     </div>
                                     <div class="single_players">
                                         <div class="players_thumb">
                                             <a href="#"><img width="170" height="170"
-                                                             src="{{ url_for('static', filename='img/others/players1.webp') }}"
-                                                             alt=""></a>
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
                                         </div>
                                     </div>
                                     <div class="single_players">
                                         <div class="players_thumb">
                                             <a href="#"><img width="170" height="170"
-                                                             src="{{ url_for('static', filename='img/others/players1.webp') }}"
-                                                             alt=""></a>
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -161,13 +167,16 @@
     // of almost the entire screen. The user can choose 6 monsters by clicking on them. When the user clicks on
     // the "Start" button, the popup disappears and the game starts.
 
+    // list with the names of the chosen monsters
+    monster_list = []
+    // create an array with all stats of the chosen monsters
+    monsters_stats_list = []
+
     // JavaScript code to display the pop-up window
     window.addEventListener('load', function () {
         const popup = document.getElementById('monster-popup');
         popup.style.display = 'block';
     });
-
-    monster_list = []
 
     // JavaScript function to select a monster
     function selectMonster(monster) {
@@ -178,18 +187,45 @@
         const monsterSelection = document.getElementById('monster-selection');
         const monsterImage = monsterSelection.querySelector(`img[onclick="selectMonster('${monster}')"]`);
         monsterImage.parentNode.removeChild(monsterImage);
-        console.log(monster)
+        // console.log(monster)
         monster_list.push(monster)
         if (monster_list.length === 6) {
             startGame()
         }
     }
 
+    // JavaScript function to get the stats of a monster from url /get_monster_stats/<string:name>/ where name is the name of the monster
+    // where the space are replaced by an underscore
+    function getMonsterStats(name) {
+        // replace the space in the name of the monster by an underscore
+        name = name.replace(/ /g, '_')
+        // send a request to the server to get the stats of the monster
+        return fetch(`/get_monster_stats/${name}/`)
+            .then(response => response.json())
+            .then(data => {
+                // display the stats of the monster
+                return data
+            })
+    }
+
     // JavaScript function to start the game
-    function startGame() {
+    async function startGame() {
         // Hide the pop-up window
         const popup = document.getElementById('monster-popup');
         popup.style.display = 'none';
+        // get the stats of each monster
+        for (let i = 0; i < monster_list.length; i++) {
+            monsters_stats_list.push(await getMonsterStats(monster_list[i]))
+        }
+        // Récupérez les éléments img dans le HTML dont la classe est "monster-img"
+        const img_elements = document.getElementsByClassName("monster-img");
+
+        // Bouclez à travers chaque élément img et mettez à jour ses informations
+        for (var i = 0; i < img_elements.length; i++) {
+            var monster_data = monsters_stats_list[i];
+            const imgPath = monster_data["img_path"];
+            img_elements[i].src = "/assets"+imgPath;
+        }
     }
 
 </script>

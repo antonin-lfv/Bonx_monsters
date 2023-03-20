@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, Blueprint, request, url_for, session, flash
+from flask import Flask, render_template, redirect, Blueprint, request, url_for, session, flash, jsonify
 from flask_login import LoginManager, UserMixin, login_user, login_required, current_user, logout_user
 from os.path import exists
 from app import db
@@ -147,3 +147,27 @@ def profil(rarity):
 @login_required
 def about():
     return render_template('general/about.html')
+
+
+@BLP_general.route('/get_monster_stats/<string:name>/', methods=['POST', 'GET'])
+@login_required
+def get_monster_stats(name):
+    """
+    Get the stats of a monster
+    :param name: name of the monster
+    :return: json with the stats
+    """
+    # replace underscore by space in the name
+    name = name.replace("_", " ")
+    # get the monster
+    monster = Monster.query.filter_by(user_id=current_user.id, name=name).first()
+    # create a dict with the stats
+    stats = {"name": monster.name,
+             "rarity": monster.rarity,
+             "level": monster.level,
+             "attack": monster.attack,
+             "defense": monster.defense,
+             "img_path": monster.img_path}
+
+    # return the dict as json
+    return jsonify(stats)
