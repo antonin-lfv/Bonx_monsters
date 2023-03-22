@@ -35,3 +35,12 @@ class Match(db.Model):
     reward_coin = db.Column(db.Integer)
     win = db.Column(db.String(1))  # y or n
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+
+class ShopItem(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    price = db.Column(db.Integer)
+    last_update = db.Column(db.DateTime)
+    monster_name = db.Column(db.String(100))
+    monster_rarity = db.Column(db.String(100))
+    monster_img_path = db.Column(db.String(1000))

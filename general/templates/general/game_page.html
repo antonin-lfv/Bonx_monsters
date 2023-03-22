@@ -56,10 +56,14 @@
             <h2 style="text-align: center">Choose 6 Monsters</h2>
             <div id="monster-selection" style="height: 600px; overflow: auto; text-align: center">
                 {% for monster in monsters %}
-                    <img src="{{ url_for('static', filename=monster.img_path) }}"
-                         onclick="selectMonster('{{ monster.name }}')"
-                         width="25%"
-                         style="pointer-events: auto;">
+                    <div style="width: 25%; display: inline-block; pointer-events: auto; cursor:pointer;"
+                         id="{{ monster.name }}"
+                         onclick="selectMonster('{{ monster.name }}')">
+                        <img src="{{ url_for('static', filename=monster.img_path) }}"
+                             style="pointer-events: auto;">
+                        <h4>{{ monster.name }}</h4>
+                        <h5>Level {{ monster.level }}</h5>
+                    </div>
                 {% endfor %}
             </div>
         </div>
@@ -85,6 +89,8 @@
                                                              src=""
                                                              alt=""
                                                              class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
                                         </div>
                                     </div>
                                     <div class="single_players">
@@ -93,6 +99,8 @@
                                                              src=""
                                                              alt=""
                                                              class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
                                         </div>
                                     </div>
                                     <div class="single_players">
@@ -101,6 +109,8 @@
                                                              src=""
                                                              alt=""
                                                              class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
                                         </div>
                                     </div>
                                     <div class="single_players">
@@ -109,6 +119,8 @@
                                                              src=""
                                                              alt=""
                                                              class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
                                         </div>
                                     </div>
                                     <div class="single_players">
@@ -117,6 +129,8 @@
                                                              src=""
                                                              alt=""
                                                              class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
                                         </div>
                                     </div>
                                     <div class="single_players">
@@ -125,6 +139,8 @@
                                                              src=""
                                                              alt=""
                                                              class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -182,11 +198,10 @@
     function selectMonster(monster) {
         // Add selected monster to a list of chosen monsters
         // Use an array to store the chosen monsters
-        // You can add your code here
-        // Remove the selected monster from the list of available monsters
+        // remove the div with id monster
         const monsterSelection = document.getElementById('monster-selection');
-        const monsterImage = monsterSelection.querySelector(`img[onclick="selectMonster('${monster}')"]`);
-        monsterImage.parentNode.removeChild(monsterImage);
+        const monsterDiv = monsterSelection.querySelector(`div[id="${monster}"]`);
+        monsterDiv.parentNode.removeChild(monsterDiv);
         // console.log(monster)
         monster_list.push(monster)
         if (monster_list.length === 6) {
@@ -219,12 +234,26 @@
         }
         // Récupérez les éléments img dans le HTML dont la classe est "monster-img"
         const img_elements = document.getElementsByClassName("monster-img");
+        // Récupérez les éléments img dans le HTML dont la classe est "monster-h4"
+        const h4_elements = document.getElementsByClassName("monster-h4");
+        // Récupérez les éléments img dans le HTML dont la classe est "monster-h5"
+        const h5_elements = document.getElementsByClassName("monster-h5");
 
         // Bouclez à travers chaque élément img et mettez à jour ses informations
         for (var i = 0; i < img_elements.length; i++) {
             var monster_data = monsters_stats_list[i];
             const imgPath = monster_data["img_path"];
             img_elements[i].src = "/assets" + imgPath;
+        }
+        for (var i = 0; i < h4_elements.length; i++) {
+            var monster_data = monsters_stats_list[i];
+            const name = monster_data["name"];
+            h4_elements[i].innerHTML = name;
+        }
+        for (var i = 0; i < h5_elements.length; i++) {
+            var monster_data = monsters_stats_list[i];
+            const level = monster_data["level"];
+            h5_elements[i].innerHTML = "Level " + level;
         }
     }
 

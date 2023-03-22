@@ -18,11 +18,10 @@ def login():
             user = User.query.filter_by(email=email).first()
             # if user already exists
             if not user or not check_password_hash(user.password, password):
-                flash('Please check your login details and try again.')
-                return render_template('auth/login.html')
+                return render_template('auth/login.html', wrong_credentials=True)
             login_user(user)
             return redirect(url_for('BLP_general.home'))
-    return render_template('auth/login.html')
+    return render_template('auth/login.html', wrong_credentials=False)
 
 
 @BLP_auth.route('/signup', methods=["GET", "POST"])
@@ -33,7 +32,7 @@ def registration():
             user = User.query.filter_by(email=email).first()
             # if user already exists
             if user:
-                return render_template('auth/login.html')
+                return render_template('auth/registration.html', already_exists=True)
             # else - creation of the user
             new_user = User()
             new_user.email = email
@@ -46,8 +45,8 @@ def registration():
             # add the new user to the database
             db.session.add(new_user)
             db.session.commit()
-            return render_template('auth/login.html')
-    return render_template('auth/registration.html')
+            return render_template('auth/login.html', wrong_credentials=False)
+    return render_template('auth/registration.html', already_exists=False)
 
 
 @BLP_auth.route('/logout', methods=["GET", "POST"])

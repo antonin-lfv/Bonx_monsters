@@ -70,6 +70,24 @@ class GameConfig(Config):
             "Update attack": 1000
         }
     }
+    SHOP_CONFIG = {
+        "Common": {
+            "Price": 1500,
+            "Max_per_day": 5
+        },
+        "Rare": {
+            "Price": 200,
+            "Max_per_day": 3
+        },
+        "Epic": {
+            "Price": 300,
+            "Max_per_day": 2
+        },
+        "Legendary": {
+            "Price": 400,
+            "Max_per_day": 1
+        }
+    }
 
 
 app_config = Config

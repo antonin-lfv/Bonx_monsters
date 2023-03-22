@@ -49,6 +49,20 @@ Page de profil du joueur :
 - Liste des monstres du joueur avec leur niveau, leur rareté, leur nom, l'image et le nombre de cartes en hover
 - Possibilité de filtrer les monstres par rareté
 
+## Shop
+
+- Url : /shop
+- Template : shop.html
+- Blueprint : general
+
+Page de la boutique :
+- Liste de 9 monstres aléatoires qui peuvent être achetés avec des pièces.
+- On peut acheter un monstre en cliquant sur son image avec un maximum de 1 monstre légendaire, 2 monstres épiques, 
+3 monstres rares et 5 monstres communs.
+- Est affiché le nombre de pièces restantes
+- Si le monstre est déjà niveau max alors il est grisé et on ne peut pas l'acheter (c'est écrit "max" en hover)
+- Si le joueur n'a pas assez de pièces alors le monstre est grisé et on ne peut pas l'acheter (c'est écrit "pas assez de pièces" en hover)
+
 ## About us
 
 - Url : /about

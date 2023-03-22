@@ -1,8 +1,10 @@
 import json
 from app import db
-from models import User, Monster, Match
+from models import User, Monster, Match, ShopItem
 from configuration.config import GameConfig
 import math
+import random
+from datetime import datetime
 
 
 def all_monsters_from_json():
@@ -95,3 +97,25 @@ def update_power_user(id_user):
         total_power += m.power
     user.power = total_power
     db.session.commit()
+
+
+def update_shop():
+    """
+    If the shop last_update is older than 1 day, update it
+    so update the shop with 6 new monsters and change the last_update
+    """
+    shop = ShopItem.query.all()
+    if len(shop) == 0 or (datetime.now() - shop[0].last_update).days >= 1:
+        # if shop is empty or if last_update is older than 1 day
+        monsters_json = all_monsters_from_json()
+        monster_names_to_add = random.choice(list(monsters_json.keys()))
+        for m in monster_names_to_add:
+            new_shop_item = ShopItem()
+            corresponding_monster = Monster.query.filter_by(name=m).first()
+            new_shop_item.monster_name = corresponding_monster.name
+            new_shop_item.monster_img_path = corresponding_monster.img_path
+            new_shop_item.monster_rarity = corresponding_monster.rarity
+            new_shop_item.price = GameConfig.SHOP_CONFIG[corresponding_monster.rarity]["Price"]
+            new_shop_item.last_update = datetime.now()
+            db.session.add(new_shop_item)
+            db.session.commit()

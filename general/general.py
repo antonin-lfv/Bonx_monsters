@@ -3,6 +3,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, cur
 from os.path import exists
 from app import db
 from models import User, Monster, Match
+import random
 from configuration.utils import *
 from configuration.config import GameConfig
 
@@ -141,6 +142,16 @@ def profil(rarity):
         monsters = legendary_monsters + epic_monsters + rare_monsters + common_monsters
 
     return render_template('general/profil.html', user=current_user, monsters=monsters, len=len, int=int, rarity=rarity)
+
+
+@BLP_general.route('/shop', methods=['POST', 'GET'])
+@login_required
+def shop():
+    """
+    Page to buy monsters
+    """
+    update_shop()
+    return render_template('general/shop.html')
 
 
 @BLP_general.route('/about', methods=['POST', 'GET'])

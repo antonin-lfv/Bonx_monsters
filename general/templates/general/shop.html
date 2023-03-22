@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<!-- Head -->
+{% include 'includes/head_page.html' %}
+
+<body class="body__bg" data-bgimg="{{ url_for('static', filename='img/bg/body-bg.webp') }}">
+
+{% include 'includes/navbar.html' %}
+
+<!-- breadcrumbs area start -->
+<div class="breadcrumbs_aree breadcrumbs_bg mb-15" data-bgimg="assets/img/bg/breadcrumbs-bg.webp">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs_text text-center">
+                    <h1>Shop</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumbs area end -->
+
+<!-- page wrapper start -->
+<div class="page_wrapper">
+
+    <!--match details section area start-->
+    <section class="match_details_section mb-125">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="match_details_inner">
+                        <div class="match_details_content">
+                            <span class="date">Last update : </span>
+                            <h2 class="match_details_title">Buy new monsters</h2>
+                            <div class="match_details_desc">
+                                <p>Welcome to the Monster Shop, where you can find the most amazing creatures to add to
+                                    your collection! Our shop is the perfect place to find new and exotic monsters to
+                                    train and battle with. It's important to note that our shop is reset every day, so
+                                    be sure to check back
+                                    often to see what new monsters are available. Don't miss out on the chance to add
+                                    rare and powerful monsters to your team!</p>
+                                <p class="text_italic">You have {{ pieces }} coins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-50">
+                    <!--  Single Player List Start-->
+                    <div class="player_list_single_item wow fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1.1s">
+                        <div class="top mb-30">
+                            <a class="image" href=""><img src="assets/img/player/list/player-1.webp" alt=""></a>
+                            <div class="overlay">
+                                <div class="social-link">
+                                    <a href="https://www.twitch.tv" target="_blank" rel="noopener noreferrer"><i
+                                            class="icofont-twitch"></i></a>
+                                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i
+                                            class="icofont-youtube-play"></i></a>
+                                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i
+                                            class="icofont-twitter"></i></a>
+                                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i
+                                            class="icofont-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h4 class="title"><a href="player-details.html">THUNDERMAN</a></h4>
+                            <h5 class="level-text">40 LEVEL COMPLETED</h5>
+
+                            <div class="content-shape-img">
+                                <img width="351" height="126" src="assets/img/others/tam-text-shape.webp" alt="">
+                                <img width="351" height="126" src="assets/img/others/tam-text-shape2.webp" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--  Single Player List End-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--match details section area end-->
+
+</div>
+<!-- page wrapper end -->
+
+<!-- Footer -->
+{% include 'includes/footer_page.html' %}
+
+<!-- JS -->
+{% include 'includes/JS_src.html' %}
+
+
+</body>
+
+</html>

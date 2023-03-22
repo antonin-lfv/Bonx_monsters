@@ -5,46 +5,51 @@
 {% include 'includes/head_page.html' %}
 
 <body class="body__bg" data-bgimg="{{ url_for('static', filename='img/bg/body-bg2.webp') }}">
-   
-  
-    <!--header area start-->
-    <header class="header_section header_transparent sticky-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="main_header d-flex justify-content-between align-items-center">
-                        <div class="header_logo">
-                            <a class="sticky_none" href="{{ url_for('BLP_auth.registration') }}"><img aria-label="logo" width="215" height="79" src="{{ url_for('static', filename='img/logo/logo.webp') }}" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!--header area end-->
 
-    <!-- breadcrumbs area start -->
-    <div class="breadcrumbs_aree breadcrumbs_bg" data-bgimg="{{ url_for('static', filename='img/bg/breadcrumbs-bg.webp') }}">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcrumbs_text text-center">
-                        <h1>signup</h1>
+
+<!--header area start-->
+<header class="header_section header_transparent sticky-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="main_header d-flex justify-content-between align-items-center">
+                    <div class="header_logo">
+                        <a class="sticky_none" href="{{ url_for('BLP_auth.registration') }}"><img aria-label="logo"
+                                                                                                  width="215"
+                                                                                                  height="79"
+                                                                                                  src="{{ url_for('static', filename='img/logo/logo.webp') }}"
+                                                                                                  alt=""></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- breadcrumbs area end -->
-    <!-- page wrapper start -->
-    <div class="page_wrapper">
-    
-        <!-- contact section start -->
-        <section class="contact_page_section mb-140">
-            <div class="container">
-                <div class="row justify-content-between align-items-center mb-n50">
-                    <div class="col-lg-5 col-md-8 col-12 mx-auto mb-50">
-                        <form method="POST" action="{{ url_for('BLP_auth.registration') }}">
+</header>
+<!--header area end-->
+
+<!-- breadcrumbs area start -->
+<div class="breadcrumbs_aree breadcrumbs_bg"
+     data-bgimg="{{ url_for('static', filename='img/bg/breadcrumbs-bg.webp') }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs_text text-center">
+                    <h1>signup</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumbs area end -->
+<!-- page wrapper start -->
+<div class="page_wrapper">
+
+    <!-- contact section start -->
+    <section class="contact_page_section mb-140">
+        <div class="container">
+            <div class="row justify-content-between align-items-center mb-n50">
+                <div class="col-lg-5 col-md-8 col-12 mx-auto mb-50">
+                    <form method="POST" action="{{ url_for('BLP_auth.registration') }}">
                         <div class="form_input">
                             <input name="signup_name" placeholder="Name" type="text">
                         </div>
@@ -56,25 +61,57 @@
                         </div>
 
                         <div class="form_input_btn text-center mb-40">
-                            <button type="submit" class="btn btn-link">Signup here <img width="20" height="20" src="{{ url_for('static', filename='img/icon/arrrow-icon.webp') }}" alt=""></button>
+                            <button type="submit" class="btn btn-link">Signup here <img width="20" height="20"
+                                                                                        src="{{ url_for('static', filename='img/icon/arrrow-icon.webp') }}"
+                                                                                        alt=""></button>
                         </div>
-                        <p class="text-center">Already have account,  <a href="{{ url_for('BLP_auth.login') }}">Login here</a></p>
-                        </form>
-                    </div>
+                        <p class="text-center">Already have account, <a href="{{ url_for('BLP_auth.login') }}">Login
+                            here</a></p>
+                    </form>
                 </div>
             </div>
-        </section>
-        <!-- contact section end -->
+        </div>
+    </section>
+    <!-- contact section end -->
 
-    </div>
-    <!-- page wrapper end -->
+    {% if already_exists %}
+        <!-- Popup if wrong credentials -->
+        <div id="popup-box" style="position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #0b145a;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border-color: rgba(126,26,194,255);
+    border-width: 2px;
+    display: none;">
+            <div id="popup-message" style="font-size: 20px;">User already exists</div>
+        </div>
 
-    <!-- Footer -->
-    {% include 'includes/footer_page.html' %}
-   
+        <script>
+            // Get the popup box
+            const popupBox = document.getElementById("popup-box");
+
+            // Display the popup box
+            popupBox.style.display = "block";
+
+            // Hide the popup box after 3 seconds
+            setTimeout(function () {
+                popupBox.style.display = "none";
+            }, 5000);
+        </script>
+        <!-- End Popup if wrong credentials -->
+    {% endif %}
+
+</div>
+<!-- page wrapper end -->
+
+<!-- Footer -->
+{% include 'includes/footer_page.html' %}
+
 <!-- JS -->
 {% include 'includes/JS_src.html' %}
-
 
 
 </body>
