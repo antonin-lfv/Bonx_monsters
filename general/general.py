@@ -150,8 +150,13 @@ def shop():
     """
     Page to buy monsters
     """
+    # update shop if needed
     update_shop()
-    return render_template('general/shop.html')
+    # get coins of the user
+    coins = User.query.filter_by(id=current_user.id).first().coins
+    # get all the monsters in the shop
+    shop_monsters = ShopItem.query.all()
+    return render_template('general/shop.html', coins=coins, shop_monsters=shop_monsters, GameConfig=GameConfig)
 
 
 @BLP_general.route('/about', methods=['POST', 'GET'])

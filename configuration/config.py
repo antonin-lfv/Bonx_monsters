@@ -76,15 +76,15 @@ class GameConfig(Config):
             "Max_per_day": 5
         },
         "Rare": {
-            "Price": 200,
+            "Price": 2000,
             "Max_per_day": 3
         },
         "Epic": {
-            "Price": 300,
+            "Price": 4000,
             "Max_per_day": 2
         },
         "Legendary": {
-            "Price": 400,
+            "Price": 6000,
             "Max_per_day": 1
         }
     }

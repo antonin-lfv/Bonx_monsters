@@ -44,3 +44,4 @@ class ShopItem(db.Model):
     monster_name = db.Column(db.String(100))
     monster_rarity = db.Column(db.String(100))
     monster_img_path = db.Column(db.String(1000))
+    monster_bought = db.Column(db.Integer)  # number of times this monster has been bought today

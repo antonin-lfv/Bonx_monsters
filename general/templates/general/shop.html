@@ -41,44 +41,50 @@
                                     be sure to check back
                                     often to see what new monsters are available. Don't miss out on the chance to add
                                     rare and powerful monsters to your team!</p>
-                                <p class="text_italic">You have {{ pieces }} coins</p>
+                                <p class="text_italic">You have {{ coins }} coins</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mb-50">
-                    <!--  Single Player List Start-->
-                    <div class="player_list_single_item wow fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1.1s">
-                        <div class="top mb-30">
-                            <a class="image" href=""><img src="assets/img/player/list/player-1.webp" alt=""></a>
-                            <div class="overlay">
-                                <div class="social-link">
-                                    <a href="https://www.twitch.tv" target="_blank" rel="noopener noreferrer"><i
-                                            class="icofont-twitch"></i></a>
-                                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i
-                                            class="icofont-youtube-play"></i></a>
-                                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i
-                                            class="icofont-twitter"></i></a>
-                                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i
-                                            class="icofont-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h4 class="title"><a href="player-details.html">THUNDERMAN</a></h4>
-                            <h5 class="level-text">40 LEVEL COMPLETED</h5>
-
-                            <div class="content-shape-img">
-                                <img width="351" height="126" src="assets/img/others/tam-text-shape.webp" alt="">
-                                <img width="351" height="126" src="assets/img/others/tam-text-shape2.webp" alt="">
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--  Single Player List End-->
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="player_list_section mb-125">
+        <div class="container">
+            <div class="row mb-n50">
+                {% for monster in shop_monsters %}
+                    <!--  Single monster in shop List Start-->
+                    <div class="col-lg-4 col-md-6 col-12 mb-50">
+                        <div class="player_list_single_item wow fadeInLeft" data-wow-delay="0.1s"
+                             data-wow-duration="1.1s">
+                            <div class="top mb-30">
+                                <a class="image" href=""><img src="{{ url_for('static', filename=monster.monster_img_path) }}" alt=""></a>
+                                <div class="overlay">
+                                    <div class="social-link">
+                                        <a rel="noopener noreferrer"><i class="icofont-money-bag"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4 class="title"><a href="{{ url_for('BLP_general.monster_details_inventory', name_monster=monster.monster_name) }}">{{ monster.monster_name }}</a></h4>
+                                <h5 class="level-text">{{ GameConfig.SHOP_CONFIG[monster.monster_rarity]["Price"] }} Coins</h5>
+                                <h5 class="level-text">{{ monster.monster_rarity }}</h5>
+
+                                <div class="content-shape-img">
+                                    <img width="351" height="126" src="assets/img/others/tam-text-shape.webp"
+                                         alt="">
+                                    <img width="351" height="126" src="assets/img/others/tam-text-shape2.webp"
+                                         alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  Single monster shop List End-->
+                {% endfor %}
+            </div>
+        </div>
+
     </section>
     <!--match details section area end-->
 

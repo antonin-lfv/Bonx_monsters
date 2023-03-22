@@ -108,7 +108,8 @@ def update_shop():
     if len(shop) == 0 or (datetime.now() - shop[0].last_update).days >= 1:
         # if shop is empty or if last_update is older than 1 day
         monsters_json = all_monsters_from_json()
-        monster_names_to_add = random.choice(list(monsters_json.keys()))
+        # get 6 random monsters names from monsters.json
+        monster_names_to_add = random.sample(list(monsters_json.keys()), 6)
         for m in monster_names_to_add:
             new_shop_item = ShopItem()
             corresponding_monster = Monster.query.filter_by(name=m).first()
@@ -117,5 +118,6 @@ def update_shop():
             new_shop_item.monster_rarity = corresponding_monster.rarity
             new_shop_item.price = GameConfig.SHOP_CONFIG[corresponding_monster.rarity]["Price"]
             new_shop_item.last_update = datetime.now()
+            new_shop_item.amount = 0
             db.session.add(new_shop_item)
             db.session.commit()
