@@ -32,7 +32,7 @@
                 <div class="col-12">
                     <div class="match_details_inner">
                         <div class="match_details_content">
-                            <span class="date">Last update : </span>
+                            <span class="date">Last update : <b id="display_last_update_shop"></b></span>
                             <h2 class="match_details_title">Buy new monsters</h2>
                             <div class="match_details_desc">
                                 <p>Welcome to the Monster Shop, where you can find the most amazing creatures to add to
@@ -41,7 +41,9 @@
                                     be sure to check back
                                     often to see what new monsters are available. Don't miss out on the chance to add
                                     rare and powerful monsters to your team!</p>
-                                <p class="text_italic">You have {{ coins }} coins</p>
+                                <p class="text_italic">You have
+                                    <b id="display_coins_shop"></b>
+                                    coins</p>
                             </div>
                         </div>
                     </div>
@@ -59,7 +61,8 @@
                         <div class="player_list_single_item wow fadeInLeft" data-wow-delay="0.1s"
                              data-wow-duration="1.1s">
                             <div class="top mb-30">
-                                <a class="image" href=""><img src="{{ url_for('static', filename=monster.monster_img_path) }}" alt=""></a>
+                                <a class="image" href=""><img
+                                        src="{{ url_for('static', filename=monster.monster_img_path) }}" alt=""></a>
                                 <div class="overlay">
                                     <div class="social-link">
                                         <a rel="noopener noreferrer"><i class="icofont-money-bag"></i></a>
@@ -67,9 +70,14 @@
                                 </div>
                             </div>
                             <div class="content">
-                                <h4 class="title"><a href="{{ url_for('BLP_general.monster_details_inventory', name_monster=monster.monster_name) }}">{{ monster.monster_name }}</a></h4>
-                                <h5 class="level-text">{{ GameConfig.SHOP_CONFIG[monster.monster_rarity]["Price"] }} Coins</h5>
-                                <h5 class="level-text">{{ monster.monster_rarity }}</h5>
+                                <h4 class="title"><a
+                                        href="{{ url_for('BLP_general.monster_details_inventory', name_monster=monster.monster_name) }}">{{ monster.monster_name }}</a>
+                                </h4>
+                                <h5 class="level-text">{{ monster.monster_rarity }}
+                                    - {{ GameConfig.SHOP_CONFIG[monster.monster_rarity]["Price"] }}
+                                    Coins</h5>
+                                <p>Bought <b id="number_bought_{{ monster.monster_name.replace(" ", "_") }}">
+                                </b>/{{ GameConfig.SHOP_CONFIG[monster.monster_rarity]["Max_per_day"] }}</p>
 
                                 <div class="content-shape-img">
                                     <img width="351" height="126" src="assets/img/others/tam-text-shape.webp"
@@ -96,6 +104,49 @@
 
 <!-- JS -->
 {% include 'includes/JS_src.html' %}
+
+<script>
+    // get user coins
+    $(document).ready(function () {
+        $.ajax({
+            url: "/api/get_user_coins",
+            type: "GET",
+            success: function (data) {
+                $("#display_coins_shop").html(data["coins"]);
+            }
+        });
+    });
+    // get last update shop
+    $(document).ready(function () {
+        $.ajax({
+            url: "/api/get_last_update_shop",
+            type: "GET",
+            success: function (data) {
+                // display only the day, not the hour
+                const lst_date = data["last_update_shop"].split(" ");
+                let dateOnly = lst_date[0] + " " + lst_date[1] + " " + lst_date[2] + " " + lst_date[3];
+                $("#display_last_update_shop").html(dateOnly);
+            }
+        });
+    });
+
+    // create a function that return the response of "/api/get_number_bought_monster/<string:name>/" in the html
+    function get_number_bought_monster(name) {
+        // replace space by underscore
+        $.ajax({
+            url: "/api/get_number_bought_monster/" + name + "/",
+            type: "GET",
+            success: function (data) {
+                $("#number_bought_" + name).html(data["number_bought"]);
+            }
+        });
+    }
+
+    {% for monster in shop_monsters %}
+        get_number_bought_monster("{{ monster.monster_name.replace(" ", "_") }}");
+    {% endfor %}
+
+</script>
 
 
 </body>

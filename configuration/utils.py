@@ -112,12 +112,11 @@ def update_shop():
         monster_names_to_add = random.sample(list(monsters_json.keys()), 6)
         for m in monster_names_to_add:
             new_shop_item = ShopItem()
-            corresponding_monster = Monster.query.filter_by(name=m).first()
-            new_shop_item.monster_name = corresponding_monster.name
-            new_shop_item.monster_img_path = corresponding_monster.img_path
-            new_shop_item.monster_rarity = corresponding_monster.rarity
-            new_shop_item.price = GameConfig.SHOP_CONFIG[corresponding_monster.rarity]["Price"]
+            new_shop_item.monster_name = m
+            new_shop_item.monster_img_path = monsters_json[m]["img_path"]
+            new_shop_item.monster_rarity = monsters_json[m]["rarity"]
+            new_shop_item.price = GameConfig.SHOP_CONFIG[monsters_json[m]["rarity"]]["Price"]
             new_shop_item.last_update = datetime.now()
-            new_shop_item.amount = 0
+            new_shop_item.monster_bought = 0
             db.session.add(new_shop_item)
             db.session.commit()

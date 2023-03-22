@@ -152,11 +152,9 @@ def shop():
     """
     # update shop if needed
     update_shop()
-    # get coins of the user
-    coins = User.query.filter_by(id=current_user.id).first().coins
     # get all the monsters in the shop
     shop_monsters = ShopItem.query.all()
-    return render_template('general/shop.html', coins=coins, shop_monsters=shop_monsters, GameConfig=GameConfig)
+    return render_template('general/shop.html', shop_monsters=shop_monsters, GameConfig=GameConfig)
 
 
 @BLP_general.route('/about', methods=['POST', 'GET'])
@@ -187,3 +185,82 @@ def get_monster_stats(name):
 
     # return the dict as json
     return jsonify(stats)
+
+
+# ====== API ======
+
+@BLP_general.route('/api/get_user_coins', methods=['GET', 'POST'])
+@login_required
+def get_user_coins():
+    """
+    Get the number of coins of the user
+    :return: json with the number of coins
+    """
+    # get the number of coins
+    coins = User.query.filter_by(id=current_user.id).first().coins
+    # return the number of coins as json
+    return jsonify({"coins": coins})
+
+
+@BLP_general.route('/api/buy_monster/<string:name>/', methods=['POST', 'GET'])
+@login_required
+def buy_monster(name):
+    """
+    Buy a monster
+    :param name: name of the monster
+    :return: json with the result of the transaction
+    """
+    # replace underscore by space in the name
+    name = name.replace("_", " ")
+    # get the monster
+    monster = Monster.query.filter_by(user_id=current_user.id, name=name).first()
+    # get the number of coins of the user
+    coins = User.query.filter_by(id=current_user.id).first().coins
+    # get the price of the monster
+    price = GameConfig.SHOP_CONFIG[monster.rarity]["Price"]
+    # Max card buyable per day
+    max_buy = GameConfig.SHOP_CONFIG[monster.rarity]["Max_per_day"]
+    # if the user has enough coins
+    if coins >= price and ShopItem.query.filter_by(name=name).first().amount_bought < max_buy:
+        # remove the price of the monster from the number of coins of the user
+        current_user.coins -= price
+        # add 1 to amount of monsters bought
+        ShopItem.query.filter_by(name=name).first().amount_bought += 1
+        # add the monster to the user's monsters
+        create_and_add_new_monster_from_json(monster.name, current_user.id)
+        # commit the changes
+        db.session.commit()
+        # return the result of the transaction as json
+        return jsonify({"result": "success"})
+    else:
+        # return the result of the transaction as json
+        return jsonify({"result": "not enough coins"})
+
+
+@BLP_general.route('/api/get_last_update_shop', methods=['GET', 'POST'])
+@login_required
+def get_last_update_shop():
+    """
+    Get the last update of the shop
+    :return: json with the last update of the shop
+    """
+    # get the last update of the shop
+    last_update = ShopItem.query.first().last_update
+    # return the last update of the shop as json
+    return jsonify({"last_update_shop": last_update})
+
+
+@BLP_general.route('/api/get_number_bought_monster/<string:name>/', methods=['POST', 'GET'])
+@login_required
+def get_number_bought_monster(name):
+    """
+    Get the number of a monster bought by the user
+    :param name: name of the monster
+    :return: json with the number of the monster bought by the user
+    """
+    # replace underscore by space in the name
+    name = name.replace("_", " ")
+    # get the number of the monster bought by the user
+    number_bought = ShopItem.query.filter_by(monster_name=name).first().monster_bought
+    # return the number of the monster bought by the user as json
+    return jsonify({"number_bought": number_bought})
