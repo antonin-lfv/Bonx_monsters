@@ -56,12 +56,10 @@ Page de profil du joueur :
 - Blueprint : general
 
 Page de la boutique :
-- Liste de 9 monstres aléatoires qui peuvent être achetés avec des pièces.
+- Liste de 6 monstres aléatoires qui peuvent être achetés avec des pièces.
 - On peut acheter un monstre en cliquant sur son image avec un maximum de 1 monstre légendaire, 2 monstres épiques, 
 3 monstres rares et 5 monstres communs.
-- Est affiché le nombre de pièces restantes
-- Si le monstre est déjà niveau max alors il est grisé et on ne peut pas l'acheter (c'est écrit "max" en hover)
-- Si le joueur n'a pas assez de pièces alors le monstre est grisé et on ne peut pas l'acheter (c'est écrit "pas assez de pièces" en hover)
+- Est affiché le nombre de pièces restantes dynamiquement
 
 ## About us
 
@@ -170,14 +168,14 @@ C'est un combat tour par tour, et le joueur peut choisir d'attaquer ou de se dé
 
 
 # TODO
-- Ajouter des stats, ou des infos sur le jeu sur la page Home
+- [ ] Ajouter des stats, ou des infos sur le jeu sur la page Home
 - [X] Ajouter un filtre par rareté dans la liste des monstres du jeu
 - [X] Ajouter un filtre par rareté dans la liste des monstres du joueur
-- Créer le système de donjons et de boss, et le système de combat
-- Créer ouvertures de coffres/ récompenses aléatoires
-- Ajouter un système de capacités pour les monstres (attaque spéciale, défense spéciale, etc.)
-- Créer un shop pour acheter des cartes de monstres avec des pièces (à implémenter)
-- Ajouter des messages lors du login, de l'inscription etc
+- [ ] Créer le système de donjons et de boss, et le système de combat
+- [ ] Créer récompenses aléatoires après chaque combat
+- [ ] Ajouter un système de capacités pour les monstres (attaque spéciale, défense spéciale, etc.)
+- [X] Créer un shop pour acheter des cartes de monstres avec des pièces (à implémenter)
+- [X] Ajouter des messages lors du login, de l'inscription etc
 
 
 # Liens
