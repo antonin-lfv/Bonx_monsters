@@ -1,9 +1,11 @@
+import random
 from flask import Flask, render_template, redirect, Blueprint, request, url_for, session, flash
 from flask_login import LoginManager, UserMixin, login_user, login_required, current_user, logout_user
 from os.path import exists
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import User
 from app import db
+from configuration.utils import all_monsters_from_json, create_and_add_new_monster_from_json
 
 BLP_auth = Blueprint('BLP_auth', __name__,
                      template_folder='templates',
@@ -45,6 +47,13 @@ def registration():
             # add the new user to the database
             db.session.add(new_user)
             db.session.commit()
+            # Add 6 random cards to the user
+            # select 6 random monsters from the json file
+            monsters = all_monsters_from_json().keys()
+            monsters_random_name = random.sample(monsters, 6)
+            # create 6 new monsters and add them to the database
+            for monster_name in monsters_random_name:
+                create_and_add_new_monster_from_json(monster_name, new_user.id)
             return render_template('auth/login.html', wrong_credentials=False)
     return render_template('auth/registration.html', already_exists=False)
 

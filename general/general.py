@@ -110,14 +110,10 @@ def game_page(opponent):
 @login_required
 def profil(rarity):
     # ===== add some monsters
-    for monster_name, _ in all_monsters_from_json().items():
+    """for monster_name, _ in all_monsters_from_json().items():
         if monster_name != "meta":
-            create_and_add_new_monster_from_json(monster_name, current_user.id)
-    """create_and_add_new_monster_from_json("Yellow wizard", current_user.id)
-    create_and_add_new_monster_from_json("Red wizard", current_user.id)
-    create_and_add_new_monster_from_json("Lord bacus", current_user.id)
-    create_and_add_new_monster_from_json("Black mage", current_user.id)
-    create_and_add_new_monster_from_json("Dark scorp", current_user.id)"""
+            create_and_add_new_monster_from_json(monster_name, current_user.id)"""
+
     # ===== add some matches
     create_and_add_new_match_in_history(id_user=current_user.id, opponent="Lord bacus", reward_coin=10000, win="y")
 
@@ -212,29 +208,46 @@ def buy_monster(name):
     """
     # replace underscore by space in the name
     name = name.replace("_", " ")
-    # get the monster
-    monster = Monster.query.filter_by(user_id=current_user.id, name=name).first()
     # get the number of coins of the user
     coins = User.query.filter_by(id=current_user.id).first().coins
+    # get the monster in json
+    monster = all_monsters_from_json()[name]
+    # get the rarity of the monster
+    rarity = monster["rarity"]
     # get the price of the monster
-    price = GameConfig.SHOP_CONFIG[monster.rarity]["Price"]
+    price = GameConfig.SHOP_CONFIG[rarity]["Price"]
     # Max card buyable per day
-    max_buy = GameConfig.SHOP_CONFIG[monster.rarity]["Max_per_day"]
-    # if the user has enough coins
-    if coins >= price and ShopItem.query.filter_by(name=name).first().amount_bought < max_buy:
+    max_buy = GameConfig.SHOP_CONFIG[rarity]["Max_per_day"]
+    # user number of monsters bought
+    user_bought = ShopItem.query.filter_by(monster_name=name).first().monster_bought
+    # Get the monster in user monsters
+    user_monster = Monster.query.filter_by(user_id=current_user.id, name=name).first()
+    if user_monster:
+        level = user_monster.level
+    else:
+        level = 0
+    # if the user has already the monster
+    if coins >= price and user_bought < max_buy and level < GameConfig.MAX_MONSTER_LEVEL:
         # remove the price of the monster from the number of coins of the user
         current_user.coins -= price
         # add 1 to amount of monsters bought
-        ShopItem.query.filter_by(name=name).first().amount_bought += 1
-        # add the monster to the user's monsters
-        create_and_add_new_monster_from_json(monster.name, current_user.id)
+        ShopItem.query.filter_by(monster_name=name).first().monster_bought += 1
         # commit the changes
         db.session.commit()
+        # add the monster to the user's monsters
+        create_and_add_new_monster_from_json(name, current_user.id)
         # return the result of the transaction as json
         return jsonify({"result": "success"})
     else:
         # return the result of the transaction as json
-        return jsonify({"result": "not enough coins"})
+        if user_bought >= max_buy:
+            return jsonify({"result": "You bought the max number of this monster today"})
+        elif level == GameConfig.MAX_MONSTER_LEVEL:
+            return jsonify({"result": "You already have the max level of this monster"})
+        elif coins < price:
+            return jsonify({"result": "You don't have enough coins"})
+        else:
+            return jsonify({"result": "Error while buying the monster"})
 
 
 @BLP_general.route('/api/get_last_update_shop', methods=['GET', 'POST'])

@@ -72,19 +72,19 @@ class GameConfig(Config):
     }
     SHOP_CONFIG = {
         "Common": {
-            "Price": 1500,
+            "Price": 2500,
             "Max_per_day": 5
         },
         "Rare": {
-            "Price": 2000,
+            "Price": 4500,
             "Max_per_day": 3
         },
         "Epic": {
-            "Price": 4000,
+            "Price": 10000,
             "Max_per_day": 2
         },
         "Legendary": {
-            "Price": 6000,
+            "Price": 20000,
             "Max_per_day": 1
         }
     }

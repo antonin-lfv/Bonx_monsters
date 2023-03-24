@@ -62,10 +62,13 @@
                              data-wow-duration="1.1s">
                             <div class="top mb-30">
                                 <a class="image" href=""><img
-                                        src="{{ url_for('static', filename=monster.monster_img_path) }}" alt=""></a>
+                                        src="{{ url_for('static', filename=monster.monster_img_path) }}" alt=""
+                                        class="object_moving"></a>
                                 <div class="overlay">
                                     <div class="social-link">
-                                        <a rel="noopener noreferrer"><i class="icofont-money-bag"></i></a>
+                                        <a rel="noopener noreferrer"
+                                           onclick="buy_monster('{{ monster.monster_name.replace(' ','_') }}')"><i
+                                                class="icofont-money-bag"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -96,6 +99,19 @@
     </section>
     <!--match details section area end-->
 
+    <div id="popup-box" style="position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #0b145a;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border-color: rgba(126,26,194,255);
+    border-width: 2px;
+    display: none; z-index: 1!important;">
+        <div id="popup-message" style="font-size: 20px;"></div>
+    </div>
+
 </div>
 <!-- page wrapper end -->
 
@@ -106,8 +122,13 @@
 {% include 'includes/JS_src.html' %}
 
 <script>
-    // get user coins
-    $(document).ready(function () {
+
+    // run main function when the page is loaded
+    $(document).ready(main);
+
+    function main() {
+        // to initialize the page
+        // get user coins
         $.ajax({
             url: "/api/get_user_coins",
             type: "GET",
@@ -115,9 +136,8 @@
                 $("#display_coins_shop").html(data["coins"]);
             }
         });
-    });
-    // get last update shop
-    $(document).ready(function () {
+
+        // get last update shop
         $.ajax({
             url: "/api/get_last_update_shop",
             type: "GET",
@@ -128,7 +148,12 @@
                 $("#display_last_update_shop").html(dateOnly);
             }
         });
-    });
+
+        // get number bought monster
+        {% for monster in shop_monsters %}
+            get_number_bought_monster('{{ monster.monster_name.replace(' ', '_') }}');
+        {% endfor %}
+    }
 
     // create a function that return the response of "/api/get_number_bought_monster/<string:name>/" in the html
     function get_number_bought_monster(name) {
@@ -142,9 +167,53 @@
         });
     }
 
-    {% for monster in shop_monsters %}
-        get_number_bought_monster("{{ monster.monster_name.replace(" ", "_") }}");
-    {% endfor %}
+    // create a function that run "/api/buy_monster/<string:name>/" and update the page
+    function buy_monster(name) {
+        $.ajax({
+            url: "/api/buy_monster/" + name + "/",
+            type: "GET",
+            success: function (data) {
+                if (data["result"] === "success") {
+                    const getUserCoins = $.ajax({
+                        url: "/api/get_user_coins",
+                        type: "GET"
+                    });
+
+                    const getLastUpdateShop = $.ajax({
+                        url: "/api/get_last_update_shop",
+                        type: "GET"
+                    });
+
+                    // Attendre la fin des deux requêtes AJAX
+                    $.when(getUserCoins, getLastUpdateShop).done(function (userCoinsData, lastUpdateShopData) {
+                        // set the html of the div with id "display_coins_shop" to the value of userCoinsData[0]["coins"]
+                        $("#display_coins_shop").html(userCoinsData[0]["coins"]);
+
+                        const lst_date = lastUpdateShopData[0]["last_update_shop"].split(" ");
+                        let dateOnly = lst_date[0] + " " + lst_date[1] + " " + lst_date[2] + " " + lst_date[3];
+                        $("#display_last_update_shop").html(dateOnly);
+
+                        // Appeler get_number_bought_monster(name) après que les deux requêtes AJAX précédentes soient terminées
+                        // get number bought monster
+                        get_number_bought_monster(name);
+                        // Afficher le popup avec data["result"] comme texte, qui disparaît après 3 secondes
+                        $("#popup-message").html("Success : you bought the monster! ");
+                        $("#popup-box").show();
+                        setTimeout(function () {
+                            $("#popup-box").hide();
+                        }, 3000);
+                    });
+                } else {
+                    // Afficher le popup avec data["result"] comme texte, qui disparaît après 3 secondes
+                    $("#popup-message").html("Failed : " + data["result"] + "! ");
+                    $("#popup-box").show();
+                    setTimeout(function () {
+                        $("#popup-box").hide();
+                    }, 3000);
+                }
+            }
+        });
+    }
 
 </script>
 
