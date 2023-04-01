@@ -182,3 +182,6 @@ C'est un combat tour par tour, et le joueur peut choisir d'attaquer ou de se dé
 - Assets boss : 
   - https://free-game-assets.itch.io/free-2d-orcs-sprite-sheets
   - https://engvee.itch.io/free-animated-isometric-hellbeast
+
+- Assets level up :
+  - https://uiverse.io/challenges/level-up-challenge

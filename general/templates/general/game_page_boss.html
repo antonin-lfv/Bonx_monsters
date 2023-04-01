@@ -1,0 +1,328 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<!-- Head -->
+{% include 'includes/head_page.html' %}
+
+<body class="body__bg" data-bgimg="{{ url_for('static', filename='img/bg/body-bg.webp') }}">
+
+<header class="header_section header_transparent sticky-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="main_header d-flex justify-content-between align-items-center">
+                    <div class="header_logo">
+                        <a class="sticky_none"><img aria-label="logo"
+                                                    width="215" height="79"
+                                                    src="{{ url_for('static', filename='img/logo/logo.webp') }}"
+                                                    alt=""></a>
+                    </div>
+                    <div class="header_right_sidebar d-flex align-items-center">
+                        <a class="btn btn-link" href="{{ url_for('BLP_general.battle') }}">Quit battle <img width="10"
+                                                                                                            height="10"
+                                                                                                            src="{{ url_for('static', filename='img/icon/arrrow-icon2.webp') }}"
+                                                                                                            alt=""> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- page wrapper start -->
+<div class="page_wrapper">
+
+    <!-- breadcrumbs area start -->
+    <div class="breadcrumbs_aree breadcrumbs_bg mb-10" data-bgimg="assets/img/bg/breadcrumbs-bg.webp">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs_text text-center">
+                        <h1>Battle {{ opponent }}</h1>
+                        <ul class="d-flex justify-content-center">
+                            <li>Start the battle</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumbs area end -->
+
+    <!-- HTML code for the pop-up window to select monsters -->
+    <div id="monster-popup"
+         style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); z-index: 1; pointer-events: auto;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <h2 style="text-align: center">Choose 6 Monsters</h2>
+            <div id="monster-selection" style="height: 600px; overflow: auto; text-align: center">
+                {% for monster in monsters %}
+                    <div style="width: 25%; display: inline-block; pointer-events: auto; cursor:pointer;"
+                         id="{{ monster.name }}"
+                         onclick="selectMonster('{{ monster.name }}')">
+                        <img src="{{ url_for('static', filename=monster.img_path) }}"
+                             style="pointer-events: auto;">
+                        <h4>{{ monster.name }}</h4>
+                        <h5>Level {{ monster.level }}</h5>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- HTML code for the pop-up window to show the result of the battle in case you won -->
+    <div id="win-popup"
+         style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 1; pointer-events: auto;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <h2 style="text-align: center" class="mb-25">You won !</h2>
+        </div>
+    </div>
+
+    <!-- HTML code for the pop-up window to show the result of the battle in case you loose -->
+    <div id="lose-popup"
+         style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 1; pointer-events: auto;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <h2 style="text-align: center" class="mb-25">You loose !</h2>
+        </div>
+    </div>
+
+    <!--match details section area start-->
+    <section class="match_details_section mb-125">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="match_details_inner">
+                        <div class="team_players_area">
+                            <div class="team_players_list">
+                                <div class="team_players_title">
+                                    <h2>YOUR TEAM</h2>
+                                </div>
+                                <div class="team_players_inner slick__activation" id="parent_team" data-slick='{
+                                        "slidesToShow": 6
+                                    }'>
+                                    <div class="single_players">
+                                        <div class="players_thumb">
+                                            <a href="#"><img width="170" height="170"
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
+                                        </div>
+                                    </div>
+                                    <div class="single_players">
+                                        <div class="players_thumb">
+                                            <a href="#"><img width="170" height="170"
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
+                                        </div>
+                                    </div>
+                                    <div class="single_players">
+                                        <div class="players_thumb">
+                                            <a href="#"><img width="170" height="170"
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
+                                        </div>
+                                    </div>
+                                    <div class="single_players">
+                                        <div class="players_thumb">
+                                            <a href="#"><img width="170" height="170"
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
+                                        </div>
+                                    </div>
+                                    <div class="single_players">
+                                        <div class="players_thumb">
+                                            <a href="#"><img width="170" height="170"
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
+                                        </div>
+                                    </div>
+                                    <div class="single_players">
+                                        <div class="players_thumb">
+                                            <a href="#"><img width="170" height="170"
+                                                             src=""
+                                                             alt=""
+                                                             class="monster-img"></a>
+                                            <h4 class="monster-h4" style="text-align: center"></h4>
+                                            <h5 class="monster-h5" style="text-align: center"></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team_players_list">
+                                <div class="team_players_title">
+                                    <h2>{{ opponent }}</h2>
+                                </div>
+                                <div class="team_players_inner slick__activation" data-slick='{
+                                        "slidesToShow": 6
+                                    }'>
+                                    <div class="single_players">
+                                        <div class="players_thumb">
+                                            <a href="#"><img id="boss-img" width="170" height="170"
+                                                             src="{{ url_for('static', filename=boss_info["img_path"]) }}"
+                                                             alt=""></a>
+                                            <div style="width: 100%; background-color: #ddd">
+                                                <div class="BossBar"
+                                                     style="height: 30px;background-color: #04AA6D;text-align: center;line-height: 30px;color: black;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--match details section area end-->
+
+    <!-- Phaser integration -->
+
+    <!-- Phaser integration end -->
+
+
+</div>
+<!-- page wrapper end -->
+
+<!-- JS -->
+{% include 'includes/JS_src.html' %}
+
+<script>
+    // Before the page is loaded, display a popup that will ask the user to choose 6 monsters. the popu has a size
+    // of almost the entire screen. The user can choose 6 monsters by clicking on them. When the user clicks on
+    // the "Start" button, the popup disappears and the game starts.
+
+    // list with the names of the chosen monsters
+    monster_list = []
+    // create an array with all stats of the chosen monsters
+    monsters_stats_list = []
+
+    // JavaScript code to display the pop-up window
+    window.addEventListener('load', function () {
+        const popup = document.getElementById('monster-popup');
+        popup.style.display = 'block';
+    });
+
+    // JavaScript function to select a monster
+    function selectMonster(monster) {
+        // Add selected monster to a list of chosen monsters
+        // Use an array to store the chosen monsters
+        // remove the div with id monster
+        const monsterSelection = document.getElementById('monster-selection');
+        const monsterDiv = monsterSelection.querySelector(`div[id="${monster}"]`);
+        monsterDiv.parentNode.removeChild(monsterDiv);
+        // console.log(monster)
+        monster_list.push(monster)
+        if (monster_list.length === 6) {
+            startGame()
+        }
+    }
+
+    // JavaScript function to get the stats of a monster from url /get_monster_stats/<string:name>/ where name is the name of the monster
+    // where the space are replaced by an underscore
+    function getMonsterStats(name) {
+        // replace the space in the name of the monster by an underscore
+        name = name.replace(/ /g, '_')
+        // send a request to the server to get the stats of the monster
+        return fetch(`/get_monster_stats/${name}/`)
+            .then(response => response.json())
+            .then(data => {
+                // display the stats of the monster
+                return data
+            })
+    }
+
+    // JavaScript function to start the game
+    async function startGame() {
+        // Hide the pop-up window
+        const popup = document.getElementById('monster-popup');
+        popup.style.display = 'none';
+        // get the stats of each monster
+        for (let i = 0; i < monster_list.length; i++) {
+            monsters_stats_list.push(await getMonsterStats(monster_list[i]))
+        }
+        // Récupérez les éléments img dans le HTML dont la classe est "monster-img"
+        const img_elements = document.getElementsByClassName("monster-img");
+        // Récupérez les éléments img dans le HTML dont la classe est "monster-h4"
+        const h4_elements = document.getElementsByClassName("monster-h4");
+        // Récupérez les éléments img dans le HTML dont la classe est "monster-h5"
+        const h5_elements = document.getElementsByClassName("monster-h5");
+
+        // Bouclez à travers chaque élément img et mettez à jour ses informations
+        for (let i = 0; i < img_elements.length; i++) {
+            const monster_data = monsters_stats_list[i];
+            const imgPath = monster_data["img_path"];
+            const name = monster_data["name"];
+            const level = monster_data["level"];
+            img_elements[i].src = "/assets" + imgPath;
+            h4_elements[i].innerHTML = name;
+            h5_elements[i].innerHTML = "Level " + level;
+        }
+
+        // store the stats of the monsters in dictionary with the name of the monster as key, and the boss
+        const monsters_stats = {};
+        for (let i = 0; i < monster_list.length; i++) {
+            monsters_stats[monster_list[i]] = monsters_stats_list[i]
+        }
+        const boss_stats = {{ boss_info|tojson }};  // keys : attack, defense, img_path, level, dead_imh_path
+
+        // display the HP bar of the boss
+        const BossBar = document.getElementsByClassName("BossBar");
+        BossBar[0].style.width = (boss_stats["defense"] / {{ boss_info['defense'] }}) * 100 + "%";
+        BossBar[0].innerHTML = boss_stats["defense"];
+
+        // enter the while loop that ends when the game is over, i.e. when all the monsters are dead (defense <= 0)
+        // or when the boss has no more life points
+        while (boss_stats["defense"] > 0) {
+            boss_stats["defense"] = Math.max(0, boss_stats["defense"] - 30000);
+
+            // update the HP bar of the boss
+            BossBar[0].style.width = (boss_stats["defense"] / {{ boss_info['defense'] }}) * 100 + "%";
+            BossBar[0].innerHTML = boss_stats["defense"];
+            // wait 1 second if game is not over
+            if (boss_stats["defense"] > 0) {
+                await new Promise(r => setTimeout(r, 2000));
+            }
+        }
+
+        // change the boss image to a dead image if the boss has no more life points
+        if (boss_stats["defense"] <= 0) {
+            const boss_img = document.getElementById("boss-img");
+            {% for img in boss_info['dead_img_path'] %}
+                boss_img.src = "{{ url_for('static', filename=img)}}";
+                await new Promise(r => setTimeout(r, 40));
+            {% endfor %}
+            await new Promise(r => setTimeout(r, 1000));
+            // display a pop-up window that tells the user that he has won the game
+            window.scrollTo(0, 0);
+            const popup = document.getElementById('win-popup');
+            popup.style.display = 'block';
+        }
+        // display a pop-up window that tells the user that he has lost the game
+        else {
+            window.scrollTo(0, 0);
+            const popup = document.getElementById('lose-popup');
+            popup.style.display = 'block';
+        }
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

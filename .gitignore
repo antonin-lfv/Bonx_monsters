@@ -4,3 +4,4 @@ monsters.db
 db.sqlite
 instance/db.sqlite
 temp-plot.html
+/test_files/
