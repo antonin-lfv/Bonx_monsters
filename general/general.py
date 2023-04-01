@@ -67,8 +67,13 @@ def monster_details_inventory(name_monster):
 def match_history():
     ten_last_games_history = Match.query.filter_by(user_id=current_user.id).order_by(Match.id.desc()).limit(10).all()
     opponents = []
+    bosses = all_bosses_from_json()
+    monsters = all_monsters_from_json()
     for game in ten_last_games_history:
-        opponents.append(Monster.query.filter_by(name=game.opponent).first())
+        if game.opponent in bosses.keys():
+            opponents.append(bosses[game.opponent])
+        else:
+            opponents.append(monsters[game.opponent])
     return render_template('general/match_history.html', games_history=ten_last_games_history, opponents=opponents,
                            zip=zip)
 
@@ -120,7 +125,8 @@ def game_page(opponent):
         return render_template('general/game_page_boss.html',
                                opponent=opponent,
                                boss_info=bosses[opponent],
-                               monsters=monsters)
+                               monsters=monsters,
+                               GameConfig=GameConfig)
     else:
         # We fight in a dungeon
         ...
@@ -136,7 +142,7 @@ def profil(rarity):
             create_and_add_new_monster_from_json(monster_name, current_user.id)"""
 
     # ===== add some matches
-    create_and_add_new_match_in_history(id_user=current_user.id, opponent="Lord bacus", reward_coin=10000, win="y")
+    # create_and_add_new_match_in_history(id_user=current_user.id, opponent="Lord bacus", reward_coin=10000, win="y")
 
     # get Legendary monsters
     legendary_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Legendary").all()
@@ -298,3 +304,23 @@ def get_number_bought_monster(name):
     number_bought = ShopItem.query.filter_by(monster_name=name).first().monster_bought
     # return the number of the monster bought by the user as json
     return jsonify({"number_bought": number_bought})
+
+
+@BLP_general.route('/api/add_match_history_boss/<string:opponent>/<string:win>', methods=['POST', 'GET'])
+@login_required
+def add_match_history_boss(opponent, win):
+    """
+    Add a match to the match history
+    :param opponent: name of the opponent
+    :param win: result of the match (y for win, n for lose)
+    """
+    # replace underscore by space in the opponent name if needed
+    opponent = opponent.replace("_", " ")
+    # get the rarity of the opponent
+    rarity = all_bosses_from_json()[opponent]["rarity"]
+    # get the reward of the opponent
+    reward_coin = GameConfig.BOSS_CONFIG[rarity]["Reward"]
+    # add the match to the match history
+    create_and_add_new_match_in_history(id_user=current_user.id, opponent=opponent, reward_coin=reward_coin, win=win)
+    # return the result of the transaction as json
+    return jsonify({"result": "success"})

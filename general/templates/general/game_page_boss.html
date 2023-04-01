@@ -74,6 +74,7 @@
          style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 1; pointer-events: auto;">
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
             <h2 style="text-align: center" class="mb-25">You won !</h2>
+            <p style="text-align: center"><b>Reward : {{ GameConfig.BOSS_CONFIG[boss_info["rarity"]]["Reward"] }} coins</b></p>
         </div>
     </div>
 
@@ -107,6 +108,9 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
+                                            <div style="width: 100%; background-color: #ddd">
+                                                <div class="MonsterBar"></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="single_players">
@@ -117,6 +121,9 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
+                                            <div style="width: 100%; background-color: #ddd">
+                                                <div class="MonsterBar"></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="single_players">
@@ -127,6 +134,9 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
+                                            <div style="width: 100%; background-color: #ddd">
+                                                <div class="MonsterBar"></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="single_players">
@@ -137,6 +147,9 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
+                                            <div style="width: 100%; background-color: #ddd">
+                                                <div class="MonsterBar"></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="single_players">
@@ -147,6 +160,9 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
+                                            <div style="width: 100%; background-color: #ddd">
+                                                <div class="MonsterBar"></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="single_players">
@@ -157,6 +173,9 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
+                                            <div style="width: 100%; background-color: #ddd">
+                                                <div class="MonsterBar"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -174,8 +193,7 @@
                                                              src="{{ url_for('static', filename=boss_info["img_path"]) }}"
                                                              alt=""></a>
                                             <div style="width: 100%; background-color: #ddd">
-                                                <div class="BossBar"
-                                                     style="height: 30px;background-color: #04AA6D;text-align: center;line-height: 30px;color: black;"></div>
+                                                <div class="BossBar">{{ boss_info["defense"] }}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -245,6 +263,15 @@
             })
     }
 
+    function total_defense_deck(monster_dict) {
+        let total_defense = 0
+        // iter through monster_list keys and add monster_dict[key]["defense"] to total_defense
+        for (let key in monster_dict) {
+            total_defense += monster_dict[key]["defense"]
+        }
+        return total_defense
+    }
+
     // JavaScript function to start the game
     async function startGame() {
         // Hide the pop-up window
@@ -273,27 +300,91 @@
         }
 
         // store the stats of the monsters in dictionary with the name of the monster as key, and the boss
-        const monsters_stats = {};
+        let monsters_stats = {};
         for (let i = 0; i < monster_list.length; i++) {
             monsters_stats[monster_list[i]] = monsters_stats_list[i]
         }
+        let monster_stats_reference = JSON.parse(JSON.stringify(monsters_stats));
         const boss_stats = {{ boss_info|tojson }};  // keys : attack, defense, img_path, level, dead_imh_path
 
         // display the HP bar of the boss
-        const BossBar = document.getElementsByClassName("BossBar");
+        let BossBar = document.getElementsByClassName("BossBar");
         BossBar[0].style.width = (boss_stats["defense"] / {{ boss_info['defense'] }}) * 100 + "%";
         BossBar[0].innerHTML = boss_stats["defense"];
 
+        // display the HP bar of the monsters
+        let MonsterBar = document.getElementsByClassName("MonsterBar");
+        for (let i = 0; i < MonsterBar.length; i++) {
+            MonsterBar[i].style.width = (monsters_stats[monster_list[i]]["defense"] / monster_stats_reference[monster_list[i]]["defense"]) * 100 + "%";
+            MonsterBar[i].innerHTML = monsters_stats[monster_list[i]]["defense"];
+        }
+
         // enter the while loop that ends when the game is over, i.e. when all the monsters are dead (defense <= 0)
         // or when the boss has no more life points
-        while (boss_stats["defense"] > 0) {
-            boss_stats["defense"] = Math.max(0, boss_stats["defense"] - 30000);
-
-            // update the HP bar of the boss
-            BossBar[0].style.width = (boss_stats["defense"] / {{ boss_info['defense'] }}) * 100 + "%";
+        await new Promise(r => setTimeout(r, 1000));
+        while (boss_stats["defense"] > 0 && total_defense_deck(monsters_stats) > 0) {
+            // the monsters attack the boss one by one if they are still alive
+            for (let i = 0; i < monster_list.length; i++) {
+                if (monsters_stats[monster_list[i]]["defense"] > 0) {
+                    // the boss loses life points
+                    boss_stats["defense"] = Math.max(0, boss_stats["defense"] - monsters_stats[monster_list[i]]["attack"]);
+                }
+            }
+            // Hurt animation of the boss
+            const boss_img = document.getElementById("boss-img");
+            {% for img in boss_info['hurt_img_path'] %}
+                boss_img.src = "{{ url_for('static', filename=img)}}";
+                console.log(boss_img.src);
+                await new Promise(r => setTimeout(r, 40));
+            {% endfor %}
+            // update the HP bar of the boss, if HP < 40% bar is orange, if HP < 20% bar is red
+            let HP_percent = (boss_stats["defense"] / {{ boss_info['defense'] }}) * 100;
+            BossBar[0].style.width = HP_percent + "%";
             BossBar[0].innerHTML = boss_stats["defense"];
-            // wait 1 second if game is not over
+            if (HP_percent < 40) {
+                BossBar[0].style.backgroundColor = "orange";
+            }
+            if (HP_percent < 20) {
+                BossBar[0].style.backgroundColor = "red";
+            }
+
+            // wait 1 second if boss is still alive
             if (boss_stats["defense"] > 0) {
+                await new Promise(r => setTimeout(r, 1000));
+            } else {
+                break;
+            }
+
+            // the boss attacks 1 monster at random that is still alive
+            let alive_monsters = [];
+            for (let i = 0; i < monster_list.length; i++) {
+                if (monsters_stats[monster_list[i]]["defense"] > 0) {
+                    alive_monsters.push(monster_list[i])
+                }
+            }
+            let random_monster = alive_monsters[Math.floor(Math.random() * alive_monsters.length)];
+            monsters_stats[random_monster]["defense"] = Math.max(0, monsters_stats[random_monster]["defense"] - boss_stats["attack"]);
+            // Attack animation of the boss, wait the animation to finish before updating the HP bar
+            {% for img in boss_info['attack_img_path'] %}
+                boss_img.src = "{{ url_for('static', filename=img)}}";
+                await new Promise(r => setTimeout(r, 40));
+                console.log(boss_img.src);
+            {% endfor %}
+
+            // update the HP bar of the monsters, if HP < 40% bar is orange, if HP < 20% bar is red
+            for (let i = 0; i < MonsterBar.length; i++) {
+                let HP_percent = (monsters_stats[monster_list[i]]["defense"] / monster_stats_reference[monster_list[i]]["defense"]) * 100;
+                MonsterBar[i].style.width = HP_percent + "%";
+                MonsterBar[i].innerHTML = monsters_stats[monster_list[i]]["defense"];
+                if (HP_percent < 40) {
+                    MonsterBar[i].style.backgroundColor = "orange";
+                }
+                if (HP_percent < 20) {
+                    MonsterBar[i].style.backgroundColor = "red";
+                }
+            }
+            // wait 1 second if game is not over
+            if (boss_stats["defense"] > 0 && total_defense_deck(monsters_stats) > 0) {
                 await new Promise(r => setTimeout(r, 2000));
             }
         }
@@ -310,12 +401,34 @@
             window.scrollTo(0, 0);
             const popup = document.getElementById('win-popup');
             popup.style.display = 'block';
+            // update match history by requesting /api/add_match_history_boss/<string:opponent>/y via AJAX
+            $.ajax({
+                url: "/api/add_match_history_boss/{{ opponent }}/y",
+                type: "GET",
+                success: function (data) {
+                    console.log("success in updating match history");
+                },
+                error: function (data) {
+                    console.log("error in updating match history");
+                }
+            });
         }
         // display a pop-up window that tells the user that he has lost the game
         else {
             window.scrollTo(0, 0);
             const popup = document.getElementById('lose-popup');
             popup.style.display = 'block';
+            // update match history by requesting /api/add_match_history_boss/<string:opponent>/n via AJAX
+            $.ajax({
+                url: "/api/add_match_history_boss/{{ opponent }}/n",
+                type: "GET",
+                success: function (data) {
+                    console.log("success in updating match history");
+                },
+                error: function (data) {
+                    console.log("error in updating match history");
+                }
+            });
         }
 
     }

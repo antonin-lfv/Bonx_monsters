@@ -1,4 +1,3 @@
-
 class Config(object):
     """
     Base config class
@@ -86,6 +85,17 @@ class GameConfig(Config):
         "Legendary": {
             "Price": 20000,
             "Max_per_day": 1
+        }
+    }
+    BOSS_CONFIG = {
+        "Easy": {
+            "Reward": 3000,
+        },
+        "Medium": {
+            "Reward": 5000,
+        },
+        "Hard": {
+            "Reward": 9000,
         }
     }
 

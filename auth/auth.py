@@ -41,7 +41,7 @@ def registration():
             new_user.name = name
             new_user.password = generate_password_hash(password, method='sha256')
             new_user.level = 0
-            new_user.coins = 0
+            new_user.coins = 30000
             new_user.nb_games = 0
             new_user.nb_wins = 0
             # add the new user to the database

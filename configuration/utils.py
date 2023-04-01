@@ -65,7 +65,7 @@ def create_and_add_new_match_in_history(id_user, opponent, reward_coin, win):
     """
     new_match = Match()
     new_match.opponent = opponent  # string
-    new_match.reward_coin = reward_coin  # int
+    new_match.reward_coin = reward_coin if win == "y" else 0  # int
     new_match.win = win  # y or n
     new_match.user_id = id_user
     db.session.add(new_match)

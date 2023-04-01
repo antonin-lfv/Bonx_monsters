@@ -90,16 +90,16 @@ Page d'inscription :
 
 
 # Progression dans le jeu
-Le joueur doit créer un compte pour pouvoir jouer. Il commence avec un monstre aléatoire commun (niveau 1).
+Le joueur doit créer un compte pour pouvoir jouer. Il commence avec 6 monstres aléatoires (niveau 1).
 Pour progresser il doit combattre des monstres.
 
 À chaque victoire : 
-- Le joueur perçoit une récompense en pièces (le montant est à déterminer)
-- Le joueur gagne un monstre aléatoire (commun, rare, épique, légendaire) (le niveau est à déterminer)
+- Le joueur perçoit une récompense en pièces
+- Le joueur gagne un monstre aléatoire (commun, rare, épique, légendaire)
 
 Le joueur :
 - Peut acheter des cartes de monstres avec ses pièces (à implémenter)
-- Le niveau du joueur correspond à la puissance divisée par 3000
+- Le niveau du joueur correspond à la puissance divisée par 2000
 - La puissance du joueur est calculée par la somme de la puissance de chacun de ses monstres
 - A un nombre de pièces, de victoires et de combats
 
@@ -117,63 +117,55 @@ Configuration du jeu :
 
 Statistiques des monstres :
 - Commun :
-    - Défense : 30 (level 1)
+    - Défense : 70 (level 1)
     - Attaque : 40 (level 1)
     - Puissance : 100 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 10
 - Rare :
-    - Défense : 40 (level 1)
+    - Défense : 90 (level 1)
     - Attaque : 50 (level 1)
-    - Puissance : 1000 (level 1) (puissance = niveau * puissance au level 1)
+    - Puissance : 200 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 20
 - Épique :
-    - Défense : 50 (level 1)
+    - Défense : 110 (level 1)
     - Attaque : 60 (level 1)
-    - Puissance : 2000 (level 1) (puissance = niveau * puissance au level 1)
+    - Puissance : 300 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 30
 - Légendaire :
-    - Défense : 60 (level 1)
-    - Attaque : 70 (level 1)
-    - Puissance : 3000 (level 1) (puissance = niveau * puissance au level 1)
+    - Défense : 150 (level 1)
+    - Attaque : 80 (level 1)
+    - Puissance : 500 (level 1) (puissance = niveau * puissance au level 1)
     - Nombre de cartes pour améliorer : 40
 
 
 # Combats
 Il y a 2 types de combats :
 - Combat dans un donjon, qui consiste à combattre une horde de monstres
-- Combat contre un boss, qui consiste à combattre un monstre de niveau très élevé. Le but est de le battre en un seul combat.
-(récompenses en fonction du nombre de pv retirés)
+- Combat contre un boss, qui consiste à combattre un monstre de niveau très élevé. Le but est de le battre en un seul combat
 
 ## Donjon
 Le donjon est composé de 6 monstres
-Il existe 50 donjons différents, et le joueur peut choisir le donjon dans lequel il veut combattre seulement s'il a battu le donjon précédent.
+Il existe plusieurs donjons différents, et le joueur peut choisir le donjon dans lequel il veut combattre.
 Il se bat avec 6 monstres de son choix.
 
 ## Boss
-Le boss est un monstre de niveau très élevé. Le joueur doit le battre en un seul combat. (ou faire le plus de dégâts possible)
+Le boss est un monstre de niveau très élevé. Le joueur doit le battre en un seul combat.
 Il existe 3 boss différents, et le joueur peut choisir le boss qu'il veut combattre.
 Le joueur peut quitter le combat contre le boss à tout moment. Il se bat avec 6 monstres de son choix.
+Chaque monstre du joueur inflige des dégâts au boss, et le boss inflige des dégâts à un monstre aléatoire du joueur encore vivant.
 
 ## Récompenses
-À chaque combat, le joueur reçoit une récompense en pièces. Le montant de la récompense est calculé en fonction du niveau du monstre battu.
+À chaque combat gagné, le joueur reçoit une récompense en pièces. Le montant de la récompense est calculé en fonction du niveau du monstre battu.
 De plus il a une chance de gagner un monstre aléatoire (commun, rare, épique, légendaire).
-
-## Combat
-Le combat se déroule ainsi :
-- Des phases d'attaque : Le joueur attaque le monstre
-- Des phases de défense : Le monstre attaque le joueur
-C'est un combat tour par tour, et le joueur peut choisir d'attaquer ou de se défendre à chaque tour.
-- Si le joueur attaque, il inflige des dégâts au monstre
-- Si le joueur se défend, il réduit les dégâts qu'il prend du monstre
 
 
 # TODO
 - [ ] Ajouter des stats, ou des infos sur le jeu sur la page Home
 - [X] Ajouter un filtre par rareté dans la liste des monstres du jeu
 - [X] Ajouter un filtre par rareté dans la liste des monstres du joueur
-- [ ] Créer le système de donjons et de boss, et le système de combat
-- [ ] Créer récompenses aléatoires après chaque combat
-- [ ] Ajouter un système de capacités pour les monstres (attaque spéciale, défense spéciale, etc.)
+- [ ] Créer le système de donjons
+- [X] Créer le système de boss
+- [ ] Créer récompenses aléatoires après chaque combat (monstre)
 - [X] Créer un shop pour acheter des cartes de monstres avec des pièces (à implémenter)
 - [X] Ajouter des messages lors du login, de l'inscription etc
 
