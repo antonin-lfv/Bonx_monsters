@@ -165,11 +165,12 @@ De plus il a une chance de gagner un monstre aléatoire (commun, rare, épique, 
 - [X] Ajouter un filtre par rareté dans la liste des monstres du joueur
 - [ ] Créer le système de donjons
 - [X] Créer le système de boss
-- [ ] Créer récompenses aléatoires après chaque combat (monstre)
+- [X] Créer récompenses aléatoires après chaque combat (monstre)
 - [X] Créer un shop pour acheter des cartes de monstres avec des pièces (à implémenter)
 - [X] Ajouter des messages lors du login, de l'inscription etc
 - [ ] Ajouter des cartes gratuites dans le shop
-- [ ] Animation après victoire pour afficher les cartes gagnées
+- [X] Animation après victoire pour afficher les cartes gagnées
+- [ ] Ajouter les cartes gagnées dans l'historique des combats
 
 
 # Liens

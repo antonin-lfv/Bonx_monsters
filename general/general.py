@@ -365,6 +365,10 @@ def get_reward_after_win(boss_rarity):
     monster["img_path"] = url_for('static', filename=monster["img_path"])
     # get coins reward
     reward_coin = GameConfig.BOSS_CONFIG[boss_rarity]["Reward"]
+    # add the monster to the user's monsters as many times as the amount of cards
+    for i in range(amount_cards):
+        # TODO : optimize to add all the cards at once  (only one call)
+        create_and_add_new_monster_from_json(monster_name, current_user.id)
     # return the result of the transaction as json
     return jsonify({"monster": monster, "monster_name": monster_name,
                     "amount_cards": amount_cards, "reward_coin": reward_coin})
