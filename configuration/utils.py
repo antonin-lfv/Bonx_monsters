@@ -101,11 +101,11 @@ def update_power_user(id_user):
 
 def update_shop():
     """
-    If the shop last_update is older than 1 day, update it
+    If the shop last_update is another day, update the shop
     so update the shop with 6 new monsters and change the last_update
     """
     shop = ShopItem.query.all()
-    if len(shop) == 0 or (datetime.now() - shop[0].last_update).days >= 1:
+    if len(shop) == 0 or datetime.now().day != shop[0].last_update.day:
         # delete all shop items
         for s in shop:
             db.session.delete(s)
@@ -113,6 +113,27 @@ def update_shop():
         monsters_json = all_monsters_from_json()
         # get 6 random monsters names from monsters.json
         monster_names_to_add = random.sample(list(monsters_json.keys()), 6)
+        # Sort the monsters by rarity
+        common_monsters = []
+        rare_monsters = []
+        epic_monsters = []
+        legendary_monsters = []
+        for m in monster_names_to_add:
+            if monsters_json[m]["rarity"] == "Common":
+                common_monsters.append(m)
+            elif monsters_json[m]["rarity"] == "Rare":
+                rare_monsters.append(m)
+            elif monsters_json[m]["rarity"] == "Epic":
+                epic_monsters.append(m)
+            else:
+                legendary_monsters.append(m)
+        # sort the monsters by name in each rarity
+        common_monsters.sort()
+        rare_monsters.sort()
+        epic_monsters.sort()
+        legendary_monsters.sort()
+        monster_names_to_add = legendary_monsters + epic_monsters + rare_monsters + common_monsters
+
         for m in monster_names_to_add:
             new_shop_item = ShopItem()
             new_shop_item.monster_name = m

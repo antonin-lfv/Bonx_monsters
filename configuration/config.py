@@ -12,26 +12,11 @@ class GameConfig(Config):
     """
     Config class for the game
     MAX_COINS = 1000000
-    COMMON_MONSTER_DEFENSE: defense of common monsters
-    COMMON_MONSTER_ATTACK: attack of common monsters
-    COMMON_MONSTER_POWER: power of common monsters
-    COMMON_NUMBER_CARD_TO_UPGRADE: number of common cards to upgrade
-    COMMON_RATIO_TO_UPGRADE: ratio of common cards to upgrade defense and attack
-    RARE_MONSTER_DEFENSE: defense of rare monsters
-    RARE_MONSTER_ATTACK: attack of rare monsters
-    RARE_MONSTER_POWER: power of rare monsters
-    RARE_NUMBER_CARD_TO_UPGRADE: number of rare cards to upgrade
-    RARE_RATIO_TO_UPGRADE: ratio of rare cards to upgrade defense and attack
-    EPIC_MONSTER_DEFENSE: defense of epic monsters
-    EPIC_MONSTER_ATTACK: attack of epic monsters
-    EPIC_MONSTER_POWER: power of epic monsters
-    EPIC_NUMBER_CARD_TO_UPGRADE: number of epic cards to upgrade
-    EPIC_RATIO_TO_UPGRADE: ratio of epic cards to upgrade defense and attack
-    LEGENDARY_MONSTER_DEFENSE: defense of legendary monsters
-    LEGENDARY_MONSTER_ATTACK: attack of legendary monsters
-    LEGENDARY_MONSTER_POWER: power of legendary monsters
-    LEGENDARY_NUMBER_CARD_TO_UPGRADE: number of legendary cards to upgrade
-    LEGENDARY_RATIO_TO_UPGRADE: ratio of legendary cards to upgrade defense and attack
+    MAX_MONSTER_LEVEL = 200
+    MONSTER_CONFIG = stats for each monster type
+    SHOP_CONFIG = price and max number of cards per day
+    BOSS_CONFIG = reward for each boss type
+    REWARD_CONFIG = chance to get each card type
     """
     MAX_COINS = 1000000
     MAX_MONSTER_LEVEL = 200
@@ -89,13 +74,31 @@ class GameConfig(Config):
     }
     BOSS_CONFIG = {
         "Easy": {
-            "Reward": 3000,
-        },
-        "Medium": {
             "Reward": 5000,
         },
+        "Medium": {
+            "Reward": 35000,
+        },
         "Hard": {
-            "Reward": 9000,
+            "Reward": 75000,
+        }
+    }
+    REWARD_CONFIG = {
+        "Common": {
+            "chance_to_get": 0.5,
+            "max_cards": 8,
+        },
+        "Rare": {
+            "chance_to_get": 0.3,
+            "max_cards": 5,
+        },
+        "Epic": {
+            "chance_to_get": 0.1,
+            "max_cards": 3,
+        },
+        "Legendary": {
+            "chance_to_get": 0.1,
+            "max_cards": 3,
         }
     }
 

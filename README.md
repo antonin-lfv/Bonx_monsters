@@ -168,6 +168,8 @@ De plus il a une chance de gagner un monstre aléatoire (commun, rare, épique, 
 - [ ] Créer récompenses aléatoires après chaque combat (monstre)
 - [X] Créer un shop pour acheter des cartes de monstres avec des pièces (à implémenter)
 - [X] Ajouter des messages lors du login, de l'inscription etc
+- [ ] Ajouter des cartes gratuites dans le shop
+- [ ] Animation après victoire pour afficher les cartes gagnées
 
 
 # Liens

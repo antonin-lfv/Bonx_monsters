@@ -51,7 +51,8 @@
                                     <h3>
                                         <a href="{{ url_for('BLP_general.game_page', opponent="Grommash") }}">Grommash</a>
                                     </h3>
-                                    <span>LEVEL 100</span>
+                                    <span>LEVEL {{ bosses["Grommash"]["level"] }}</span>
+                                    <p>Reward {{ GameConfig.BOSS_CONFIG[bosses["Grommash"]["rarity"]]["Reward"] }} coins</p>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +67,8 @@
                                 <div class="gamer_team_text">
                                     <h3><a href="{{ url_for('BLP_general.game_page', opponent="Gronk") }}">Gronk</a>
                                     </h3>
-                                    <span>LEVEL 200</span>
+                                    <span>LEVEL {{ bosses["Gronk"]["level"] }}</span>
+                                    <p>Reward {{ GameConfig.BOSS_CONFIG[bosses["Gronk"]["rarity"]]["Reward"] }} coins</p>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +83,8 @@
                                 <div class="gamer_team_text">
                                     <h3><a href="{{ url_for('BLP_general.game_page', opponent="Throgg") }}">Throgg</a>
                                     </h3>
-                                    <span>LEVEL 300</span>
+                                    <span>LEVEL {{ bosses["Throgg"]["level"] }}</span>
+                                    <p>Reward {{ GameConfig.BOSS_CONFIG[bosses["Throgg"]["rarity"]]["Reward"] }} coins</p>
                                 </div>
                             </div>
                         </div>

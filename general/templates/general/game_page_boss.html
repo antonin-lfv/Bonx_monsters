@@ -72,9 +72,20 @@
     <!-- HTML code for the pop-up window to show the result of the battle in case you won -->
     <div id="win-popup"
          style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 1; pointer-events: auto;">
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center">
             <h2 style="text-align: center" class="mb-25">You won !</h2>
-            <p style="text-align: center"><b>Reward : {{ GameConfig.BOSS_CONFIG[boss_info["rarity"]]["Reward"] }} coins</b></p>
+            <p style="text-align: center"><b id="coins_rewards"></b></p>
+            <div class="top" style="text-align: center">
+                <a class="image">
+                    <img class="object_moving" id="img_monster_rewards"
+                         alt=""></a>
+            </div>
+            <div class="content" style="text-align: center">
+                <h4 class="title"><a id="monster_name_rewards"></a>
+                </h4>
+                <h6 class="level-text" id="monster_rarity_rewards"></h6>
+                <h6 class="level-text" id="monster_cards_rewards"></h6>
+            </div>
         </div>
     </div>
 
@@ -390,6 +401,7 @@
         }
 
         // change the boss image to a dead image if the boss has no more life points
+        // WIN
         if (boss_stats["defense"] <= 0) {
             const boss_img = document.getElementById("boss-img");
             {% for img in boss_info['dead_img_path'] %}
@@ -397,6 +409,31 @@
                 await new Promise(r => setTimeout(r, 40));
             {% endfor %}
             await new Promise(r => setTimeout(r, 1000));
+            // call /api/get_reward_after_boss_win via AJAX and get the result as a JSON object
+            $.ajax({
+                url: "/api/get_reward_after_boss_win/{{ boss_info['rarity'] }}",
+                type: "GET",
+                success: function (data) {
+                    console.log("success in getting reward");
+                    // display the reward in the pop-up window
+                    // id = coins_rewards for coins, id = img_monster_rewards for monster image
+                    // id = monster_name_rewards for monster name, id="monster_rarity_rewards" for monster rarity
+                    // id="monster_cards_rewards" for monster cards
+                    const coins_rewards = document.getElementById("coins_rewards");
+                    const img_monster_rewards = document.getElementById("img_monster_rewards");
+                    const monster_name_rewards = document.getElementById("monster_name_rewards");
+                    const monster_rarity_rewards = document.getElementById("monster_rarity_rewards");
+                    const monster_cards_rewards = document.getElementById("monster_cards_rewards");
+                    coins_rewards.innerHTML = "+" + data["reward_coin"] + " coins";
+                    img_monster_rewards.src = data["monster"]["img_path"];
+                    monster_name_rewards.innerHTML = data["monster_name"];
+                    monster_rarity_rewards.innerHTML = data["monster"]["rarity"];
+                    monster_cards_rewards.innerHTML = "+" + data["amount_cards"] + " cards"
+                },
+                error: function (data) {
+                    console.log("error in getting reward");
+                }
+            });
             // display a pop-up window that tells the user that he has won the game
             window.scrollTo(0, 0);
             const popup = document.getElementById('win-popup');
@@ -413,7 +450,8 @@
                 }
             });
         }
-        // display a pop-up window that tells the user that he has lost the game
+            // display a pop-up window that tells the user that he has lost the game
+        // LOSE
         else {
             window.scrollTo(0, 0);
             const popup = document.getElementById('lose-popup');

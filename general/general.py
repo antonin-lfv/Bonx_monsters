@@ -85,7 +85,8 @@ def battle():
     Page to choose the opponent
     :return:
     """
-    return render_template('general/battle.html')
+    bosses = all_bosses_from_json()
+    return render_template('general/battle.html', GameConfig=GameConfig, bosses=bosses)
 
 
 @BLP_general.route('/game_page/<string:opponent>/', methods=['POST', 'GET'])
@@ -136,9 +137,12 @@ def game_page(opponent):
 @BLP_general.route('/profil/<string:rarity>/', methods=['POST', 'GET'])
 @login_required
 def profil(rarity):
-    # ===== add some monsters
+    # ===== add all monsters
     """for monster_name, _ in all_monsters_from_json().items():
         if monster_name != "meta":
+            create_and_add_new_monster_from_json(monster_name, current_user.id)
+            create_and_add_new_monster_from_json(monster_name, current_user.id)
+            create_and_add_new_monster_from_json(monster_name, current_user.id)
             create_and_add_new_monster_from_json(monster_name, current_user.id)"""
 
     # ===== add some matches
@@ -324,3 +328,43 @@ def add_match_history_boss(opponent, win):
     create_and_add_new_match_in_history(id_user=current_user.id, opponent=opponent, reward_coin=reward_coin, win=win)
     # return the result of the transaction as json
     return jsonify({"result": "success"})
+
+
+@BLP_general.route('/api/get_reward_after_boss_win/<string:boss_rarity>/', methods=['POST', 'GET'])
+@login_required
+def get_reward_after_win(boss_rarity):
+    """
+    Get the reward after a win, choose a random monster and a random amount of cards
+    :param boss_rarity: rarity of the boss
+    :return: json with monster's name, rarity, amount of cards and the image path of the monster
+    """
+    # The probability of getting a monster by rarity is in GameConfig.REWARD_CONFIG
+    # with the rarity and then "chance_to_get"
+    rarity = ["Common", "Rare", "Epic", "Legendary"]
+    weights = [GameConfig.REWARD_CONFIG[r]["chance_to_get"] for r in rarity]
+    selected_rarity = random.choices(rarity, weights=weights, k=1)[0]
+    # get the list of monsters of the selected rarity
+    monsters = all_monsters_from_json()
+    # delete the first key of the dict monsters
+    monsters.pop('meta')
+    # filter monsters by rarity
+    if selected_rarity == "Legendary":
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Legendary"}
+    elif selected_rarity == "Epic":
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Epic"}
+    elif selected_rarity == "Rare":
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Rare"}
+    elif selected_rarity == "Common":
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Common"}
+    # choose a random key in monsters
+    monster_name = random.choice(list(monsters.keys()))
+    monster = monsters[monster_name]
+    # get the amount of cards
+    amount_cards = random.randint(1, GameConfig.REWARD_CONFIG[selected_rarity]["max_cards"])
+    # get the ulr of the image of the monster and add it to the monster dict
+    monster["img_path"] = url_for('static', filename=monster["img_path"])
+    # get coins reward
+    reward_coin = GameConfig.BOSS_CONFIG[boss_rarity]["Reward"]
+    # return the result of the transaction as json
+    return jsonify({"monster": monster, "monster_name": monster_name,
+                    "amount_cards": amount_cards, "reward_coin": reward_coin})
