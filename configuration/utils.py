@@ -19,6 +19,12 @@ def all_bosses_from_json():
     return bosses
 
 
+def all_doors_from_json():
+    with open('assets/bonx_data/doors_dungeon.json', 'r') as f:
+        doors = json.load(f)
+    return doors
+
+
 def create_and_add_new_monster_from_json(monster_name, id_user):
     """Create and add monster if user don't already have it, else amount += 1"""
     if m := Monster.query.filter_by(user_id=id_user, name=monster_name).first():

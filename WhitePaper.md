@@ -36,7 +36,7 @@ Page qui regroupe tous les monstres du jeu :
 - Blueprint : general
 
 Page de choix d'un combat :
-- Choix entre 3 bosses ou des donjons
+- Choix entre 3 bosses ou 8 donjons
 
 ## Profil
 
@@ -145,7 +145,7 @@ Il y a 2 types de combats :
 
 ## Donjon
 Le donjon est composé de 6 monstres
-Il existe plusieurs donjons différents, et le joueur peut choisir le donjon dans lequel il veut combattre.
+Il existe 8 donjons différents, et le joueur peut choisir le donjon dans lequel il veut combattre.
 Il se bat avec 6 monstres de son choix.
 
 ## Boss

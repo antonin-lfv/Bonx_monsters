@@ -1,0 +1,42 @@
+{
+  "1": {
+    "name": "Gargoyle Gorge",
+    "img_path": "doors/door_1.jp2",
+    "description": "A treacherous canyon filled with menacing gargoyles perched on jagged rocks. Brave adventurers must navigate narrow paths and avoid the stony glare of these fearsome guardians."
+  },
+  "2": {
+    "name": "Chimera Cavern",
+    "img_path": "doors/door_2.jp2",
+    "description": "This dark, winding cave system is home to the terrifying chimeras. Combining features of various creatures, they prowl the shadows waiting to ambush unwary explorers."
+  },
+  "3": {
+    "name": "Werewolf Maze",
+    "img_path": "doors/door_3.jp2",
+    "description": "Lost within a dense forest, the Werewolf Maze challenges adventurers to escape its twisted paths while evading the fierce werewolves that hunt under the full moon."
+  },
+  "4": {
+    "name": "The Great Hall",
+    "img_path": "doors/door_4.jp2",
+    "description": "Hidden beneath the ocean's surface, the Kraken Crypt is a submerged temple protected by monstrous krakens. Daring heroes must hold their breath and navigate treacherous waters."
+  },
+  "5": {
+    "name": "Specter Sanctuary",
+    "img_path": "doors/door_5.jp2",
+    "description": "An ancient, haunted burial ground, the Revenant Hideout is teeming with vengeful spirits. These restless souls seek to protect their crypts from would-be intruders."
+  },
+  "6": {
+    "name": "Basilisk Grove",
+    "img_path": "doors/door_6.jp2",
+    "description": "In this eerie, fog-shrouded forest, deadly basilisks lie in wait. Their petrifying gaze can turn even the most skilled adventurer into stone with a single glance."
+  },
+  "7": {
+    "name": "Revenant Hideout",
+    "img_path": "doors/door_7.jp2",
+    "description": "A towering fortress stretching towards the sky, Titan Tower is guarded by colossal beings of immense power. Conquering this stronghold requires cunning, strength, and determination."
+  },
+  "8": {
+    "name": "Kraken Crypt",
+    "img_path": "doors/door_8.jp2",
+    "description": "This forsaken ruin is a haven for eerie specters and lost souls. The chilling whispers of the dead echo throughout, sapping the courage and strength of all who dare to enter."
+  }
+}

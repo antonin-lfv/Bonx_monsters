@@ -85,8 +85,13 @@ def battle():
     Page to choose the opponent
     :return:
     """
+    # Get all the bosses
     bosses = all_bosses_from_json()
-    return render_template('general/battle.html', GameConfig=GameConfig, bosses=bosses)
+    # Get doors of the dungeon
+    doors = all_doors_from_json()
+    # Get number of doors in string format
+    nb_doors = str(len(doors))
+    return render_template('general/battle.html', GameConfig=GameConfig, bosses=bosses, doors=doors, nb_doors=nb_doors)
 
 
 @BLP_general.route('/game_page/<string:opponent>/', methods=['POST', 'GET'])
