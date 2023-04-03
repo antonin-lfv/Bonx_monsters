@@ -1,3 +1,8 @@
+chmod +x install_requirements.sh
+chmod +x start_bonx_monster.sh
+chmod +x reset_data.sh
+
+
 # Bienvenue sur Bonx Monster
 
 Bonx Monster est un jeu en ligne passionnant où vous pouvez collectionner des monstres, les faire évoluer et les utiliser pour combattre dans des donjons et contre des boss redoutables. Suivez ce guide pour comprendre les bases du jeu et vous lancer dans l'aventure!
