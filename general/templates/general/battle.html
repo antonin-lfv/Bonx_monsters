@@ -126,7 +126,7 @@
                         {"breakpoint":576, "settings": { "slidesToShow": 1 } }
                         ]
                     }' data-bgimg="assets/img/others/testimonial-bg.webp">
-                        {% for num, door in doors.items() %}
+                        {% for name, door in doors.items() %}
                             <div class="testimonial_list d-flex align-items-center">
                                 <div class="testimonial_thumb">
                                     <img width="270" height="319"
@@ -135,13 +135,13 @@
                                 </div>
                                 <div class="testimonial_content">
                                     <div class="testimonial_desc">
-                                        <h3>{{ door['name'] }} ({{ num + "/" + nb_doors }})</h3>
+                                        <h3>{{ name }} ({{ door["num"] + "/" + nb_doors }})</h3>
                                         <p>{{ door['description'] }}</p>
                                     </div>
                                     <div class="testimonial_author">
                                         <a class="btn btn-link wow fadeInUp" data-wow-delay="0.3s"
                                            data-wow-duration="1.3s"
-                                           href="{{ url_for('BLP_general.battle') }}">Enter Dungeon</a>
+                                           href="{{ url_for('BLP_general.game_page', opponent=name) }}">Enter Dungeon</a>
                                     </div>
                                 </div>
                             </div>

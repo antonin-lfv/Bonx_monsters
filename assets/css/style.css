@@ -8001,3 +8001,11 @@ section.error_section {
     line-height: 30px;
     color: black;
 }
+
+.OppoBar {
+    height: 30px;
+    background-color: #04AA6D;
+    text-align: center;
+    line-height: 30px;
+    color: black;
+}

@@ -99,10 +99,14 @@ def battle():
 def game_page(opponent):
     """
     Page to fight
-    :param opponent: name of the opponent
+    :param opponent: name of the opponent or name of the dungeon
     """
     # Get all the bosses
     bosses = all_bosses_from_json()
+    # Get all dungeons
+    dungeons = all_doors_from_json()
+    # Get all monsters
+    monsters_json = all_monsters_from_json()
     # Get the users' monsters to display them in the game page to choose the monsters to fight with
     monsters = Monster.query.filter_by(user_id=current_user.id).all()
     # sort the monsters by rarity by adding them to different lists
@@ -133,9 +137,18 @@ def game_page(opponent):
                                boss_info=bosses[opponent],
                                monsters=monsters,
                                GameConfig=GameConfig)
+    elif opponent in dungeons.keys():
+        # We fight a dungeon
+        dungeon_info = dungeons[opponent]
+        return render_template('general/game_page_dungeon.html',
+                               opponent=opponent,
+                               opponent_info=monsters_json[dungeon_info["monster_name"]],
+                               dungeon_info=dungeon_info,
+                               monsters=monsters,
+                               GameConfig=GameConfig)
     else:
-        # We fight in a dungeon
-        ...
+        # Raise error in case of wrong opponent
+        raise ValueError("Wrong opponent")
 
 
 @BLP_general.route('/profil', defaults={'rarity': 'All'}, methods=['POST', 'GET'])

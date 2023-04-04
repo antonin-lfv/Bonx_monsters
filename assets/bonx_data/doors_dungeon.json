@@ -1,42 +1,58 @@
 {
-  "1": {
-    "name": "Gargoyle Gorge",
+  "Gargoyle Gorge": {
+    "num": "1",
     "img_path": "doors/door_1.jp2",
-    "description": "A treacherous canyon filled with menacing gargoyles perched on jagged rocks. Brave adventurers must navigate narrow paths and avoid the stony glare of these fearsome guardians."
+    "description": "A treacherous canyon filled with menacing gargoyles perched on jagged rocks. Brave adventurers must navigate narrow paths and avoid the stony glare of these fearsome guardians.",
+    "monster_name": "Obsidian owl",
+    "level": "5"
   },
-  "2": {
-    "name": "Chimera Cavern",
+  "Chimera Cavern": {
+    "num": "2",
     "img_path": "doors/door_2.jp2",
-    "description": "This dark, winding cave system is home to the terrifying chimeras. Combining features of various creatures, they prowl the shadows waiting to ambush unwary explorers."
+    "description": "This dark, winding cave system is home to the terrifying chimeras. Combining features of various creatures, they prowl the shadows waiting to ambush unwary explorers.",
+    "monster_name": "Ice cyclops",
+    "level": "25"
   },
-  "3": {
-    "name": "Werewolf Maze",
+  "Werewolf Maze": {
+    "num": "3",
     "img_path": "doors/door_3.jp2",
-    "description": "Lost within a dense forest, the Werewolf Maze challenges adventurers to escape its twisted paths while evading the fierce werewolves that hunt under the full moon."
+    "description": "Lost within a dense forest, the Werewolf Maze challenges adventurers to escape its twisted paths while evading the fierce werewolves that hunt under the full moon.",
+    "monster_name": "Maleficent tricera",
+    "level": "50"
   },
-  "4": {
-    "name": "The Great Hall",
+  "The Great Hall": {
+    "num": "4",
     "img_path": "doors/door_4.jp2",
-    "description": "Hidden beneath the ocean's surface, the Kraken Crypt is a submerged temple protected by monstrous krakens. Daring heroes must hold their breath and navigate treacherous waters."
+    "description": "Hidden beneath the ocean's surface, the Kraken Crypt is a submerged temple protected by monstrous krakens. Daring heroes must hold their breath and navigate treacherous waters.",
+    "monster_name": "Dark groot",
+    "level": "75"
   },
-  "5": {
-    "name": "Specter Sanctuary",
+  "Specter Sanctuary": {
+    "num": "5",
     "img_path": "doors/door_5.jp2",
-    "description": "An ancient, haunted burial ground, the Revenant Hideout is teeming with vengeful spirits. These restless souls seek to protect their crypts from would-be intruders."
+    "description": "An ancient, haunted burial ground, the Revenant Hideout is teeming with vengeful spirits. These restless souls seek to protect their crypts from would-be intruders.",
+    "monster_name": "Dark pumpkin",
+    "level": "100"
   },
-  "6": {
-    "name": "Basilisk Grove",
+  "Basilisk Grove": {
+    "num": "6",
     "img_path": "doors/door_6.jp2",
-    "description": "In this eerie, fog-shrouded forest, deadly basilisks lie in wait. Their petrifying gaze can turn even the most skilled adventurer into stone with a single glance."
+    "description": "In this eerie, fog-shrouded forest, deadly basilisks lie in wait. Their petrifying gaze can turn even the most skilled adventurer into stone with a single glance.",
+    "monster_name": "Dark grimlock",
+    "level": "100"
   },
-  "7": {
-    "name": "Revenant Hideout",
+  "Revenant Hideout": {
+    "num": "7",
     "img_path": "doors/door_7.jp2",
-    "description": "A towering fortress stretching towards the sky, Titan Tower is guarded by colossal beings of immense power. Conquering this stronghold requires cunning, strength, and determination."
+    "description": "A towering fortress stretching towards the sky, Titan Tower is guarded by colossal beings of immense power. Conquering this stronghold requires cunning, strength, and determination.",
+    "monster_name": "Brown harpy",
+    "level": "100"
   },
-  "8": {
-    "name": "Kraken Crypt",
+  "Knight Crypt": {
+    "num": "8",
     "img_path": "doors/door_8.jp2",
-    "description": "This forsaken ruin is a haven for eerie specters and lost souls. The chilling whispers of the dead echo throughout, sapping the courage and strength of all who dare to enter."
+    "description": "This forsaken ruin is a haven for eerie specters and lost souls. The chilling whispers of the dead echo throughout, sapping the courage and strength of all who dare to enter.",
+    "monster_name": "Dark knight",
+    "level": "150"
   }
 }

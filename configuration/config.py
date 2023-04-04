@@ -17,6 +17,8 @@ class GameConfig(Config):
     SHOP_CONFIG = price and max number of cards per day
     BOSS_CONFIG = reward for each boss type
     REWARD_CONFIG = chance to get each card type
+    DUNGON_MONSTER_AMOUNT = number of monsters in each dungeon
+    DUNGON_CONFIG = stats for each dungon
     """
     MAX_COINS = 1000000
     MAX_MONSTER_LEVEL = 200
@@ -101,6 +103,7 @@ class GameConfig(Config):
             "max_cards": 3,
         }
     }
+    DUNGON_MONSTER_AMOUNT = 5
 
 
 app_config = Config

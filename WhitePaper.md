@@ -144,7 +144,7 @@ Il y a 2 types de combats :
 - Combat contre un boss, qui consiste à combattre un monstre de niveau très élevé. Le but est de le battre en un seul combat
 
 ## Donjon
-Le donjon est composé de 6 monstres
+Le donjon est composé de 5 monstres
 Il existe 8 donjons différents, et le joueur peut choisir le donjon dans lequel il veut combattre.
 Il se bat avec 6 monstres de son choix.
 
