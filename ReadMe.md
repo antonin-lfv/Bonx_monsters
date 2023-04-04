@@ -10,7 +10,7 @@
 <h3 align="center">Bonx monster</h3>
 
   <p align="center">
-    An awesome game to spend some time!
+    An awesome game to enjoy in your spare time!
     <br />
     <a href="https://github.com/antonin-lfv/Bonx_monsters"><strong>Explore the docs »</strong></a>
     <br />
