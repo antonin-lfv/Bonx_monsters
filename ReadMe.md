@@ -99,11 +99,11 @@ _Follow the steps below to set up a local copy of the project and get it running
 
 2. Add the right permissions to the scripts
 
-```bash
-chmod +x install_requirements.sh
-chmod +x start_bonx_monster.sh
-chmod +x reset_data.sh
-```
+   ```bash
+   chmod +x install_requirements.sh
+   chmod +x start_bonx_monster.sh
+   chmod +x reset_data.sh
+   ```
 
 3. Install requirements and dependencies
    ```sh
