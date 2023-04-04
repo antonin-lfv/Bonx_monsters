@@ -12,7 +12,7 @@
   <p align="center">
     An awesome game to enjoy in your spare time!
     <br />
-    <a href="https://github.com/antonin-lfv/Bonx_monsters"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/antonin-lfv/Bonx_monsters/ReadMe.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/antonin-lfv/Bonx_monsters">View Demo</a>
@@ -57,7 +57,7 @@
 
 ## About The Project
 
-[![Bonx monster home page][https://user-images.githubusercontent.com/63207451/229769113-150f328e-c4e4-4fdf-a9bb-2e89bc8ccb25.png]](https://user-images.githubusercontent.com/63207451/229769113-150f328e-c4e4-4fdf-a9bb-2e89bc8ccb25.png)
+![Bonx monster home page](https://user-images.githubusercontent.com/63207451/229769113-150f328e-c4e4-4fdf-a9bb-2e89bc8ccb25.png)
 
 Bonx Monster is a game where you collect and own monsters. The objective is to gather all the monsters and raise them to
 the highest level. To achieve this, you can have them battle against bosses, explore dungeons, or purchase monster cards
