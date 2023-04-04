@@ -1,73 +1,205 @@
+<a name="readme-top"></a>
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/antonin-lfv/Bonx_monsters">
+    <img src="assets/logo_bonx.png" alt="Logo" width="80" height="80">
+  </a>
+
+<h3 align="center">Bonx monster</h3>
+
+  <p align="center">
+    An awesome game to spend some time!
+    <br />
+    <a href="https://github.com/antonin-lfv/Bonx_monsters"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/antonin-lfv/Bonx_monsters">View Demo</a>
+    ·
+    <a href="https://github.com/antonin-lfv/Bonx_monsters/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/antonin-lfv/Bonx_monsters/issues">Request Feature</a>
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+[![Bonx monster home page][product-screenshot]](https://user-images.githubusercontent.com/63207451/229769113-150f328e-c4e4-4fdf-a9bb-2e89bc8ccb25.png)
+
+Bonx Monster is a game where you collect and own monsters. The objective is to gather all the monsters and raise them to
+the highest level. To achieve this, you can have them battle against bosses, explore dungeons, or purchase monster cards
+in the store.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+This section highlights several major tools used in building our project. For a comprehensive list, please refer to
+the `requirements.txt` file.
+
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![JQuery][JQuery.com]][JQuery-url]
+* [![Flask][Flask.com]][Flask-url]
+* [![Python][Python.com]][Python-url]
+* [![SQLAlchemy][SQLAlchemy.com]][SQLAlchemy-url]
+* [![Gunicorn][Gunicorn.com]][Gunicorn-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+Add the right permissions to the scripts
+
 ```bash
 chmod +x install_requirements.sh
 chmod +x start_bonx_monster.sh
 chmod +x reset_data.sh
 ```
 
+### Installation
 
-# Bienvenue sur Bonx Monster
+_Follow the steps below to set up a local copy of the project and get it running on your local machine._
 
-Bonx Monster est un jeu en ligne passionnant où vous pouvez collectionner des monstres, les faire évoluer et les utiliser pour combattre dans des donjons et contre des boss redoutables. Suivez ce guide pour comprendre les bases du jeu et vous lancer dans l'aventure!
+1. Clone the repo
+   ```sh
+   git clone https://github.com/antonin-lfv/Bonx_monsters.git
+   ```
+2. Install requirements and dependencies
+   ```sh
+   ./install_requirements.sh
+   ```
 
-## Inscription et connexion
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Pour commencer, vous devrez créer un compte. Rendez-vous sur la page d'inscription (/signup) et remplissez le formulaire. Une fois inscrit, vous pouvez vous connecter en utilisant vos identifiants sur la page de connexion (/login).
 
-## Votre profil
+<!-- USAGE EXAMPLES -->
 
-Après vous être connecté, vous pouvez consulter votre profil (/profil). Sur cette page, vous trouverez des informations sur votre joueur, telles que :
+## Usage
 
-- Nom
-- Niveau
-- Pièces
-- Nombre de monstres
-- Nombre de combats
-- Nombre de victoires 
+To start the game, run the following command:
 
-Vous pouvez également voir la liste de vos monstres, avec leur niveau, rareté, nom et image. Vous pouvez filtrer cette liste par rareté si vous le souhaitez.
+```bash
+./start_bonx_monster.sh
+```
 
-## Les monstres
+_(use `Ctrl + C` to stop the server)_
 
-Dans Bonx Monster, il existe 4 types de monstres basés sur leur rareté :
+To reset the data, run the following command:
 
-- Commun
-- Rare
-- Épique
-- Légendaire
+```bash
+./reset_data.sh
+```
 
-- Chaque monstre possède des caractéristiques telles que la puissance, l'attaque et la défense, qui augmentent avec le niveau du monstre. Les monstres gagnent des niveaux en accumulant des cartes, qui peuvent être obtenues en combattant ou en les achetant dans la boutique.
 
-## La boutique
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Vous pouvez acheter des monstres aléatoires dans la boutique (/shop) en dépensant des pièces. La boutique propose 6 monstres différents à la fois, et vous pouvez acheter un maximum de 1 monstre légendaire, 2 monstres épiques, 3 monstres rares et 5 monstres communs. Les pièces restantes sont affichées dynamiquement.
 
-## Les combats
+<!-- LICENSE -->
 
-Il y a deux types de combats dans Bonx Monster :
+## License
 
-1. Les donjons : Vous combattez une horde de monstres dans un donjon de votre choix.
-2. Les boss : Vous affrontez un boss de niveau très élevé, avec pour objectif de le vaincre en un seul combat.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-### Donjons
-Pour participer à un combat dans un donjon, rendez-vous sur la page de combat (/battle) et sélectionnez l'option "Donjon". Vous pouvez choisir parmi plusieurs donjons différents et combattre avec 6 de vos monstres.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Boss
-Pour combattre un boss, allez sur la page de combat (/battle) et choisissez l'option "Boss". Vous pouvez sélectionner l'un des 3 boss disponibles pour les affronter. Vous pouvez quitter le combat à tout moment et combattre avec 6 de vos monstres.
 
-## Récompenses
 
-À chaque combat gagné, vous recevrez des pièces en récompense. Le montant des pièces dépend du niveau du monstre battu. De plus, vous avez une chance de gagner un monstre aléatoire (commun, rare, épique ou légendaire) après chaque combat.
+<!-- CONTACT -->
 
-## Historique des combats
+## Contact
 
-Vous pouvez consulter l'historique de vos combats à tout moment en visitant la page d'historique des combats (/match_history). Cette page affiche une liste des combats avec l'adversaire, le résultat et les récompenses obtenues.
+Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
-# Autres fonctionnalités
+Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
-## Page d'accueil
-La page d'accueil (/home) est le point d'entrée du jeu, où vous pouvez accéder aux combats en cliquant sur le bouton approprié. Des statistiques et des informations sur le jeu pourraient être ajoutées à l'avenir.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## À propos de nous
-Vous pouvez en savoir plus sur les créateurs du jeu en visitant la page "À propos de nous" (/about). Cette page contiendra des crédits et des informations sur l'équipe de développement.
 
-Nous espérons que ce guide vous a aidé à comprendre les bases de Bonx Monster. Bonne chance et amusez-vous bien dans le monde des monstres!
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites
+to kick things off!
+
+* [Choose an Open Source License](https://choosealicense.com)
+* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
+* [Malven's Grid Cheatsheet](https://grid.malven.co/)
+* [Img Shields](https://shields.io)
+* [GitHub Pages](https://pages.github.com)
+* [Font Awesome](https://fontawesome.com)
+* [React Icons](https://react-icons.github.io/react-icons/search)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+
+[Bootstrap-url]: https://getbootstrap.com
+
+[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
+
+[JQuery-url]: https://jquery.com
+
+[Flask.com]: https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white
+
+[Flask-url]: https://flask.palletsprojects.com/en/2.2.x/
+
+[SQLAlchemy.com]: https://img.shields.io/badge/SQLAlchemy-000000?style=for-the-badge&logo=sqlalchemy&logoColor=white
+
+[SQLAlchemy-url]: https://www.sqlalchemy.org/
+
+[Gunicorn.com]: https://img.shields.io/badge/Gunicorn-000000?style=for-the-badge&logo=gunicorn&logoColor=white
+
+[Gunicorn-url]: https://gunicorn.org/
+
+[Python.com]: https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white
+
+[Python-url]: https://www.python.org/
