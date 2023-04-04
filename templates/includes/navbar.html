@@ -5,11 +5,14 @@
             <div class="col-12">
                 <div class="main_header d-flex justify-content-between align-items-center">
                     <div class="header_logo">
-                        <a class="sticky_none" href="{{ url_for('BLP_general.home') }}"><img aria-label="logo" width="215" height="79" src="{{ url_for('static', filename='img/logo/logo.webp') }}" alt=""></a>
+                        <a class="sticky_none" href="{{ url_for('BLP_general.home') }}"><img aria-label="logo"
+                                                                                             width="215" height="79"
+                                                                                             src="{{ url_for('static', filename='img/logo/logo.webp') }}"
+                                                                                             alt=""></a>
                     </div>
                     <!--main menu start-->
-                    <div class="main_menu d-none d-lg-block"> 
-                        <nav>  
+                    <div class="main_menu d-none d-lg-block">
+                        <nav>
                             <ul class="d-flex">
                                 <li><a href="{{ url_for('BLP_general.home') }}">Home</a></li>
                                 <li><a href="{{ url_for('BLP_general.match_history') }}">History</a></li>
@@ -23,10 +26,14 @@
                     <!--main menu end-->
                     <div class="header_right_sidebar d-flex align-items-center">
                         <div class="sing_up_btn">
-                            <a class="btn btn-link" href="{{ url_for('BLP_auth.logout') }}">LOG OUT <img width="15" height="15" src="{{ url_for('static', filename='img/icon/arrrow-icon2.webp') }}" alt=""> </a>
+                            <a class="btn btn-link" href="{{ url_for('BLP_auth.logout') }}">LOG OUT <img width="15"
+                                                                                                         height="15"
+                                                                                                         src="{{ url_for('static', filename='img/icon/arrrow-icon2.webp') }}"
+                                                                                                         alt=""> </a>
                         </div>
                         <div class="canvas_open">
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"><i class="icofont-navigation-menu"></i></button>
+                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"><i
+                                    class="icofont-navigation-menu"></i></button>
                         </div>
                     </div>
                 </div>
@@ -35,3 +42,31 @@
     </div>
 </header>
 <!--header area end-->
+
+<!--offcanvas menu area start-->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
+    <div class="offcanvas-header justify-content-end">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="offcanvas_main_menu">
+            <li class="menu-item-has-children active">
+                <a href="{{ url_for('BLP_general.home') }}">Home</a>
+            </li>
+            <li class="menu-item-has-children"><a href="#">Match</a>
+                <ul class="sub-menu">
+                    <li><a href="{{ url_for('BLP_general.battle') }}">Battle</a></li>
+                    <li><a href="{{ url_for('BLP_general.match_history') }}">History</a></li>
+                </ul>
+            </li>
+            <li class="menu-item-has-children"><a href="#">Pages</a>
+                <ul class="sub-menu">
+                    <li><a href="{{ url_for('BLP_general.monsters') }}">Monsters</a></li>
+                    <li><a href="{{ url_for('BLP_general.profil') }}">Profil</a></li>
+                    <li><a href="{{ url_for('BLP_general.shop') }}">Shop</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--offcanvas menu area end-->

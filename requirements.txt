@@ -7,3 +7,4 @@ plotly
 jsons
 pip
 requests
+gunicorn

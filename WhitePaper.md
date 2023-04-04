@@ -171,6 +171,7 @@ De plus il a une chance de gagner un monstre aléatoire (commun, rare, épique, 
 - [ ] Ajouter des cartes gratuites dans le shop
 - [X] Animation après victoire pour afficher les cartes gagnées
 - [ ] Ajouter les cartes gagnées dans l'historique des combats
+- [X] Navbar responsive
 
 
 # Liens

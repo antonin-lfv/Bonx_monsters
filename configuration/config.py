@@ -5,7 +5,7 @@ class Config(object):
     SECRET_KEY = "uYGBIUJKgUKYGkgukgFDjtfVUFTjJYgugGugYtfyuytfJY"
     SQLALCHEMY_DATABASE_URI = "sqlite:///db.sqlite"
     SQLALCHEMY_TRACK_MODIFICATIONS = True
-    DEBUG = True
+    DEBUG = False  # False for production mode
 
 
 class GameConfig(Config):

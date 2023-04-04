@@ -1,6 +1,8 @@
+```bash
 chmod +x install_requirements.sh
 chmod +x start_bonx_monster.sh
 chmod +x reset_data.sh
+```
 
 
 # Bienvenue sur Bonx Monster
