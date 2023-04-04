@@ -5,3 +5,5 @@ db.sqlite
 instance/db.sqlite
 temp-plot.html
 /test_files/
+__pycache__/
+.idea
