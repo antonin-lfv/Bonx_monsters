@@ -86,13 +86,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-Add the right permissions to the scripts
-
-```bash
-chmod +x install_requirements.sh
-chmod +x start_bonx_monster.sh
-chmod +x reset_data.sh
-```
+Install a recent version of Python (3.9 or higher) and pip.
 
 ### Installation
 
@@ -102,7 +96,16 @@ _Follow the steps below to set up a local copy of the project and get it running
    ```sh
    git clone https://github.com/antonin-lfv/Bonx_monsters.git
    ```
-2. Install requirements and dependencies
+
+2. Add the right permissions to the scripts
+
+```bash
+chmod +x install_requirements.sh
+chmod +x start_bonx_monster.sh
+chmod +x reset_data.sh
+```
+
+3. Install requirements and dependencies
    ```sh
    ./install_requirements.sh
    ```
