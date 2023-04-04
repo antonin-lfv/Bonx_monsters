@@ -131,6 +131,8 @@ To reset the data, run the following command:
 ./reset_data.sh
 ```
 
+_This will delete all the data in the database (users, monsters, cards, etc.)_
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
