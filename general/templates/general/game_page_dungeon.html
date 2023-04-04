@@ -204,12 +204,15 @@
                                         <div class="single_players">
                                             <div class="players_thumb">
                                                 <a href="#"><img width="170" height="170"
-                                                                 src="{{ url_for('static', filename=opponent_info['img_path'])}}"
+                                                                 src="{{ url_for('static', filename=opponent_info['img_path']) }}"
                                                                  alt=""></a>
                                                 <h4 class="oppo-h4" style="text-align: center">{{ opponent }}</h4>
-                                                <h5 class="oppo-h5" style="text-align: center">Level {{ dungeon_info['level'] }}</h5>
+                                                <h5 class="oppo-h5" style="text-align: center">
+                                                    Level {{ dungeon_info['level'] }}</h5>
                                                 <div style="width: 100%; background-color: #ddd">
-                                                    <div class="OppoBar"></div>
+                                                    <div class="OppoBar"
+                                                         id="{{ dungeon_info["monster_name"].replace(' ', '_') }}_{{ oppo }}">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -281,6 +284,22 @@
             })
     }
 
+    // JavaScript function to get the stats of an opponent from url /api/get_dungeon_monsters_stats/<string: dungeon_name>/ where dungeon_name is the name of the dungeon
+    // where the space are replaced by an underscore
+    function getOpponentStats(name) {
+        // replace the space in the name of the dungeon by an underscore
+        name = name.replace(/ /g, '_')
+        // send a request to the server to get the stats of the opponent
+        return fetch(`/api/get_dungeon_monsters_stats/${name}/`)
+            .then(response => response.json())
+            .then(data => {
+                // display the stats of the opponent
+                return data
+            })
+    }
+
+
+    // JavaScript function to get the total defense of a deck
     function total_defense_deck(monster_dict) {
         let total_defense = 0
         // iter through monster_list keys and add monster_dict[key]["defense"] to total_defense
@@ -324,9 +343,24 @@
         }
         let monster_stats_reference = JSON.parse(JSON.stringify(monsters_stats));
 
-        // store the stats of all opponents in a dictionary with the name of the opponent as key
+        // store the stats of all opponents in a dictionary with the name of the opponent as key (adding an id to the name of the opponent to make it unique)
+        let dungeon_name = "{{ opponent }}"
+        let opponents_stats = {};
+        let opponents_stats_reference = {};
+        const dungeonMonsterAmount = {{ GameConfig.DUNGON_MONSTER_AMOUNT }};
+        const OpponentName = "{{ dungeon_info['monster_name'].replace(' ', '_') }}";
+        for (let i = 0; i < dungeonMonsterAmount; i++) {
+            // copy the stats of the opponent and add an id to the name of the opponent to make it unique
+            opponents_stats[OpponentName + "_" + i] = await getOpponentStats(dungeon_name);
+            opponents_stats_reference[OpponentName + "_" + i] = await getOpponentStats(dungeon_name);
+        }
 
-        // display the HP bar of the boss
+        // display the HP bar of the opponents
+        let OpponentBar = document.getElementsByClassName("OppoBar");
+        for (let i = 0; i < OpponentBar.length; i++) {
+            OpponentBar[i].style.width = (opponents_stats[OpponentName + "_" + i]["defense"] / opponents_stats_reference[OpponentName + "_" + i]["defense"]) * 100 + "%";
+            OpponentBar[i].innerHTML = opponents_stats[OpponentName + "_" + i]["defense"];
+        }
 
         // display the HP bar of the monsters
         let MonsterBar = document.getElementsByClassName("MonsterBar");
@@ -336,8 +370,57 @@
         }
 
         // enter the while loop that ends when the game is over, i.e. when all the monsters are dead (defense <= 0)
-        // or when the boss has no more life points
+        // or when all the opponents are dead (defense <= 0)
         await new Promise(r => setTimeout(r, 1000));
+        while (total_defense_deck(monsters_stats) > 0 && total_defense_deck(opponents_stats) > 0) {
+            // All the monsters attack the opponents (One random alive monster attacks one random opponent alive)
+            // 3 random opponents attack 3 random monsters (1 alive opponent attacks 1 alive monster)
+
+            // Get all the alive monsters
+            let alive_monsters = [];
+            for (let key in monsters_stats) {
+                if (monsters_stats[key]["defense"] > 0) {
+                    alive_monsters.push(key)
+                }
+            }
+            // Get all the alive opponents
+            let alive_opponents = [];
+            for (let key in opponents_stats) {
+                if (opponents_stats[key]["defense"] > 0) {
+                    alive_opponents.push(key)
+                }
+            }
+
+            // for each alive monster, attack one random opponent
+            for (let i = 0; i < alive_monsters.length; i++) {
+                // get a random opponent
+                let random_opponent = alive_opponents[Math.floor(Math.random() * alive_opponents.length)];
+                // get the attack of the monster
+                let monster_attack = monsters_stats[alive_monsters[i]]["attack"];
+                // get the defense of the opponent
+                let opponent_defense = opponents_stats[random_opponent]["defense"];
+                // update the defense of the opponent
+                opponents_stats[random_opponent]["defense"] = Math.max(opponent_defense - monster_attack, 0);
+                // update the HP bar of the opponent
+                let OpponentBar = document.getElementsByClassName("OppoBar");
+                for (let i = 0; i < OpponentBar.length; i++) {
+                    let HP_percent = (opponents_stats[OpponentName + "_" + i]["defense"] / opponents_stats_reference[OpponentName + "_" + i]["defense"]) * 100;
+                    OpponentBar[i].style.width = HP_percent + "%";
+                    OpponentBar[i].innerHTML = opponents_stats[OpponentName + "_" + i]["defense"];
+                    if (HP_percent < 40) {
+                        OpponentBar[i].style.backgroundColor = "orange";
+                    }
+                    if (HP_percent < 20) {
+                        OpponentBar[i].style.backgroundColor = "red";
+                    }
+                }
+                // wait 0.5 second
+                await new Promise(r => setTimeout(r, 500));
+            }
+
+            // wait 1 second
+            await new Promise(r => setTimeout(r, 1000));
+        }
     }
 
 

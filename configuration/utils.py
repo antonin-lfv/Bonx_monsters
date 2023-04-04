@@ -25,6 +25,26 @@ def all_doors_from_json():
     return doors
 
 
+def get_monster_stats_of_level(monster_name, level):
+    """
+    Return the stats of a monster of a level
+    :param monster_name: name of the monster
+    :param level: level of the monster
+    :return: dict of stats
+    """
+    monsters = all_monsters_from_json()
+    rarity = monsters[monster_name]["rarity"]
+    level = int(level)
+    stats = {
+        "defense": int(math.sqrt(level) * GameConfig.MONSTER_CONGIF[rarity]["Update defense"] +
+                       GameConfig.MONSTER_CONGIF[rarity]["Defense"]),
+        "attack": int(math.sqrt(level) * GameConfig.MONSTER_CONGIF[rarity]["Update attack"] +
+                      GameConfig.MONSTER_CONGIF[rarity]["Attack"]),
+        "power": GameConfig.MONSTER_CONGIF[rarity]["Power"] * level
+    }
+    return stats
+
+
 def create_and_add_new_monster_from_json(monster_name, id_user):
     """Create and add monster if user don't already have it, else amount += 1"""
     if m := Monster.query.filter_by(user_id=id_user, name=monster_name).first():

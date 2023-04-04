@@ -389,3 +389,22 @@ def get_reward_after_win(boss_rarity):
     # return the result of the transaction as json
     return jsonify({"monster": monster, "monster_name": monster_name,
                     "amount_cards": amount_cards, "reward_coin": reward_coin})
+
+
+@BLP_general.route('/api/get_dungeon_monsters_stats/<string:dungeon_name>/', methods=['POST', 'GET'])
+@login_required
+def get_dungeon_monsters_stats(dungeon_name):
+    """
+    Get the stats of the monsters of the dungeon
+    :param dungeon_name: name of the dungeon
+    :return: json with the stats of the monsters of the dungeon
+    """
+    # replace underscore by space in the dungeon name if needed
+    dungeon_name = dungeon_name.replace("_", " ")
+    # get the monsters of the dungeon
+    monster_name = all_doors_from_json()[dungeon_name]["monster_name"]
+    monster_level = all_doors_from_json()[dungeon_name]["level"]
+    # get the stats of the monster of the dungeon
+    stats = get_monster_stats_of_level(monster_name, monster_level)
+    # return the stats of the monsters of the dungeon as json
+    return jsonify(stats)
