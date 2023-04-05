@@ -117,14 +117,16 @@ _Follow the steps below to set up a local copy of the project and get it running
 
 ## Usage
 
-To start the game, run the following command:
+1. To start the game, run the following command:
+
    ```bash
    ./start_bonx_monster.sh
    ```
 
 _(use `Ctrl + C` to stop the server)_
 
-To reset the data, run the following command:
+2. To reset the data, run the following command:
+
    ```bash
    ./reset_data.sh
    ```
