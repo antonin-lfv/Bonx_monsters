@@ -18,7 +18,6 @@ class GameConfig(Config):
     BOSS_CONFIG = reward for each boss type
     REWARD_CONFIG = chance to get each card type
     DUNGON_MONSTER_AMOUNT = number of monsters in each dungeon
-    DUNGON_CONFIG = stats for each dungon
     """
     MAX_COINS = 1000000
     MAX_MONSTER_LEVEL = 200
