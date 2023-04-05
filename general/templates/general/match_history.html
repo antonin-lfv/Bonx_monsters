@@ -34,11 +34,11 @@
     <section class="upcoming_gaming_section mb-125">
         <div class="container">
             <div class="upcoming_gaming_inner">
-                {% for games, oppo in zip(games_history, opponents) %}
+                {% for games, oppo, type_oppo in zip(games_history, opponents, type_of_opponent) %}
                 <div class="upcoming_gaming_list wow fadeInUp d-flex justify-content-between align-items-center mb-30" data-wow-delay="0.1s" data-wow-duration="1.1s">
                     <div class="upcoming_gaming_text">
                         <p>{% if games.win == "y" %}Victory {% else %}Lose{% endif %}</p>
-                        <h3>Game against {{games.opponent}}</h3>
+                        <h3>Game {% if type_oppo == "dungeon" %}in{% else %}against{% endif %} {{games.opponent}}</h3>
                         <span>{{ games.reward_coin }} coins earned</span>
                     </div>
                     <div class="upcoming_gaming_thumb d-flex align-items-center">
@@ -49,7 +49,7 @@
                             <img width="40" height="40" src="{{ url_for('static', filename='img/others/game-vs2.webp') }}" alt="">
                         </div>
                         <div class="single_upcoming_thumb">
-                            <img width="100" height="100" src="{{ url_for('static', filename=oppo["img_path"]) }}" alt="">
+                            <img width="100" height="100" style="border-radius: 20px" src="{{ url_for('static', filename=oppo["img_path"]) }}" alt="">
                         </div>
                     </div>
                 </div> 

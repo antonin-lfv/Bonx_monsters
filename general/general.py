@@ -67,15 +67,27 @@ def monster_details_inventory(name_monster):
 def match_history():
     ten_last_games_history = Match.query.filter_by(user_id=current_user.id).order_by(Match.id.desc()).limit(10).all()
     opponents = []
+    type_of_opponent = []
     bosses = all_bosses_from_json()
     monsters = all_monsters_from_json()
+    dungeons = all_doors_from_json()
     for game in ten_last_games_history:
         if game.opponent in bosses.keys():
             opponents.append(bosses[game.opponent])
-        else:
+            type_of_opponent.append("boss")
+        elif game.opponent in monsters.keys():
             opponents.append(monsters[game.opponent])
-    return render_template('general/match_history.html', games_history=ten_last_games_history, opponents=opponents,
-                           zip=zip)
+            type_of_opponent.append("monster")
+        elif game.opponent in dungeons.keys():
+            opponents.append(dungeons[game.opponent])
+            type_of_opponent.append("dungeon")
+        else:
+            raise ValueError("The opponent is not in the json files")
+    return render_template('general/match_history.html',
+                           games_history=ten_last_games_history,
+                           opponents=opponents,
+                           zip=zip,
+                           type_of_opponent=type_of_opponent)
 
 
 @BLP_general.route('/battle', methods=['POST', 'GET'])
@@ -356,13 +368,12 @@ def add_match_history_dungeon(opponent, win):
     :param opponent: name of the dungeon
     :param win: result of the match (y for win, n for lose)
     """
-    # TODO
     # replace underscore by space in the opponent name if needed
     opponent = opponent.replace("_", " ")
-    # get the rarity of the opponent
-    rarity = all_bosses_from_json()[opponent]["rarity"]
+    # get all dungeons
+    dungeons = all_doors_from_json()
     # get the reward of the opponent
-    reward_coin = GameConfig.BOSS_CONFIG[rarity]["Reward"]
+    reward_coin = dungeons[opponent]["reward"]
     # add the match to the match history
     create_and_add_new_match_in_history(id_user=current_user.id, opponent=opponent, reward_coin=reward_coin, win=win)
     # return the result of the transaction as json

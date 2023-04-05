@@ -59,19 +59,19 @@ class GameConfig(Config):
     SHOP_CONFIG = {
         "Common": {
             "Price": 2500,
-            "Max_per_day": 5
+            "Max_per_day": 10
         },
         "Rare": {
             "Price": 4500,
-            "Max_per_day": 3
+            "Max_per_day": 5
         },
         "Epic": {
             "Price": 10000,
-            "Max_per_day": 2
+            "Max_per_day": 5
         },
         "Legendary": {
             "Price": 20000,
-            "Max_per_day": 1
+            "Max_per_day": 5
         }
     }
     BOSS_CONFIG = {
@@ -88,7 +88,7 @@ class GameConfig(Config):
     REWARD_CONFIG = {
         "Common": {
             "chance_to_get": 0.5,
-            "max_cards": 8,
+            "max_cards": 10,
         },
         "Rare": {
             "chance_to_get": 0.3,
@@ -96,11 +96,11 @@ class GameConfig(Config):
         },
         "Epic": {
             "chance_to_get": 0.1,
-            "max_cards": 3,
+            "max_cards": 5,
         },
         "Legendary": {
             "chance_to_get": 0.1,
-            "max_cards": 3,
+            "max_cards": 5,
         }
     }
     DUNGON_MONSTER_AMOUNT = 5

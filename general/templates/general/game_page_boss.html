@@ -440,7 +440,7 @@
             popup.style.display = 'block';
             // update match history by requesting /api/add_match_history_boss/<string:opponent>/y via AJAX
             $.ajax({
-                url: "/api/add_match_history_boss/{{ opponent }}/y",
+                url: "/api/add_match_history_boss/{{ opponent.replace(' ', '_') }}/y",
                 type: "GET",
                 success: function (data) {
                     console.log("success in updating match history");
@@ -458,7 +458,7 @@
             popup.style.display = 'block';
             // update match history by requesting /api/add_match_history_boss/<string:opponent>/n via AJAX
             $.ajax({
-                url: "/api/add_match_history_boss/{{ opponent }}/n",
+                url: "/api/add_match_history_boss/{{ opponent.replace(' ', '_') }}/n",
                 type: "GET",
                 success: function (data) {
                     console.log("success in updating match history");
@@ -468,7 +468,6 @@
                 }
             });
         }
-
     }
 
 </script>

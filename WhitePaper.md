@@ -164,6 +164,7 @@ De plus il a une chance de gagner un monstre aléatoire (commun, rare, épique, 
 - [ ] Créer le système de donjons
 - [ ] Ajouter des cartes gratuites dans le shop
 - [ ] Ajouter les cartes gagnées dans l'historique des combats
+- [ ] Tri des monstres par level, attaque et défense
 
 
 # Liens
