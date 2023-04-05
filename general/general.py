@@ -348,12 +348,33 @@ def add_match_history_boss(opponent, win):
     return jsonify({"result": "success"})
 
 
-@BLP_general.route('/api/get_reward_after_boss_win/<string:boss_rarity>/', methods=['POST', 'GET'])
+@BLP_general.route('/api/add_match_history_dungeon/<string:opponent>/<string:win>', methods=['POST', 'GET'])
 @login_required
-def get_reward_after_win(boss_rarity):
+def add_match_history_dungeon(opponent, win):
+    """
+    Add a match to the match history
+    :param opponent: name of the dungeon
+    :param win: result of the match (y for win, n for lose)
+    """
+    # TODO
+    # replace underscore by space in the opponent name if needed
+    opponent = opponent.replace("_", " ")
+    # get the rarity of the opponent
+    rarity = all_bosses_from_json()[opponent]["rarity"]
+    # get the reward of the opponent
+    reward_coin = GameConfig.BOSS_CONFIG[rarity]["Reward"]
+    # add the match to the match history
+    create_and_add_new_match_in_history(id_user=current_user.id, opponent=opponent, reward_coin=reward_coin, win=win)
+    # return the result of the transaction as json
+    return jsonify({"result": "success"})
+
+
+@BLP_general.route('/api/get_reward_after_win', methods=['POST', 'GET'])
+@login_required
+def get_reward_after_win():
     """
     Get the reward after a win, choose a random monster and a random amount of cards
-    :param boss_rarity: rarity of the boss
+    Add it/them to the user's monsters
     :return: json with monster's name, rarity, amount of cards and the image path of the monster
     """
     # The probability of getting a monster by rarity is in GameConfig.REWARD_CONFIG
@@ -381,14 +402,11 @@ def get_reward_after_win(boss_rarity):
     amount_cards = random.randint(1, GameConfig.REWARD_CONFIG[selected_rarity]["max_cards"])
     # get the ulr of the image of the monster and add it to the monster dict
     monster["img_path"] = url_for('static', filename=monster["img_path"])
-    # get coins reward
-    reward_coin = GameConfig.BOSS_CONFIG[boss_rarity]["Reward"]
     # add the monster to the user's monsters as many times as the amount of cards
     for i in range(amount_cards):
         create_and_add_new_monster_from_json(monster_name, current_user.id)
     # return the result of the transaction as json
-    return jsonify({"monster": monster, "monster_name": monster_name,
-                    "amount_cards": amount_cards, "reward_coin": reward_coin})
+    return jsonify({"monster": monster, "monster_name": monster_name, "amount_cards": amount_cards})
 
 
 @BLP_general.route('/api/get_dungeon_monsters_stats/<string:dungeon_name>/', methods=['POST', 'GET'])

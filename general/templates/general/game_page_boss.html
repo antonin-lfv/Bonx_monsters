@@ -409,9 +409,9 @@
                 await new Promise(r => setTimeout(r, 40));
             {% endfor %}
             await new Promise(r => setTimeout(r, 1000));
-            // call /api/get_reward_after_boss_win via AJAX and get the result as a JSON object
+            // call /api/get_reward_after_win via AJAX and get the result as a JSON object
             $.ajax({
-                url: "/api/get_reward_after_boss_win/{{ boss_info['rarity'] }}",
+                url: "/api/get_reward_after_win",
                 type: "GET",
                 success: function (data) {
                     console.log("success in getting reward");
@@ -424,7 +424,7 @@
                     const monster_name_rewards = document.getElementById("monster_name_rewards");
                     const monster_rarity_rewards = document.getElementById("monster_rarity_rewards");
                     const monster_cards_rewards = document.getElementById("monster_cards_rewards");
-                    coins_rewards.innerHTML = "+" + data["reward_coin"] + " coins";
+                    coins_rewards.innerHTML = "+" + {{ GameConfig.BOSS_CONFIG[boss_info['rarity']]["Reward"] }} + " coins";
                     img_monster_rewards.src = data["monster"]["img_path"];
                     monster_name_rewards.innerHTML = data["monster_name"];
                     monster_rarity_rewards.innerHTML = data["monster"]["rarity"];
