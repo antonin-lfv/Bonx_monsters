@@ -103,6 +103,7 @@ _Follow the steps below to set up a local copy of the project and get it running
    chmod +x install_requirements.sh
    chmod +x start_bonx_monster.sh
    chmod +x reset_data.sh
+   chmod +x update_bonx_app.sh
    ```
 
 3. Install requirements and dependencies
@@ -132,6 +133,12 @@ _(use `Ctrl + C` to stop the server)_
    ```
 
 _This will delete all the data in the database (users, monsters, cards, etc.)_
+
+3. To update the game, run the following command:
+
+   ```bash
+   ./update_bonx_app.sh
+   ```
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
