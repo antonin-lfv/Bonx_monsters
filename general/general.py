@@ -3,7 +3,6 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, cur
 from os.path import exists
 from app import db
 from models import User, Monster, Match
-import random
 from configuration.utils import *
 from configuration.config import GameConfig
 
