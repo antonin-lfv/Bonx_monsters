@@ -4,7 +4,7 @@
 
 ### Added or Changed
 - Dungeons can be selected in battle page
-- Animation during battle
+- Animation of monsters and opponens during battle (boss and dungeon)
 
 
 ## v1.0.0

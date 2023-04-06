@@ -95,7 +95,7 @@
     <div id="lose-popup"
          style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 1; pointer-events: auto;">
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-            <h2 style="text-align: center" class="mb-25">You loose !</h2>
+            <h2 style="text-align: center" class="mb-25">You lose !</h2>
         </div>
     </div>
 
@@ -331,7 +331,6 @@
             const imgPath = monster_data["img_path"];
             const name = monster_data["name"];
             const level = monster_data["level"];
-            // TODO : move the monster when they are hit by the opponent thanks to id
             img_elements[i].src = "/assets" + imgPath;
             // set the id to the img of the monster, replacing the space by an underscore
             img_elements[i].id = name.replace(/ /g, '_') + "_img"
@@ -461,6 +460,12 @@
                 monsters_stats[random_monster]["defense"] = Math.max(monster_defense - opponent_attack, 0);
                 // update the HP bar of the monster
                 let MonsterBar = document.getElementsByClassName("MonsterBar");
+                // move the opponent image to the left to make it look like it is being attacked
+                let MonsterImg = document.getElementById(random_monster.replace(/ /g, '_') + "_img");
+                MonsterImg.style.marginLeft = "20px";
+                await new Promise(r => setTimeout(r, 75));
+                // move the opponent image back to its original position
+                MonsterImg.style.marginLeft = "0px";
                 for (let i = 0; i < MonsterBar.length; i++) {
                     let HP_percent = (monsters_stats[monster_list[i]]["defense"] / monster_stats_reference[monster_list[i]]["defense"]) * 100;
                     MonsterBar[i].style.width = HP_percent + "%";
@@ -475,6 +480,11 @@
                 // if the monster is dead, remove it from the alive monsters list
                 if (monsters_stats[random_monster]["defense"] <= 0) {
                     alive_monsters.splice(alive_monsters.indexOf(random_monster), 1);
+                    // cross out the name of the opponent, the id is ${random_opponent}_name
+                    document.getElementById(random_monster.replace(/ /g, '_') + "_name").style.textDecoration = "line-through";
+                    // rotate the image of the opponent, the id is ${random_opponent}_image
+                    document.getElementById(random_monster.replace(/ /g, '_') + "_img").style.transform = "rotate(90deg)";
+                    document.getElementById(random_monster.replace(/ /g, '_') + "_img").style.scale = "0.5";
                 }
                 // if all the monsters are dead, the player loses and the loop ends
                 if (total_defense_deck(monsters_stats) <= 0) {
@@ -533,6 +543,9 @@
         }
         // LOSE
         else {
+            // wait 1 second
+            await new Promise(r => setTimeout(r, 1000));
+            // display a pop-up window that tells the user that he has lost the game
             window.scrollTo(0, 0);
             const popup = document.getElementById('lose-popup');
             popup.style.display = 'block';

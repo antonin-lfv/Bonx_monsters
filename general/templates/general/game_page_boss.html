@@ -306,7 +306,11 @@
             const name = monster_data["name"];
             const level = monster_data["level"];
             img_elements[i].src = "/assets" + imgPath;
+            // set the id to the img of the monster, replacing the space by an underscore
+            img_elements[i].id = name.replace(/ /g, '_') + "_img"
             h4_elements[i].innerHTML = name;
+            // set the id to the name of the monster, replacing the space by an underscore
+            h4_elements[i].id = name.replace(/ /g, '_') + "_name";
             h5_elements[i].innerHTML = "Level " + level;
         }
 
@@ -382,6 +386,12 @@
                 console.log(boss_img.src);
             {% endfor %}
 
+            // move the monster image to the left to make it look like it is being attacked
+            let MonsterImg = document.getElementById(random_monster.replace(/ /g, '_') + "_img");
+            MonsterImg.style.marginLeft = "20px";
+            await new Promise(r => setTimeout(r, 75));
+            // move the opponent image back to its original position
+            MonsterImg.style.marginLeft = "0px";
             // update the HP bar of the monsters, if HP < 40% bar is orange, if HP < 20% bar is red
             for (let i = 0; i < MonsterBar.length; i++) {
                 let HP_percent = (monsters_stats[monster_list[i]]["defense"] / monster_stats_reference[monster_list[i]]["defense"]) * 100;
@@ -424,7 +434,7 @@
                     const monster_name_rewards = document.getElementById("monster_name_rewards");
                     const monster_rarity_rewards = document.getElementById("monster_rarity_rewards");
                     const monster_cards_rewards = document.getElementById("monster_cards_rewards");
-                    coins_rewards.innerHTML = "+" + {{ GameConfig.BOSS_CONFIG[boss_info['rarity']]["Reward"] }} + " coins";
+                    coins_rewards.innerHTML = "+" + {{ GameConfig.BOSS_CONFIG[boss_info['rarity']]["Reward"] }} +" coins";
                     img_monster_rewards.src = data["monster"]["img_path"];
                     monster_name_rewards.innerHTML = data["monster_name"];
                     monster_rarity_rewards.innerHTML = data["monster"]["rarity"];
