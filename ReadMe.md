@@ -140,7 +140,6 @@ _This will delete all the data in the database (users, monsters, cards, etc.)_
    ./update_bonx_app.sh
    ```
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 

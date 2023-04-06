@@ -61,7 +61,7 @@ def create_and_add_new_monster_from_json(monster_name, id_user):
     """Create and add monster if user don't already have it, else amount += 1"""
     if m := Monster.query.filter_by(user_id=id_user, name=monster_name).first():
         # if exists
-        m.amount += 1000
+        m.amount += 1
         if m.amount >= GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"] and \
                 m.level < GameConfig.MAX_MONSTER_LEVEL:
             # if monster can be upgraded, so if amount >= number of cards to upgrade and level < max level
