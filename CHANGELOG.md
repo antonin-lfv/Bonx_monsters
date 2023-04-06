@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.1.0
+
+### Added or Changed
+- Dungeons can be selected in battle page
+- Animation during battle
+
+
 ## v1.0.0
 
 ### Added or Changed
