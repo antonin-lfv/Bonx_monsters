@@ -12,7 +12,7 @@
   <p align="center">
     An awesome game to enjoy in your spare time!
     <br />
-    <a href="https://github.com/antonin-lfv/Bonx_monsters/ReadMe.md"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/antonin-lfv/Bonx_monsters/blob/main/ReadMe.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/antonin-lfv/Bonx_monsters">View Demo</a>
