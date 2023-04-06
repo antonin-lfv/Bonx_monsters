@@ -26,8 +26,6 @@ def home():
 @login_required
 def monsters(rarity):
     monsters = all_monsters_from_json()
-    # delete the first key of the dict monsters
-    monsters.pop('meta')
     # filter monsters by rarity
     if rarity == "Legendary":
         monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Legendary"}
@@ -167,17 +165,6 @@ def game_page(opponent):
 @BLP_general.route('/profil/<string:rarity>/', methods=['POST', 'GET'])
 @login_required
 def profil(rarity):
-    # ===== add all monsters
-    """for monster_name, _ in all_monsters_from_json().items():
-        if monster_name != "meta":
-            create_and_add_new_monster_from_json(monster_name, current_user.id)
-            create_and_add_new_monster_from_json(monster_name, current_user.id)
-            create_and_add_new_monster_from_json(monster_name, current_user.id)
-            create_and_add_new_monster_from_json(monster_name, current_user.id)"""
-
-    # ===== add some matches
-    # create_and_add_new_match_in_history(id_user=current_user.id, opponent="Lord bacus", reward_coin=10000, win="y")
-
     # get Legendary monsters
     legendary_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Legendary").all()
     # get Epic monsters
@@ -395,8 +382,6 @@ def get_reward_after_win():
     selected_rarity = random.choices(rarity, weights=weights, k=1)[0]
     # get the list of monsters of the selected rarity
     monsters = all_monsters_from_json()
-    # delete the first key of the dict monsters
-    monsters.pop('meta')
     # filter monsters by rarity
     if selected_rarity == "Legendary":
         monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Legendary"}

@@ -6,6 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from models import User
 from app import db
 from configuration.utils import all_monsters_from_json, create_and_add_new_monster_from_json
+from configuration.config import GameConfig
 
 BLP_auth = Blueprint('BLP_auth', __name__,
                      template_folder='templates',
@@ -41,7 +42,7 @@ def registration():
             new_user.name = name
             new_user.password = generate_password_hash(password, method='sha256')
             new_user.level = 0
-            new_user.coins = 30000
+            new_user.coins = GameConfig.USER_STARTING_COINS
             new_user.nb_games = 0
             new_user.nb_wins = 0
             # add the new user to the database
@@ -50,7 +51,7 @@ def registration():
             # Add 6 random cards to the user
             # select 6 random monsters from the json file
             monsters = all_monsters_from_json().keys()
-            monsters_random_name = random.sample(monsters, 6)
+            monsters_random_name = random.sample(monsters, GameConfig.USER_STARTING_NUMBER_OF_MONSTERS)
             # create 6 new monsters and add them to the database
             for monster_name in monsters_random_name:
                 create_and_add_new_monster_from_json(monster_name, new_user.id)

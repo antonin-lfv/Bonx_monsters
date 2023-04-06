@@ -19,6 +19,8 @@ class GameConfig(Config):
     REWARD_CONFIG = chance to get each card type
     DUNGON_MONSTER_AMOUNT = number of monsters in each dungeon
     """
+    USER_STARTING_COINS = 30000
+    USER_STARTING_NUMBER_OF_MONSTERS = 6
     MAX_COINS = 1000000
     MAX_MONSTER_LEVEL = 200
     MONSTER_CONGIF = {

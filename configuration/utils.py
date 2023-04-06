@@ -8,18 +8,30 @@ from datetime import datetime
 
 
 def all_monsters_from_json():
+    """
+    Return all monsters from json file
+    :return: dict of monsters
+    """
     with open('assets/bonx_data/monsters.json', 'r') as f:
         monsters = json.load(f)
     return monsters
 
 
 def all_bosses_from_json():
+    """
+    Return all bosses from json file
+    :return: dict of bosses
+    """
     with open('assets/bonx_data/opponent.json', 'r') as f:
         bosses = json.load(f)
     return bosses
 
 
 def all_doors_from_json():
+    """
+    Return all doors (dungeons) from json file
+    :return: dict of doors
+    """
     with open('assets/bonx_data/doors_dungeon.json', 'r') as f:
         doors = json.load(f)
     return doors
