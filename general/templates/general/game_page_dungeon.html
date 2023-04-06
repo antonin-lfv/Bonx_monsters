@@ -203,10 +203,10 @@
                                     {% for oppo in range(5) %}
                                         <div class="single_players">
                                             <div class="players_thumb">
-                                                <a href="#"><img width="170" height="170"
+                                                <a href="#"><img width="170" height="170" id="{{ dungeon_info["monster_name"].replace(' ', '_') }}_{{ oppo }}_image"
                                                                  src="{{ url_for('static', filename=opponent_info['img_path']) }}"
                                                                  alt=""></a>
-                                                <h4 class="oppo-h4" style="text-align: center">{{ opponent }}</h4>
+                                                <h4 class="oppo-h4" style="text-align: center" id="{{ dungeon_info["monster_name"].replace(' ', '_') }}_{{ oppo }}_name">{{ opponent }}</h4>
                                                 <h5 class="oppo-h5" style="text-align: center">
                                                     Level {{ dungeon_info['level'] }}</h5>
                                                 <div style="width: 100%; background-color: #ddd">
@@ -331,8 +331,13 @@
             const imgPath = monster_data["img_path"];
             const name = monster_data["name"];
             const level = monster_data["level"];
+            // TODO : move the monster when they are hit by the opponent thanks to id
             img_elements[i].src = "/assets" + imgPath;
+            // set the id to the img of the monster, replacing the space by an underscore
+            img_elements[i].id = name.replace(/ /g, '_') + "_img"
             h4_elements[i].innerHTML = name;
+            // set the id to the name of the monster, replacing the space by an underscore
+            h4_elements[i].id = name.replace(/ /g, '_') + "_name";
             h5_elements[i].innerHTML = "Level " + level;
         }
 
@@ -391,6 +396,7 @@
                 }
             }
 
+            // MONSTERs ATTACK
             // for each alive monster, attack one random opponent
             for (let i = 0; i < alive_monsters.length; i++) {
                 // get a random opponent
@@ -403,6 +409,13 @@
                 opponents_stats[random_opponent]["defense"] = Math.max(opponent_defense - monster_attack, 0);
                 // update the HP bar of the opponent
                 let OpponentBar = document.getElementsByClassName("OppoBar");
+                // move the opponent image to the left to make it look like it is being attacked
+                let OpponentImg = document.getElementById(random_opponent + "_image");
+                OpponentImg.style.marginLeft = "20px";
+                await new Promise(r => setTimeout(r, 75));
+                // move the opponent image back to its original position
+                OpponentImg.style.marginLeft = "0px";
+                // update the HP bar of the opponent
                 for (let i = 0; i < OpponentBar.length; i++) {
                     let HP_percent = (opponents_stats[OpponentName + "_" + i]["defense"] / opponents_stats_reference[OpponentName + "_" + i]["defense"]) * 100;
                     OpponentBar[i].style.width = HP_percent + "%";
@@ -415,19 +428,61 @@
                     }
                 }
                 // if the opponent is dead, remove it from the alive opponents list
+                // and cross out the name of the opponent
+                // and rotate the image of the opponent to make it look dead
                 if (opponents_stats[random_opponent]["defense"] <= 0) {
+                    // remove the opponent from the alive opponents list
                     alive_opponents.splice(alive_opponents.indexOf(random_opponent), 1);
+                    // cross out the name of the opponent, the id is ${random_opponent}_name
+                    document.getElementById(random_opponent + "_name").style.textDecoration = "line-through";
+                    // rotate the image of the opponent, the id is ${random_opponent}_image
+                    document.getElementById(random_opponent + "_image").style.transform = "rotate(90deg)";
+                    document.getElementById(random_opponent + "_image").style.scale = "0.5";
                 }
                 // if all the opponents are dead, the player wins and the loop ends
                 if (total_defense_deck(opponents_stats) <= 0) {
                     break;
                 }
                 // wait 0.5 second
-                await new Promise(r => setTimeout(r, 10));
+                await new Promise(r => setTimeout(r, 100));
             }
-
-            // wait 1 second
-            await new Promise(r => setTimeout(r, 900));
+            // wait
+            await new Promise(r => setTimeout(r, 750));
+            // OPPONENTs ATTACK
+            // for each alive opponent, attack one random monster
+            for (let i = 0; i < alive_opponents.length; i++) {
+                // get a random monster
+                let random_monster = alive_monsters[Math.floor(Math.random() * alive_monsters.length)];
+                // get the attack of the opponent
+                let opponent_attack = opponents_stats[alive_opponents[i]]["attack"];
+                // get the defense of the monster
+                let monster_defense = monsters_stats[random_monster]["defense"];
+                // update the defense of the monster
+                monsters_stats[random_monster]["defense"] = Math.max(monster_defense - opponent_attack, 0);
+                // update the HP bar of the monster
+                let MonsterBar = document.getElementsByClassName("MonsterBar");
+                for (let i = 0; i < MonsterBar.length; i++) {
+                    let HP_percent = (monsters_stats[monster_list[i]]["defense"] / monster_stats_reference[monster_list[i]]["defense"]) * 100;
+                    MonsterBar[i].style.width = HP_percent + "%";
+                    MonsterBar[i].innerHTML = monsters_stats[monster_list[i]]["defense"];
+                    if (HP_percent < 40) {
+                        MonsterBar[i].style.backgroundColor = "orange";
+                    }
+                    if (HP_percent < 20) {
+                        MonsterBar[i].style.backgroundColor = "red";
+                    }
+                }
+                // if the monster is dead, remove it from the alive monsters list
+                if (monsters_stats[random_monster]["defense"] <= 0) {
+                    alive_monsters.splice(alive_monsters.indexOf(random_monster), 1);
+                }
+                // if all the monsters are dead, the player loses and the loop ends
+                if (total_defense_deck(monsters_stats) <= 0) {
+                    break;
+                }
+                // wait 0.5 second
+                await new Promise(r => setTimeout(r, 100));
+            }
         }
 
         // if all the opponents are dead, the player wins

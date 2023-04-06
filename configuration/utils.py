@@ -125,12 +125,13 @@ def update_power_user(id_user):
     db.session.commit()
 
 
-def update_shop():
+def update_shop(user_id):
     """
     If the shop last_update is another day, update the shop
     so update the shop with 6 new monsters and change the last_update
     """
-    shop = ShopItem.query.all()
+    # get all shop items of the user
+    shop = ShopItem.query.filter_by(user_id=user_id).all()
     if len(shop) == 0 or datetime.now().day != shop[0].last_update.day:
         # delete all shop items
         for s in shop:
@@ -161,7 +162,7 @@ def update_shop():
         monster_names_to_add = legendary_monsters + epic_monsters + rare_monsters + common_monsters
 
         for m in monster_names_to_add:
-            new_shop_item = ShopItem()
+            new_shop_item = ShopItem(user_id=user_id)
             new_shop_item.monster_name = m
             new_shop_item.monster_img_path = monsters_json[m]["img_path"]
             new_shop_item.monster_rarity = monsters_json[m]["rarity"]

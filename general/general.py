@@ -208,9 +208,9 @@ def shop():
     Page to buy monsters
     """
     # update shop if needed
-    update_shop()
-    # get all the monsters in the shop
-    shop_monsters = ShopItem.query.all()
+    update_shop(user_id=current_user.id)
+    # get all the monsters in the shop of the user
+    shop_monsters = ShopItem.query.filter_by(user_id=current_user.id).all()
     return render_template('general/shop.html', shop_monsters=shop_monsters, GameConfig=GameConfig)
 
 
@@ -280,7 +280,7 @@ def buy_monster(name):
     # Max card buyable per day
     max_buy = GameConfig.SHOP_CONFIG[rarity]["Max_per_day"]
     # user number of monsters bought
-    user_bought = ShopItem.query.filter_by(monster_name=name).first().monster_bought
+    user_bought = ShopItem.query.filter_by(monster_name=name, user_id=current_user.id).first().monster_bought
     # Get the monster in user monsters
     user_monster = Monster.query.filter_by(user_id=current_user.id, name=name).first()
     if user_monster:
@@ -292,7 +292,7 @@ def buy_monster(name):
         # remove the price of the monster from the number of coins of the user
         current_user.coins -= price
         # add 1 to amount of monsters bought
-        ShopItem.query.filter_by(monster_name=name).first().monster_bought += 1
+        ShopItem.query.filter_by(monster_name=name, user_id=current_user.id).first().monster_bought += 1
         # commit the changes
         db.session.commit()
         # add the monster to the user's monsters
@@ -319,7 +319,7 @@ def get_last_update_shop():
     :return: json with the last update of the shop
     """
     # get the last update of the shop
-    last_update = ShopItem.query.first().last_update
+    last_update = ShopItem.query.filter_by(user_id=current_user.id).first().last_update
     # return the last update of the shop as json
     return jsonify({"last_update_shop": last_update})
 
@@ -335,7 +335,7 @@ def get_number_bought_monster(name):
     # replace underscore by space in the name
     name = name.replace("_", " ")
     # get the number of the monster bought by the user
-    number_bought = ShopItem.query.filter_by(monster_name=name).first().monster_bought
+    number_bought = ShopItem.query.filter_by(monster_name=name, user_id=current_user.id).first().monster_bought
     # return the number of the monster bought by the user as json
     return jsonify({"number_bought": number_bought})
 

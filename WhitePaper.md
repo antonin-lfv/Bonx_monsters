@@ -167,6 +167,7 @@ De plus il a une chance de gagner un monstre aléatoire (commun, rare, épique, 
 - [ ] Tri des monstres par level, attaque et défense
 - [ ] Finir la description des monstres
 - [ ] Ajouter un bouton recommencer dans le combat
+- [ ] Ajouter une barre pour les stats sous chaque monstre ?
 
 
 # Liens
