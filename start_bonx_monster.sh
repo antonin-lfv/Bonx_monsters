@@ -1,2 +1,2 @@
 # run flask app
-python run_gunicorn.py
+gunicorn app:app

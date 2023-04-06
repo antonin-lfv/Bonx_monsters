@@ -1,347 +1,347 @@
 {
-    "Lord bacus": {
-        "rarity": "Legendary",
-        "img_path": "/monsters_pack_1/pipo-boss004.png",
-        "description": "Lord Bacus is a legendary monster of immense power and prestige. With a body that appears to be made of solid gold, Lord Bacus commands the respect and admiration of all those who encounter him. His massive size and muscular frame are matched only by his fierce intellect and cunning tactics. \nLord Bacus wields a scepter of pure energy, which he uses to channel his formidable magical abilities. He is known to possess the power to manipulate reality itself, shaping the world to his will with ease. Despite his fearsome reputation, Lord Bacus is a benevolent ruler who seeks only to protect his domain and those who reside within it. Those who earn his favor are granted great rewards, while those who oppose him face his wrath."
-    },
-    "Black mage": {
-        "rarity": "Legendary",
-        "img_path": "/monsters_pack_1/pipo-boss001.png",
-        "description": "The Black Mage is a legendary monster of great power and darkness. With a body shrouded in black robes and a face hidden behind a sinister mask, the Black Mage radiates an aura of dread and malevolence. This creature is a master of dark magic and can manipulate the very fabric of reality to serve its twisted will. \nIts spells are capable of devastating entire armies and reducing cities to rubble. Its true origins are shrouded in mystery, but it is said that the Black Mage was once a mortal who delved too deep into the forbidden arts of magic and became consumed by its power. Now, it seeks to spread chaos and destruction wherever it goes, leaving a trail of death and despair in its wake."
-    },
-    "Kraken": {
-        "rarity": "Legendary",
-        "img_path": "/monsters_pack_1/pipo-enemy043.png",
-        "description": "The Kraken is a legendary sea monster that strikes fear into the hearts of sailors and adventurers alike. Its massive size and incredible strength make it a force to be reckoned with, capable of dragging entire ships down to the depths of the ocean with ease. Its tentacles, each the size of a ship's mast, are lined with suckers that can crush bones and tear flesh. \nThe Kraken's skin is impenetrable, and its massive eyes can see through the murky depths of the ocean with ease. Legends say that the Kraken can summon massive storms and tidal waves, and that its roar can be heard for miles. Many brave souls have sought to slay the Kraken and claim its treasures, but few have succeeded, and those who have emerged victorious carry scars that will last a lifetime."
-    },
-    "White knight": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy026.png",
-        "description": "The White Knight is an epic monster of noble bearing and unwavering honor. Adorned in gleaming armor that shines like the sun, this majestic creature commands respect and admiration wherever it goes. Its powerful physique and towering height are matched only by its chivalrous demeanor and unbreakable will. \nThe White Knight wields a sword of pure light, which it uses to vanquish darkness and defend the innocent. Though fearsome in battle, this creature's heart is pure and selfless, and it will stop at nothing to protect those in need. Those who seek the White Knight's aid are sure to find a steadfast ally in their fight against evil."
-    },
-    "Red knight": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy026a.png",
-        "description": "The Red Knight is an epic monster of great strength and ferocity, feared by many who have encountered it. Its body is covered in bright red scales, which are said to be as hard as steel, providing formidable protection against attacks. The Red Knight is a master of close combat, wielding a razor-sharp sword with deadly precision. \nIts eyes glow with an intense red light, striking fear into the hearts of its enemies. Despite its fearsome reputation, the Red Knight is known to be a fiercely honorable creature, always keeping its word and never backing down from a challenge. Those who seek to face it in battle should be prepared for a fight that will test their limits and push them to their very brink."
-    },
-    "Dark knight": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy026b.png",
-        "description": "The Dark Knight is an epic monster shrouded in darkness and mystery. Clad in black armor and wielding a fearsome sword wreathed in shadow, this imposing figure strikes fear into the hearts of even the bravest warriors. The Dark Knight is said to be imbued with incredible strength and speed, making him a formidable opponent in battle. \nHis origins are unknown, and his motives are even more enigmatic. Some say he serves a dark lord, while others believe he acts alone, seeking only to satisfy his own desires. Despite his reputation as a harbinger of doom, some brave souls have dared to seek him out, hoping to learn the secrets of his power... and survive to tell the tale."
-    },
-    "Green dragon": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy021.png",
-        "description": "The Green Dragon is an epic monster of incredible strength and cunning. Its scales shimmer with an emerald sheen, blending perfectly with the dense foliage of its forest habitat. With wings that span the length of several trees and razor-sharp claws, the Green Dragon is a force to be reckoned with. \nIts breath is a toxic cloud of poisonous gas that can bring even the hardiest of adventurers to their knees. Despite its fearsome reputation, the Green Dragon is a solitary creature that prefers to keep to itself, only venturing out to hunt or defend its territory. Those who seek to challenge the Green Dragon do so at their own peril, as its wrath is swift and deadly."
-    },
-    "Red dragon": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy021a.png",
-        "description": "The Red Dragon is an epic monster of tremendous strength and power. It is a massive creature, with wings that span the length of a football field and a fiery breath that can incinerate entire cities. Its scales are as red as blood, and they shimmer in the light of the sun, making it a fearsome sight to behold. \nThe Red Dragon is known for its cunning and intelligence, often setting elaborate traps for its prey. It is fiercely territorial and will defend its lair with all its might, making it a formidable foe for even the most experienced warriors. Despite its ferocity, some believe that there is a way to communicate with the Red Dragon, and those who succeed in doing so can gain its loyalty and protection."
-    },
-    "Purple dragon": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy021b.png",
-        "description": "The Purple Dragon is an epic creature of legend and myth, known for its immense power and regal bearing. Its majestic body is covered in shimmering purple scales that seem to glow with an otherworldly light, and its wingspan is so vast that it can blot out the sun. \nWith razor-sharp talons and a powerful tail, the Purple Dragon is a fearsome foe to any who dare to challenge it. Yet, despite its ferocity, the Purple Dragon is a creature of great wisdom and benevolence, often serving as a guardian and protector to those in need. Its breath is said to be infused with magical properties, able to heal the sick and wounded, and its gaze is said to grant visions of the future. To encounter a Purple Dragon is a rare and wondrous event, a true blessing from the gods."
-    },
-    "Golden rooky": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy033.png",
-        "description": "The Golden Rooky is an epic monster that appears to be a towering wall with two massive arms. Its body is made entirely of shimmering gold, giving it an appearance of immense wealth and power. Despite its seemingly immobile form, the Golden Rooky is an incredibly agile and powerful monster, capable of crushing its enemies with its enormous strength. \nIts arms are capable of smashing through even the toughest defenses, and its golden body is nearly impervious to damage. Those who have faced the Golden Rooky in battle know that it is a formidable opponent, capable of turning the tide of any conflict with ease. Its presence on the battlefield is enough to strike fear into the hearts of even the bravest warriors."
-    },
-    "Diamand rooky": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy033a.png",
-        "description": "Diamond Rooky is an epic monster that appears to be a massive wall with a pair of powerful arms. Its entire body is made of an incredibly hard and durable diamond-like substance, making it nearly impervious to most forms of attack. Despite its bulky appearance, Diamond Rooky is surprisingly fast and agile, capable of unleashing devastating blows with its mighty arms. \nIts unique appearance makes it an excellent defender, and it can quickly take down any opponent foolish enough to underestimate it. Diamond Rooky is a rare sight in the wild, but those who have encountered it know to fear its unbreakable defense and powerful attacks."
-    },
-    "Ruby rooky": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy033b.png",
-        "description": "The Ruby Rooky is an epic monster that appears to be a massive wall with a pair of powerful arms protruding from its sides. Despite its seemingly immovable nature, the Ruby Rooky is a fearsome opponent that should not be underestimated. Its body is made of a dense, ruby-colored crystal that is nearly impenetrable, and its arms possess incredible strength and dexterity. \nThe Ruby Rooky can use its arms to grab and crush its enemies with ease, or to create a powerful shockwave that can send foes flying. Although it lacks traditional limbs, the Ruby Rooky is surprisingly agile, able to slide and pivot around the battlefield with ease. Those who face the Ruby Rooky in battle must be prepared for a relentless and unyielding foe."
-    },
-    "Pink hydra": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy044.png",
-        "description": "The Pink Hydra is a formidable and majestic creature that resembles a dragon in many ways. However, this beast possesses several unique characteristics that set it apart from its more common kin. The Pink Hydra boasts multiple heads, each of which possesses a powerful breath weapon that can incinerate foes with ease. \nIts scales are a vibrant pink color, providing a striking contrast to its fearsome appearance. The Pink Hydra is a master of both physical combat and magical spells, making it a truly versatile foe. Its epic rarity only serves to underscore the fact that this monster is not to be taken lightly, and any adventurer who faces it in combat would do well to approach with caution."
-    },
-    "Angry hydra": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy044b.png",
-        "description": "The Angry Hydra is an epic monster that resembles a fearsome dragon. its head is ferocious and aggressive. With razor-sharp teeth and claws, the Angry Hydra is a force to be reckoned with. Its scales are thick and impenetrable, protecting it from most attacks. Despite its fearsome appearance, the Angry Hydra is not invincible. \nIts weakness lies in its many heads - if one is severed, two more grow in its place. To defeat the Angry Hydra, one must be swift and strategic, attacking each head separately while avoiding its deadly breath attacks."
-    },
-    "Green hydra": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy044c.png",
-        "description": "The Green Hydra is a formidable monster, resembling a dragon in both appearance and power. With its shimmering green scales and multiple heads, this Epic creature is a force to be reckoned with. Each head possesses its own consciousness and vicious set of teeth, making the Green Hydra a daunting opponent in battle. \nIts venomous breath can immobilize even the strongest of foes, and its agility allows it to move with surprising speed and grace. Despite its ferocity, the Green Hydra is a creature of intelligence and cunning, often using its wits to outmaneuver its enemies. Those who dare to face this monster should be prepared for a grueling and dangerous fight."
-    },
-    "Fire hydra": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy044d.png",
-        "description": "The Fire Hydra is an epic monster that resembles a fierce dragon, with a body covered in shimmering scales and a powerful set of wings. Its most distinctive feature is its many heads, each capable of spewing streams of searing flames that can reduce even the sturdiest of structures to ash. \nThe Fire Hydra is a highly intelligent creature, with a keen sense of strategy and a deep understanding of its own strengths and weaknesses. It is a fierce opponent, able to withstand even the most brutal attacks and retaliate with devastating force. Those brave enough to face the Fire Hydra in battle must be prepared to contend with its deadly breath and cunning tactics if they hope to emerge victorious."
-    },
-    "Ice hydra": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy044e.png",
-        "description": ""
-    },
-    "Sulphur hydra": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy044f.png",
-        "description": ""
-    },
-    "Green harpy": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy045.png",
-        "description": ""
-    },
-    "Brown harpy": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy045a.png",
-        "description": ""
-    },
-    "Ice harpy": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy045b.png",
-        "description": ""
-    },
-    "Red grimlock": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy040.png",
-        "description": ""
-    },
-    "Green grimlock": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy040a.png",
-        "description": ""
-    },
-    "Dark grimlock": {
-        "rarity": "Epic",
-        "img_path": "/monsters_pack_1/pipo-enemy040b.png",
-        "description": ""
-    },
-    "Red chest": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy032.png",
-        "description": ""
-    },
-    "Silver chest": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy032a.png",
-        "description": ""
-    },
-    "Lapis chest": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy032b.png",
-        "description": ""
-    },
-    "Bear": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy037a.png",
-        "description": ""
-    },
-    "Purple pumpkin": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy038.png",
-        "description": ""
-    },
-    "Green pumpkin": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy038a.png",
-        "description": ""
-    },
-    "Dark pumpkin": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy038b.png",
-        "description": ""
-    },
-    "Ice lantern": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy042.png",
-        "description": ""
-    },
-    "Pink lantern": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy042a.png",
-        "description": ""
-    },
-    "Black lantern": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy042b.png",
-        "description": ""
-    },
-    "Red wizard": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy025b.png",
-        "description": "The Red Wizard is a rare and formidable monster known for its mastery of fire magic. Clad in flowing red robes and wielding a staff wreathed in flames, this creature is a sight to behold. Its eyes gleam with a fierce intelligence, and its movements are graceful and fluid. \nThe Red Wizard is able to summon pillars of flame and hurl fiery projectiles at its foes, incinerating them with ease. Its control over fire also allows it to manipulate the environment, creating walls of flame to block enemies or burning down obstacles in its path. Those who face the Red Wizard in battle must be cautious, for its power is not to be underestimated."
-    },
-    "Yellow wizard": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy025a.png",
-        "description": "The Yellow Wizard is a rare monster known for its mastery of elemental magic. With its distinctive yellow robes and tall pointed hat, this creature commands the power of lightning and thunder. \nThe Yellow Wizard's spellcasting abilities are fearsome to behold, with bolts of electricity crackling from its fingertips and thunderclaps echoing through the air. It is said that the Yellow Wizard can summon lightning strikes from clear blue skies, and its wrath can level entire cities. Though rare, the Yellow Wizard is highly sought after by those seeking to harness its powerful magic for their own purposes. However, few have ever been successful in taming this wild and unpredictable creature."
-    },
-    "Light treant": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy006.png",
-        "description": ""
-    },
-    "Dark treant": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy006b.png",
-        "description": ""
-    },
-    "Red groot": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy019.png",
-        "description": ""
-    },
-    "Dark groot": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy019b.png",
-        "description": ""
-    },
-    "Blue cyclops": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy020.png",
-        "description": ""
-    },
-    "Ice cyclops": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy020b.png",
-        "description": ""
-    },
-    "Brown owl": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy022.png",
-        "description": ""
-    },
-    "Fire owl": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy022a.png",
-        "description": ""
-    },
-    "Obsidian owl": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy022b.png",
-        "description": ""
-    },
-    "Fire tricera": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy023.png",
-        "description": ""
-    },
-    "Maleficient tricera": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy023a.png",
-        "description": ""
-    },
-    "Light tricera": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy023b.png",
-        "description": ""
-    },
-    "Maleficient doll": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy024.png",
-        "description": ""
-    },
-    "Fire doll": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy024a.png",
-        "description": ""
-    },
-    "Dark doll": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy024b.png",
-        "description": ""
-    },
-    "Dark wizard": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy025.png",
-        "description": ""
-    },
-    "Blue spider": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy027.png",
-        "description": ""
-    },
-    "Red spider": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy027a.png",
-        "description": ""
-    },
-    "Light spider": {
-        "rarity": "Rare",
-        "img_path": "/monsters_pack_1/pipo-enemy027b.png",
-        "description": ""
-    },
-    "Red scorp": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy028.png",
-        "description": ""
-    },
-    "Ice scorp": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy028a.png",
-        "description": ""
-    },
-    "Dark scorp": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy028b.png",
-        "description": ""
-    },
-    "Light skeleton": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy039.png",
-        "description": ""
-    },
-    "Golden skeleton": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy039a.png",
-        "description": ""
-    },
-    "Red skeleton": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy039b.png",
-        "description": ""
-    },
-    "Knight cat": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy041b.png",
-        "description": ""
-    },
-    "Creeper vine": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy007b.png",
-        "description": ""
-    },
-    "Banshee": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy010b.png",
-        "description": ""
-    },
-    "Purple villager": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy011a.png",
-        "description": ""
-    },
-    "Red villager": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy011b.png",
-        "description": ""
-    },
-    "Green fungoid": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy015.png",
-        "description": ""
-    },
-    "Dark fungoid": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy015b.png",
-        "description": ""
-    },
-    "Gecko": {
-        "rarity": "Common",
-        "img_path": "/monsters_pack_1/pipo-enemy016b.png",
-        "description": ""
-    }
+  "Lord bacus": {
+    "rarity": "Legendary",
+    "img_path": "/monsters_pack_1/pipo-boss004.png",
+    "description": "Lord Bacus is a legendary monster of immense power and prestige. With a body that appears to be made of solid gold, Lord Bacus commands the respect and admiration of all those who encounter him. His massive size and muscular frame are matched only by his fierce intellect and cunning tactics. \nLord Bacus wields a scepter of pure energy, which he uses to channel his formidable magical abilities. He is known to possess the power to manipulate reality itself, shaping the world to his will with ease. Despite his fearsome reputation, Lord Bacus is a benevolent ruler who seeks only to protect his domain and those who reside within it. Those who earn his favor are granted great rewards, while those who oppose him face his wrath."
+  },
+  "Black mage": {
+    "rarity": "Legendary",
+    "img_path": "/monsters_pack_1/pipo-boss001.png",
+    "description": "The Black Mage is a legendary monster of great power and darkness. With a body shrouded in black robes and a face hidden behind a sinister mask, the Black Mage radiates an aura of dread and malevolence. This creature is a master of dark magic and can manipulate the very fabric of reality to serve its twisted will. \nIts spells are capable of devastating entire armies and reducing cities to rubble. Its true origins are shrouded in mystery, but it is said that the Black Mage was once a mortal who delved too deep into the forbidden arts of magic and became consumed by its power. Now, it seeks to spread chaos and destruction wherever it goes, leaving a trail of death and despair in its wake."
+  },
+  "Kraken": {
+    "rarity": "Legendary",
+    "img_path": "/monsters_pack_1/pipo-enemy043.png",
+    "description": "The Kraken is a legendary sea monster that strikes fear into the hearts of sailors and adventurers alike. Its massive size and incredible strength make it a force to be reckoned with, capable of dragging entire ships down to the depths of the ocean with ease. Its tentacles, each the size of a ship's mast, are lined with suckers that can crush bones and tear flesh. \nThe Kraken's skin is impenetrable, and its massive eyes can see through the murky depths of the ocean with ease. Legends say that the Kraken can summon massive storms and tidal waves, and that its roar can be heard for miles. Many brave souls have sought to slay the Kraken and claim its treasures, but few have succeeded, and those who have emerged victorious carry scars that will last a lifetime."
+  },
+  "White knight": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy026.png",
+    "description": "The White Knight is an epic monster of noble bearing and unwavering honor. Adorned in gleaming armor that shines like the sun, this majestic creature commands respect and admiration wherever it goes. Its powerful physique and towering height are matched only by its chivalrous demeanor and unbreakable will. \nThe White Knight wields a sword of pure light, which it uses to vanquish darkness and defend the innocent. Though fearsome in battle, this creature's heart is pure and selfless, and it will stop at nothing to protect those in need. Those who seek the White Knight's aid are sure to find a steadfast ally in their fight against evil."
+  },
+  "Red knight": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy026a.png",
+    "description": "The Red Knight is an epic monster of great strength and ferocity, feared by many who have encountered it. Its body is covered in bright red scales, which are said to be as hard as steel, providing formidable protection against attacks. The Red Knight is a master of close combat, wielding a razor-sharp sword with deadly precision. \nIts eyes glow with an intense red light, striking fear into the hearts of its enemies. Despite its fearsome reputation, the Red Knight is known to be a fiercely honorable creature, always keeping its word and never backing down from a challenge. Those who seek to face it in battle should be prepared for a fight that will test their limits and push them to their very brink."
+  },
+  "Dark knight": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy026b.png",
+    "description": "The Dark Knight is an epic monster shrouded in darkness and mystery. Clad in black armor and wielding a fearsome sword wreathed in shadow, this imposing figure strikes fear into the hearts of even the bravest warriors. The Dark Knight is said to be imbued with incredible strength and speed, making him a formidable opponent in battle. \nHis origins are unknown, and his motives are even more enigmatic. Some say he serves a dark lord, while others believe he acts alone, seeking only to satisfy his own desires. Despite his reputation as a harbinger of doom, some brave souls have dared to seek him out, hoping to learn the secrets of his power... and survive to tell the tale."
+  },
+  "Green dragon": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy021.png",
+    "description": "The Green Dragon is an epic monster of incredible strength and cunning. Its scales shimmer with an emerald sheen, blending perfectly with the dense foliage of its forest habitat. With wings that span the length of several trees and razor-sharp claws, the Green Dragon is a force to be reckoned with. \nIts breath is a toxic cloud of poisonous gas that can bring even the hardiest of adventurers to their knees. Despite its fearsome reputation, the Green Dragon is a solitary creature that prefers to keep to itself, only venturing out to hunt or defend its territory. Those who seek to challenge the Green Dragon do so at their own peril, as its wrath is swift and deadly."
+  },
+  "Red dragon": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy021a.png",
+    "description": "The Red Dragon is an epic monster of tremendous strength and power. It is a massive creature, with wings that span the length of a football field and a fiery breath that can incinerate entire cities. Its scales are as red as blood, and they shimmer in the light of the sun, making it a fearsome sight to behold. \nThe Red Dragon is known for its cunning and intelligence, often setting elaborate traps for its prey. It is fiercely territorial and will defend its lair with all its might, making it a formidable foe for even the most experienced warriors. Despite its ferocity, some believe that there is a way to communicate with the Red Dragon, and those who succeed in doing so can gain its loyalty and protection."
+  },
+  "Purple dragon": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy021b.png",
+    "description": "The Purple Dragon is an epic creature of legend and myth, known for its immense power and regal bearing. Its majestic body is covered in shimmering purple scales that seem to glow with an otherworldly light, and its wingspan is so vast that it can blot out the sun. \nWith razor-sharp talons and a powerful tail, the Purple Dragon is a fearsome foe to any who dare to challenge it. Yet, despite its ferocity, the Purple Dragon is a creature of great wisdom and benevolence, often serving as a guardian and protector to those in need. Its breath is said to be infused with magical properties, able to heal the sick and wounded, and its gaze is said to grant visions of the future. To encounter a Purple Dragon is a rare and wondrous event, a true blessing from the gods."
+  },
+  "Golden rooky": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy033.png",
+    "description": "The Golden Rooky is an epic monster that appears to be a towering wall with two massive arms. Its body is made entirely of shimmering gold, giving it an appearance of immense wealth and power. Despite its seemingly immobile form, the Golden Rooky is an incredibly agile and powerful monster, capable of crushing its enemies with its enormous strength. \nIts arms are capable of smashing through even the toughest defenses, and its golden body is nearly impervious to damage. Those who have faced the Golden Rooky in battle know that it is a formidable opponent, capable of turning the tide of any conflict with ease. Its presence on the battlefield is enough to strike fear into the hearts of even the bravest warriors."
+  },
+  "Diamand rooky": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy033a.png",
+    "description": "Diamond Rooky is an epic monster that appears to be a massive wall with a pair of powerful arms. Its entire body is made of an incredibly hard and durable diamond-like substance, making it nearly impervious to most forms of attack. Despite its bulky appearance, Diamond Rooky is surprisingly fast and agile, capable of unleashing devastating blows with its mighty arms. \nIts unique appearance makes it an excellent defender, and it can quickly take down any opponent foolish enough to underestimate it. Diamond Rooky is a rare sight in the wild, but those who have encountered it know to fear its unbreakable defense and powerful attacks."
+  },
+  "Ruby rooky": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy033b.png",
+    "description": "The Ruby Rooky is an epic monster that appears to be a massive wall with a pair of powerful arms protruding from its sides. Despite its seemingly immovable nature, the Ruby Rooky is a fearsome opponent that should not be underestimated. Its body is made of a dense, ruby-colored crystal that is nearly impenetrable, and its arms possess incredible strength and dexterity. \nThe Ruby Rooky can use its arms to grab and crush its enemies with ease, or to create a powerful shockwave that can send foes flying. Although it lacks traditional limbs, the Ruby Rooky is surprisingly agile, able to slide and pivot around the battlefield with ease. Those who face the Ruby Rooky in battle must be prepared for a relentless and unyielding foe."
+  },
+  "Pink hydra": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy044.png",
+    "description": "The Pink Hydra is a formidable and majestic creature that resembles a dragon in many ways. However, this beast possesses several unique characteristics that set it apart from its more common kin. The Pink Hydra boasts multiple heads, each of which possesses a powerful breath weapon that can incinerate foes with ease. \nIts scales are a vibrant pink color, providing a striking contrast to its fearsome appearance. The Pink Hydra is a master of both physical combat and magical spells, making it a truly versatile foe. Its epic rarity only serves to underscore the fact that this monster is not to be taken lightly, and any adventurer who faces it in combat would do well to approach with caution."
+  },
+  "Angry hydra": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy044b.png",
+    "description": "The Angry Hydra is an epic monster that resembles a fearsome dragon. its head is ferocious and aggressive. With razor-sharp teeth and claws, the Angry Hydra is a force to be reckoned with. Its scales are thick and impenetrable, protecting it from most attacks. Despite its fearsome appearance, the Angry Hydra is not invincible. \nIts weakness lies in its many heads - if one is severed, two more grow in its place. To defeat the Angry Hydra, one must be swift and strategic, attacking each head separately while avoiding its deadly breath attacks."
+  },
+  "Green hydra": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy044c.png",
+    "description": "The Green Hydra is a formidable monster, resembling a dragon in both appearance and power. With its shimmering green scales and multiple heads, this Epic creature is a force to be reckoned with. Each head possesses its own consciousness and vicious set of teeth, making the Green Hydra a daunting opponent in battle. \nIts venomous breath can immobilize even the strongest of foes, and its agility allows it to move with surprising speed and grace. Despite its ferocity, the Green Hydra is a creature of intelligence and cunning, often using its wits to outmaneuver its enemies. Those who dare to face this monster should be prepared for a grueling and dangerous fight."
+  },
+  "Fire hydra": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy044d.png",
+    "description": "The Fire Hydra is an epic monster that resembles a fierce dragon, with a body covered in shimmering scales and a powerful set of wings. Its most distinctive feature is its many heads, each capable of spewing streams of searing flames that can reduce even the sturdiest of structures to ash. \nThe Fire Hydra is a highly intelligent creature, with a keen sense of strategy and a deep understanding of its own strengths and weaknesses. It is a fierce opponent, able to withstand even the most brutal attacks and retaliate with devastating force. Those brave enough to face the Fire Hydra in battle must be prepared to contend with its deadly breath and cunning tactics if they hope to emerge victorious."
+  },
+  "Ice hydra": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy044e.png",
+    "description": "A fearsome Epic monster known for its multiple heads and icy breath. Each of its heads can attack separately, making it a formidable opponent to face in battle. Its scales are said to be as hard as diamond, making it almost impervious to physical attacks. \nThe Ice Hydra's breath can freeze anything in its path, encasing foes in a layer of ice. Those who dare to challenge this monster must be prepared for a battle that is as brutal as it is cold."
+  },
+  "Sulphur hydra": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy044f.png",
+    "description": "An Epic monster with multiple heads, the Sulphur Hydra is known for its noxious breath and deadly venom. Its scales emit a sulfurous odor, which is often a warning of its approach. The Sulphur Hydra's bite can cause paralysis and death, and its breath can create clouds of toxic gas. \nOnly the most skilled and daring hunters attempt to take down this monster."
+  },
+  "Green harpy": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy045.png",
+    "description": "An Epic monster that combines the features of a bird and a human. Its wings allow it to fly with great speed and agility, and its sharp talons can inflict serious damage. The Green Harpy's keen eyesight makes it an expert hunter, and its screams can stun and disorient its prey."
+  },
+  "Brown harpy": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy045a.png",
+    "description": "An Epic harpy with brown feathers and sharp talons. The Brown Harpy is a fierce predator that hunts in packs, swooping down on unsuspecting prey with lightning speed. Its screech can deafen those who hear it, leaving them vulnerable to attack."
+  },
+  "Ice harpy": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy045b.png",
+    "description": "An Epic harpy with icy blue feathers and a breath that can freeze its enemies in their tracks. The Ice Harpy's razor-sharp talons can tear through flesh and bone, making it a force to be reckoned with in battle."
+  },
+  "Red grimlock": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy040.png",
+    "description": "An Epic monster with tough, leathery skin and a fearsome appetite for destruction. The Red Grimlock's massive jaws can crush almost anything, and its strength and resilience make it a formidable opponent. Its fiery breath can incinerate anything in its path, leaving a trail of destruction behind it."
+  },
+  "Green grimlock": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy040a.png",
+    "description": "An Epic Grimlock, this one with green scales and a venomous bite. The Green Grimlock is a cunning predator that uses its powerful tail to knock down its prey before going in for the kill. Its toxic saliva can cause paralysis and death, making it a dangerous foe to face."
+  },
+  "Dark grimlock": {
+    "rarity": "Epic",
+    "img_path": "/monsters_pack_1/pipo-enemy040b.png",
+    "description": "An Epic monster with jet-black scales and piercing red eyes. The Dark Grimlock is a ruthless predator that preys on anything that crosses its path. Its sharp teeth and powerful jaws can tear through flesh and bone, and its long, muscular tail can knock enemies off their feet. \nIts fiery breath can also incinerate anything in its path, making it a force to be reckoned with in battle."
+  },
+  "Red chest": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy032.png",
+    "description": "A Rare monster that looks like an ordinary chest but is far from it. The Red Chest is an intelligent creature that is capable of manipulating reality to its advantage. It can teleport at will and create illusions to confuse its enemies. \nThose who try to open the Red Chest without its permission will be met with a barrage of magical attacks."
+  },
+  "Silver chest": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy032a.png",
+    "description": "A Rare monster that resembles a treasure chest. The Silver Chest is an expert in using traps and trickery to catch its enemies off guard. Its metallic shell can deflect even the strongest attacks, and its sharp claws can cut through almost anything."
+  },
+  "Lapis chest": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy032b.png",
+    "description": "A Rare chest that is said to contain untold riches. The Lapis Chest is protected by powerful magic that can turn its enemies to stone. It can also create barriers of pure energy that are almost impenetrable."
+  },
+  "Bear": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy037a.png",
+    "description": "A Rare monster with thick fur and sharp claws. The Bear is a formidable opponent that can take on multiple enemies at once. Its powerful muscles and sharp senses make it a fierce predator, and its roar can intimidate even the bravest of warriors."
+  },
+  "Purple pumpkin": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy038.png",
+    "description": "A Rare monster that is shaped like a pumpkin and has a purple hue. The Purple Pumpkin is an expert in using its vines to entangle and strangle its foes. Its acidic juices can also corrode anything they touch, making it a dangerous opponent to face."
+  },
+  "Green pumpkin": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy038a.png",
+    "description": "A Rare pumpkin-shaped monster, the Green Pumpkin is a master of deception. It can create illusions that can fool even the most perceptive of enemies, and its vines can ensnare them before they realize what's happening."
+  },
+  "Dark pumpkin": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy038b.png",
+    "description": "The rarest of the pumpkin monsters, the Dark Pumpkin is a fearsome foe that can manipulate shadows and darkness to its advantage. Its vine attacks can drain the life force of its enemies, and its dark magic can curse them with deadly afflictions."
+  },
+  "Ice lantern": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy042.png",
+    "description": "A Rare monster that resembles a glowing lantern made of ice. The Ice Lantern can create walls of ice that can block its enemies' attacks and freeze them in their tracks. Its frigid breath can also create blizzards that can bury its enemies alive."
+  },
+  "Pink lantern": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy042a.png",
+    "description": "A Rare monster that resembles an elegant lantern with a pink hue. The Pink Lantern is a master of light and illusion magic. It can create dazzling displays of light that can disorient its enemies and make them vulnerable to its attacks. Its wispy tendrils can also ensnare its enemies, leaving them at its mercy."
+  },
+  "Black lantern": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy042b.png",
+    "description": ""
+  },
+  "Red wizard": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy025b.png",
+    "description": "The Red Wizard is a rare and formidable monster known for its mastery of fire magic. Clad in flowing red robes and wielding a staff wreathed in flames, this creature is a sight to behold. Its eyes gleam with a fierce intelligence, and its movements are graceful and fluid. \nThe Red Wizard is able to summon pillars of flame and hurl fiery projectiles at its foes, incinerating them with ease. Its control over fire also allows it to manipulate the environment, creating walls of flame to block enemies or burning down obstacles in its path. Those who face the Red Wizard in battle must be cautious, for its power is not to be underestimated."
+  },
+  "Yellow wizard": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy025a.png",
+    "description": "The Yellow Wizard is a rare monster known for its mastery of elemental magic. With its distinctive yellow robes and tall pointed hat, this creature commands the power of lightning and thunder. \nThe Yellow Wizard's spellcasting abilities are fearsome to behold, with bolts of electricity crackling from its fingertips and thunderclaps echoing through the air. \nIt is said that the Yellow Wizard can summon lightning strikes from clear blue skies, and its wrath can level entire cities. Though rare, the Yellow Wizard is highly sought after by those seeking to harness its powerful magic for their own purposes. However, few have ever been successful in taming this wild and unpredictable creature."
+  },
+  "Light treant": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy006.png",
+    "description": "A Rare monster that looks like a tree come to life. The Light Treant is a peaceful creature that can heal itself and its allies with its magical energy. Its long vines can also entangle and trap its enemies, leaving them helpless."
+  },
+  "Dark treant": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy006b.png",
+    "description": "Another Rare treant that has been corrupted by dark magic. The Dark Treant is a sinister creature that can drain the life force of its enemies with its wicked touch. Its thorny vines can also cause bleeding and other debilitating effects."
+  },
+  "Red groot": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy019.png",
+    "description": "A Rare monster that resembles a tree-like creature with red skin. The Red Groot is a fierce warrior that can use its massive arms to crush its enemies. Its wooden body can also regenerate quickly, making it hard to take down."
+  },
+  "Dark groot": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy019b.png",
+    "description": "A Rare monster that is similar to the Red Groot, but with a more sinister appearance. The Dark Groot can control shadows and darkness to its advantage, and its thorny vines can ensnare its enemies."
+  },
+  "Blue cyclops": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy020.png",
+    "description": "A Rare monster with one eye and blue skin. The Blue Cyclops is a fierce fighter that can use its massive strength to crush its foes. Its single eye can also shoot a powerful laser that can blast through almost anything."
+  },
+  "Ice cyclops": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy020b.png",
+    "description": "Another Rare cyclops that has adapted to cold climates. The Ice Cyclops can create icy barriers to protect itself and its allies, and its breath can freeze its enemies in their tracks."
+  },
+  "Brown owl": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy022.png",
+    "description": "A Rare monster with brown feathers and piercing yellow eyes. The Brown Owl is a master of stealth and hunting. Its sharp talons and beak can tear through flesh and bone, and its powerful wings can create gusts of wind to knock its enemies off balance."
+  },
+  "Fire owl": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy022a.png",
+    "description": "A Rare owl with fiery feathers and eyes that glow like embers. The Fire Owl is a fearsome predator that can breathe flames and incinerate its enemies. Its sharp talons and beak can also leave scorch marks on anything they touch."
+  },
+  "Obsidian owl": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy022b.png",
+    "description": "Another Rare owl that is as black as obsidian. The Obsidian Owl is a master of dark magic and can curse its enemies with deadly afflictions. Its talons can also leave deep cuts that are slow to heal."
+  },
+  "Fire tricera": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy023.png",
+    "description": "A Rare monster with the body of a triceratops and flames coming out of its nostrils. The Fire Tricera can create walls of fire that can block its enemies' attacks and incinerate them. Its sharp horns can also pierce through armor and flesh."
+  },
+  "Maleficient tricera": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy023a.png",
+    "description": "Another Rare triceratops-like monster that has been corrupted by dark magic. The Maleficent Tricera can create illusions and curses that can confuse and harm its enemies. Its jagged horns can also leave deep wounds that are hard to heal."
+  },
+  "Light tricera": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy023b.png",
+    "description": "A Rare monster that resembles a triceratops but with a glowing white aura. The Light Tricera can heal itself and its allies with its holy energy, and its horn can shoot a beam of light that can purify and harm undead creatures."
+  },
+  "Maleficient doll": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy024.png",
+    "description": "A Rare monster that looks like an evil doll with red eyes and sharp teeth. The Maleficent Doll is a master of dark magic that can control its enemies' minds and turn them against each other. Its wooden body can also regenerate quickly, making it hard to take down."
+  },
+  "Fire doll": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy024a.png",
+    "description": "Another Rare doll-like monster that can breathe flames and incinerate its enemies. The Fire Doll's porcelain body can also shatter into sharp pieces and be used as projectiles."
+  },
+  "Dark doll": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy024b.png",
+    "description": "A Rare doll that has been possessed by dark spirits. The Dark Doll can manipulate shadows and darkness to its advantage, and its lifeless eyes can strike fear into the hearts of its enemies. Its sharp claws and teeth can also shred through flesh and leave deep wounds."
+  },
+  "Dark wizard": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy025.png",
+    "description": "A Rare monster that resembles a human wizard with a dark cloak and a staff. The Dark Wizard is a master of dark magic and can summon shadow creatures to fight for him. Its spells can also cause fear, confusion, and pain to its enemies."
+  },
+  "Blue spider": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy027.png",
+    "description": "A Rare monster with blue and black markings on its body. The Blue Spider is a nimble hunter that can climb walls and shoot webs to trap its enemies. Its venom can also cause paralysis and other debilitating effects."
+  },
+  "Red spider": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy027a.png",
+    "description": "Another Rare spider that is as red as blood. The Red Spider is a fierce predator that can jump great distances and strike with lightning speed. Its venom can also cause burning pain and feverish symptoms."
+  },
+  "Light spider": {
+    "rarity": "Rare",
+    "img_path": "/monsters_pack_1/pipo-enemy027b.png",
+    "description": "A Rare spider that glows with a radiant light. The Light Spider can blind its enemies with its bright aura and heal itself and its allies with its holy energy. Its silk can also be used to create protective barriers and traps."
+  },
+  "Red scorp": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy028.png",
+    "description": "A Common monster with a bright red exoskeleton. The Red Scorp is a small but deadly creature that can strike with its stinger and poison its enemies. Its hard shell also provides decent protection against physical attacks."
+  },
+  "Ice scorp": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy028a.png",
+    "description": "Another Common scorpion that has adapted to cold climates. The Ice Scorp can freeze its enemies with its icy venom and create icy barriers to protect itself. Its sharp claws and stinger can also leave deep cuts and wounds."
+  },
+  "Dark scorp": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy028b.png",
+    "description": "A Common scorpion that has been corrupted by dark magic. The Dark Scorp can curse its enemies with dark afflictions and summon shadow creatures to fight for it. Its stinger can also drain the life force of its enemies."
+  },
+  "Light skeleton": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy039.png",
+    "description": "A Common monster that resembles a humanoid skeleton with a glowing white aura. The Light Skeleton is weak and fragile, but it can heal itself and its allies with its holy energy. Its bones can also be used as weapons and shields."
+  },
+  "Golden skeleton": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy039a.png",
+    "description": "Another Common skeleton that is covered in gold plating. The Golden Skeleton is slightly stronger and more durable than the Light Skeleton, but it can still be easily destroyed by physical attacks. Its gold plating can also be melted down for valuable materials."
+  },
+  "Red skeleton": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy039b.png",
+    "description": "A Common skeleton with a bright red aura. The Red Skeleton is infused with fire magic and can ignite its enemies with its touch. Its bones can also be used to create fiery projectiles and traps."
+  },
+  "Knight cat": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy041b.png",
+    "description": "A Common monster that looks like a domestic cat wearing knight armor. The Knight Cat is a loyal and brave companion that can use its sharp claws and quick reflexes to defend its master. Its armor also provides decent protection against physical attacks."
+  },
+  "Creeper vine": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy007b.png",
+    "description": "A Common monster that resembles a plant vine with a twisted face. The Creeper Vine is a slow but persistent creature that can entangle and trap its enemies with its vines. Its thorns can also cause bleeding and other debilitating effects."
+  },
+  "Banshee": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy010b.png",
+    "description": "A Common monster that looks like a ghostly woman with long hair and a tattered dress. The Banshee is a master of dark magic and can curse its enemies with haunting screams. Its touch can also drain the life force of its enemies."
+  },
+  "Purple villager": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy011a.png",
+    "description": "A Common monster that looks like a regular human villager with purple clothing. The Purple Villager is weak and fragile, but it can still use basic weapons and tools to defend itself. Its skills are nothing special, but it can be a decent source of loot and experience."
+  },
+  "Red villager": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy011b.png",
+    "description": "Another Common villager that wears red clothing. The Red Villager is slightly stronger and more aggressive than the Purple Villager, but it still poses no real threat to experienced adventurers. It may drop better loot than the Purple Villager, but not by much."
+  },
+  "Green fungoid": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy015.png",
+    "description": "A Common monster that looks like a mushroom with a green cap and a spiky stem. The Green Fungoid is slow and stationary, but it can release poisonous spores that can weaken and sicken its enemies. It can also shoot acidic projectiles to damage its enemies from afar."
+  },
+  "Dark fungoid": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy015b.png",
+    "description": "Another Common Fungoid that has been corrupted by dark magic. The Dark Fungoid can release clouds of toxic gas that can cause hallucinations and insanity to its enemies. Its spiky stem can also impale and stun its enemies."
+  },
+  "Gecko": {
+    "rarity": "Common",
+    "img_path": "/monsters_pack_1/pipo-enemy016b.png",
+    "description": "A Common monster that looks like a small lizard with large eyes and suction cups on its feet. The Gecko is a harmless creature that can climb walls and ceilings with ease. It can also regenerate its limbs and tail if they get severed."
+  }
 }

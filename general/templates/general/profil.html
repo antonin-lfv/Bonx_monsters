@@ -129,15 +129,13 @@
                     <div class="widget_tags mt-25">
                         <ul>
                             <li><a href="{{ url_for('BLP_general.profil') }}"
-                                   {% if rarity=="All" %}style="background-color: #b154f0"{% endif %}>All</a></li>
-                            <li><a href="{{ url_for('BLP_general.profil', rarity="Legendary") }}"
-                                   {% if rarity=="Legendary" %}style="background-color: #b154f0"{% endif %}>Legendary</a></li>
-                            <li><a href="{{ url_for('BLP_general.profil', rarity="Epic") }}"
-                                   {% if rarity=="Epic" %}style="background-color: #b154f0"{% endif %}>Epic</a></li>
-                            <li><a href="{{ url_for('BLP_general.profil', rarity="Rare") }}"
-                                   {% if rarity=="Rare" %}style="background-color: #b154f0"{% endif %}>Rare</a></li>
-                            <li><a href="{{ url_for('BLP_general.profil', rarity="Common") }}"
-                                   {% if rarity=="Common" %}style="background-color: #b154f0"{% endif %}>Common</a></li>
+                                   {% if sorting=="rarity" %}style="background-color: #b154f0"{% endif %}>Sort by rarity</a></li>
+                            <li><a href="{{ url_for('BLP_general.profil', sorting="level") }}"
+                                   {% if sorting=="level" %}style="background-color: #b154f0"{% endif %}>Sort by level</a></li>
+                            <li><a href="{{ url_for('BLP_general.profil', sorting="attack") }}"
+                                   {% if sorting=="attack" %}style="background-color: #b154f0"{% endif %}>Sort by attack</a></li>
+                            <li><a href="{{ url_for('BLP_general.profil', sorting="defense") }}"
+                                   {% if sorting=="defense" %}style="background-color: #b154f0"{% endif %}>Sort by defense</a></li>
                         </ul>
                     </div>
                 </div>

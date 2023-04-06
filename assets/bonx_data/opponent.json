@@ -5,28 +5,106 @@
     "attack": 500,
     "rarity": "Easy",
     "img_path": "Bosses/1_ORK/IDLE/IDLE_000.png",
-    "attack_img_path": ["Bosses/1_ORK/ATTAK/ATTAK_000.png", "Bosses/1_ORK/ATTAK/ATTAK_001.png", "Bosses/1_ORK/ATTAK/ATTAK_002.png", "Bosses/1_ORK/ATTAK/ATTAK_003.png", "Bosses/1_ORK/ATTAK/ATTAK_004.png", "Bosses/1_ORK/ATTAK/ATTAK_005.png", "Bosses/1_ORK/ATTAK/ATTAK_006.png", "Bosses/1_ORK/IDLE/IDLE_000.png"],
-    "hurt_img_path": ["Bosses/1_ORK/HURT/HURT_000.png", "Bosses/1_ORK/HURT/HURT_001.png", "Bosses/1_ORK/HURT/HURT_002.png", "Bosses/1_ORK/HURT/HURT_003.png", "Bosses/1_ORK/HURT/HURT_004.png", "Bosses/1_ORK/HURT/HURT_005.png", "Bosses/1_ORK/HURT/HURT_006.png", "Bosses/1_ORK/IDLE/IDLE_000.png"],
-    "dead_img_path": ["Bosses/1_ORK/DIE/DIE_000.png", "Bosses/1_ORK/DIE/DIE_001.png", "Bosses/1_ORK/DIE/DIE_002.png", "Bosses/1_ORK/DIE/DIE_003.png", "Bosses/1_ORK/DIE/DIE_004.png", "Bosses/1_ORK/DIE/DIE_005.png", "Bosses/1_ORK/DIE/DIE_006.png"]
+    "attack_img_path": [
+      "Bosses/1_ORK/ATTAK/ATTAK_000.png",
+      "Bosses/1_ORK/ATTAK/ATTAK_001.png",
+      "Bosses/1_ORK/ATTAK/ATTAK_002.png",
+      "Bosses/1_ORK/ATTAK/ATTAK_003.png",
+      "Bosses/1_ORK/ATTAK/ATTAK_004.png",
+      "Bosses/1_ORK/ATTAK/ATTAK_005.png",
+      "Bosses/1_ORK/ATTAK/ATTAK_006.png",
+      "Bosses/1_ORK/IDLE/IDLE_000.png"
+    ],
+    "hurt_img_path": [
+      "Bosses/1_ORK/HURT/HURT_000.png",
+      "Bosses/1_ORK/HURT/HURT_001.png",
+      "Bosses/1_ORK/HURT/HURT_002.png",
+      "Bosses/1_ORK/HURT/HURT_003.png",
+      "Bosses/1_ORK/HURT/HURT_004.png",
+      "Bosses/1_ORK/HURT/HURT_005.png",
+      "Bosses/1_ORK/HURT/HURT_006.png",
+      "Bosses/1_ORK/IDLE/IDLE_000.png"
+    ],
+    "dead_img_path": [
+      "Bosses/1_ORK/DIE/DIE_000.png",
+      "Bosses/1_ORK/DIE/DIE_001.png",
+      "Bosses/1_ORK/DIE/DIE_002.png",
+      "Bosses/1_ORK/DIE/DIE_003.png",
+      "Bosses/1_ORK/DIE/DIE_004.png",
+      "Bosses/1_ORK/DIE/DIE_005.png",
+      "Bosses/1_ORK/DIE/DIE_006.png"
+    ]
   },
   "Gronk": {
     "level": 200,
-    "defense": 10000,
-    "attack": 2000,
+    "defense": 100000,
+    "attack": 4000,
     "rarity": "Medium",
     "img_path": "Bosses/2_ORK/IDLE/IDLE_000.png",
-    "attack_img_path": ["Bosses/2_ORK/ATTAK/ATTAK_000.png", "Bosses/2_ORK/ATTAK/ATTAK_001.png", "Bosses/2_ORK/ATTAK/ATTAK_002.png", "Bosses/2_ORK/ATTAK/ATTAK_003.png", "Bosses/2_ORK/ATTAK/ATTAK_004.png", "Bosses/2_ORK/ATTAK/ATTAK_005.png", "Bosses/2_ORK/ATTAK/ATTAK_006.png", "Bosses/2_ORK/IDLE/IDLE_000.png"],
-    "hurt_img_path": ["Bosses/2_ORK/HURT/HURT_000.png", "Bosses/2_ORK/HURT/HURT_001.png", "Bosses/2_ORK/HURT/HURT_002.png", "Bosses/2_ORK/HURT/HURT_003.png", "Bosses/2_ORK/HURT/HURT_004.png", "Bosses/2_ORK/HURT/HURT_005.png", "Bosses/2_ORK/HURT/HURT_006.png", "Bosses/2_ORK/IDLE/IDLE_000.png"],
-    "dead_img_path": ["Bosses/2_ORK/DIE/DIE_000.png", "Bosses/2_ORK/DIE/DIE_001.png", "Bosses/2_ORK/DIE/DIE_002.png", "Bosses/2_ORK/DIE/DIE_003.png", "Bosses/2_ORK/DIE/DIE_004.png", "Bosses/2_ORK/DIE/DIE_005.png", "Bosses/2_ORK/DIE/DIE_006.png"]
+    "attack_img_path": [
+      "Bosses/2_ORK/ATTAK/ATTAK_000.png",
+      "Bosses/2_ORK/ATTAK/ATTAK_001.png",
+      "Bosses/2_ORK/ATTAK/ATTAK_002.png",
+      "Bosses/2_ORK/ATTAK/ATTAK_003.png",
+      "Bosses/2_ORK/ATTAK/ATTAK_004.png",
+      "Bosses/2_ORK/ATTAK/ATTAK_005.png",
+      "Bosses/2_ORK/ATTAK/ATTAK_006.png",
+      "Bosses/2_ORK/IDLE/IDLE_000.png"
+    ],
+    "hurt_img_path": [
+      "Bosses/2_ORK/HURT/HURT_000.png",
+      "Bosses/2_ORK/HURT/HURT_001.png",
+      "Bosses/2_ORK/HURT/HURT_002.png",
+      "Bosses/2_ORK/HURT/HURT_003.png",
+      "Bosses/2_ORK/HURT/HURT_004.png",
+      "Bosses/2_ORK/HURT/HURT_005.png",
+      "Bosses/2_ORK/HURT/HURT_006.png",
+      "Bosses/2_ORK/IDLE/IDLE_000.png"
+    ],
+    "dead_img_path": [
+      "Bosses/2_ORK/DIE/DIE_000.png",
+      "Bosses/2_ORK/DIE/DIE_001.png",
+      "Bosses/2_ORK/DIE/DIE_002.png",
+      "Bosses/2_ORK/DIE/DIE_003.png",
+      "Bosses/2_ORK/DIE/DIE_004.png",
+      "Bosses/2_ORK/DIE/DIE_005.png",
+      "Bosses/2_ORK/DIE/DIE_006.png"
+    ]
   },
   "Throgg": {
     "level": 300,
-    "defense": 30000,
-    "attack": 5000,
+    "defense": 300000,
+    "attack": 7500,
     "rarity": "Hard",
     "img_path": "Bosses/3_ORK/IDLE/IDLE_000.png",
-    "attack_img": ["Bosses/3_ORK/ATTAK/ATTAK_000.png", "Bosses/3_ORK/ATTAK/ATTAK_001.png", "Bosses/3_ORK/ATTAK/ATTAK_002.png", "Bosses/3_ORK/ATTAK/ATTAK_003.png", "Bosses/3_ORK/ATTAK/ATTAK_004.png", "Bosses/3_ORK/ATTAK/ATTAK_005.png", "Bosses/3_ORK/ATTAK/ATTAK_006.png", "Bosses/3_ORK/IDLE/IDLE_000.png"],
-    "hurt_img_path": ["Bosses/3_ORK/HURT/HURT_000.png", "Bosses/3_ORK/HURT/HURT_001.png", "Bosses/3_ORK/HURT/HURT_002.png", "Bosses/3_ORK/HURT/HURT_003.png", "Bosses/3_ORK/HURT/HURT_004.png", "Bosses/3_ORK/HURT/HURT_005.png", "Bosses/3_ORK/HURT/HURT_006.png", "Bosses/3_ORK/IDLE/IDLE_000.png"],
-    "dead_img_path": ["Bosses/3_ORK/DIE/DIE_000.png", "Bosses/3_ORK/DIE/DIE_001.png", "Bosses/3_ORK/DIE/DIE_002.png", "Bosses/3_ORK/DIE/DIE_003.png", "Bosses/3_ORK/DIE/DIE_004.png", "Bosses/3_ORK/DIE/DIE_005.png", "Bosses/3_ORK/DIE/DIE_006.png"]
+    "attack_img_path": [
+      "Bosses/3_ORK/ATTAK/ATTAK_000.png",
+      "Bosses/3_ORK/ATTAK/ATTAK_001.png",
+      "Bosses/3_ORK/ATTAK/ATTAK_002.png",
+      "Bosses/3_ORK/ATTAK/ATTAK_003.png",
+      "Bosses/3_ORK/ATTAK/ATTAK_004.png",
+      "Bosses/3_ORK/ATTAK/ATTAK_005.png",
+      "Bosses/3_ORK/ATTAK/ATTAK_006.png",
+      "Bosses/3_ORK/IDLE/IDLE_000.png"
+    ],
+    "hurt_img_path": [
+      "Bosses/3_ORK/HURT/HURT_000.png",
+      "Bosses/3_ORK/HURT/HURT_001.png",
+      "Bosses/3_ORK/HURT/HURT_002.png",
+      "Bosses/3_ORK/HURT/HURT_003.png",
+      "Bosses/3_ORK/HURT/HURT_004.png",
+      "Bosses/3_ORK/HURT/HURT_005.png",
+      "Bosses/3_ORK/HURT/HURT_006.png",
+      "Bosses/3_ORK/IDLE/IDLE_000.png"
+    ],
+    "dead_img_path": [
+      "Bosses/3_ORK/DIE/DIE_000.png",
+      "Bosses/3_ORK/DIE/DIE_001.png",
+      "Bosses/3_ORK/DIE/DIE_002.png",
+      "Bosses/3_ORK/DIE/DIE_003.png",
+      "Bosses/3_ORK/DIE/DIE_004.png",
+      "Bosses/3_ORK/DIE/DIE_005.png",
+      "Bosses/3_ORK/DIE/DIE_006.png"
+    ]
   }
 }

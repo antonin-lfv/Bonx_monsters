@@ -61,7 +61,7 @@ def create_and_add_new_monster_from_json(monster_name, id_user):
     """Create and add monster if user don't already have it, else amount += 1"""
     if m := Monster.query.filter_by(user_id=id_user, name=monster_name).first():
         # if exists
-        m.amount += 1
+        m.amount += 1000
         if m.amount >= GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"] and \
                 m.level < GameConfig.MAX_MONSTER_LEVEL:
             # if monster can be upgraded, so if amount >= number of cards to upgrade and level < max level
@@ -97,15 +97,24 @@ def create_and_add_new_monster_from_json(monster_name, id_user):
     update_power_user(id_user)
 
 
-def create_and_add_new_match_in_history(id_user, opponent, reward_coin, win):
+def create_and_add_new_match_in_history(id_user, opponent, reward_coin, win,
+                                        reward_monster_name, reward_monster_amount):
     """
     Add match in history + add coins in user wallet
+    :param id_user: id of the user
+    :param opponent: name of the opponent
+    :param reward_coin: reward of the match
+    :param win: y or n
+    :param reward_monster_name: name of the monster rewarded
+    :param reward_monster_amount: amount of the monster rewarded
     """
     new_match = Match()
     new_match.opponent = opponent  # string
     new_match.reward_coin = reward_coin if win == "y" else 0  # int
     new_match.win = win  # y or n
     new_match.user_id = id_user
+    new_match.reward_monster_name = reward_monster_name
+    new_match.reward_monster_amount = reward_monster_amount
     db.session.add(new_match)
     user = User.query.filter_by(id=id_user).first()
     user.coins += new_match.reward_coin

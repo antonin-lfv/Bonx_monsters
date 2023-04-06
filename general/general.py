@@ -161,31 +161,33 @@ def game_page(opponent):
         raise ValueError("Wrong opponent")
 
 
-@BLP_general.route('/profil', defaults={'rarity': 'All'}, methods=['POST', 'GET'])
-@BLP_general.route('/profil/<string:rarity>/', methods=['POST', 'GET'])
+@BLP_general.route('/profil', defaults={'sorting': 'rarity'}, methods=['POST', 'GET'])
+@BLP_general.route('/profil/<string:sorting>/', methods=['POST', 'GET'])
 @login_required
-def profil(rarity):
-    # get Legendary monsters
-    legendary_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Legendary").all()
-    # get Epic monsters
-    epic_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Epic").all()
-    # get Rare monsters
-    rare_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Rare").all()
-    # get Common monsters
-    common_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Common").all()
-    # get all monsters filtered by rarity selected
-    if rarity == "Legendary":
-        monsters = legendary_monsters
-    elif rarity == "Epic":
-        monsters = epic_monsters
-    elif rarity == "Rare":
-        monsters = rare_monsters
-    elif rarity == "Common":
-        monsters = common_monsters
+def profil(sorting):
+    """
+    Page to display the user's monsters
+    :param sorting: the way the monsters are sorted, can be rarity (default), level, attack, defense
+    """
+    if sorting == "level":
+        # Sort by level
+        monsters = Monster.query.filter_by(user_id=current_user.id).order_by(Monster.level.desc()).all()
+    elif sorting == "attack":
+        # sort by attack
+        monsters = Monster.query.filter_by(user_id=current_user.id).order_by(Monster.attack.desc()).all()
+    elif sorting == "defense":
+        # sort by defense
+        monsters = Monster.query.filter_by(user_id=current_user.id).order_by(Monster.defense.desc()).all()
     else:
+        # Sort by rarity
+        legendary_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Legendary").all()
+        epic_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Epic").all()
+        rare_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Rare").all()
+        common_monsters = Monster.query.filter_by(user_id=current_user.id, rarity="Common").all()
         monsters = legendary_monsters + epic_monsters + rare_monsters + common_monsters
 
-    return render_template('general/profil.html', user=current_user, monsters=monsters, len=len, int=int, rarity=rarity)
+    return render_template('general/profil.html', user=current_user, monsters=monsters,
+                           len=len, int=int, sorting=sorting)
 
 
 @BLP_general.route('/shop', methods=['POST', 'GET'])
@@ -327,29 +329,45 @@ def get_number_bought_monster(name):
     return jsonify({"number_bought": number_bought})
 
 
-@BLP_general.route('/api/add_match_history_boss/<string:opponent>/<string:win>', methods=['POST', 'GET'])
+@BLP_general.route('/api/add_match_history_boss/<string:opponent>/<string:win>/',
+                   defaults={'reward_monster_name': None, 'reward_monster_amount': None},
+                   methods=['POST', 'GET'])
+@BLP_general.route('/api/add_match_history_boss/<string:opponent>/<string:win>/<string:reward_monster_name>/'
+                   '<string:reward_monster_amount>/',
+                   methods=['POST', 'GET'])
 @login_required
-def add_match_history_boss(opponent, win):
+def add_match_history_boss(opponent, win, reward_monster_name, reward_monster_amount):
     """
     Add a match to the match history
     :param opponent: name of the opponent
     :param win: result of the match (y for win, n for lose)
+    :param reward_monster_name: name of the reward monster
+    :param reward_monster_amount: amount of the reward monster
     """
     # replace underscore by space in the opponent name if needed
     opponent = opponent.replace("_", " ")
+    # replace underscore by space in the reward monster name if needed
+    if reward_monster_name:
+        reward_monster_name = reward_monster_name.replace("_", " ")
     # get the rarity of the opponent
     rarity = all_bosses_from_json()[opponent]["rarity"]
     # get the reward of the opponent
     reward_coin = GameConfig.BOSS_CONFIG[rarity]["Reward"]
     # add the match to the match history
-    create_and_add_new_match_in_history(id_user=current_user.id, opponent=opponent, reward_coin=reward_coin, win=win)
+    create_and_add_new_match_in_history(id_user=current_user.id, opponent=opponent, reward_coin=reward_coin, win=win,
+                                        reward_monster_name=reward_monster_name,
+                                        reward_monster_amount=reward_monster_amount)
     # return the result of the transaction as json
     return jsonify({"result": "success"})
 
 
-@BLP_general.route('/api/add_match_history_dungeon/<string:opponent>/<string:win>', methods=['POST', 'GET'])
+@BLP_general.route('/api/add_match_history_dungeon/<string:opponent>/<string:win>/',
+                   defaults={'reward_monster_name': None, 'reward_monster_amount': None},
+                   methods=['POST', 'GET'])
+@BLP_general.route('/api/add_match_history_dungeon/<string:opponent>/<string:win>/<string:reward_monster_name>/'
+                   '<string:reward_monster_amount>/', methods=['POST', 'GET'])
 @login_required
-def add_match_history_dungeon(opponent, win):
+def add_match_history_dungeon(opponent, win, reward_monster_name, reward_monster_amount):
     """
     Add a match to the match history
     :param opponent: name of the dungeon
@@ -357,12 +375,18 @@ def add_match_history_dungeon(opponent, win):
     """
     # replace underscore by space in the opponent name if needed
     opponent = opponent.replace("_", " ")
+    # replace underscore by space in the reward monster name if needed
+    if reward_monster_name:
+        reward_monster_name = reward_monster_name.replace("_", " ")
     # get all dungeons
     dungeons = all_doors_from_json()
     # get the reward of the opponent
     reward_coin = dungeons[opponent]["reward"]
     # add the match to the match history
-    create_and_add_new_match_in_history(id_user=current_user.id, opponent=opponent, reward_coin=reward_coin, win=win)
+    create_and_add_new_match_in_history(id_user=current_user.id, opponent=opponent,
+                                        reward_coin=reward_coin, win=win,
+                                        reward_monster_name=reward_monster_name,
+                                        reward_monster_amount=reward_monster_amount)
     # return the result of the transaction as json
     return jsonify({"result": "success"})
 

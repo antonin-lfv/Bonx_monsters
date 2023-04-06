@@ -349,7 +349,7 @@
             const boss_img = document.getElementById("boss-img");
             {% for img in boss_info['hurt_img_path'] %}
                 boss_img.src = "{{ url_for('static', filename=img)}}";
-                console.log(boss_img.src);
+                console.log("hurt", boss_img.src);
                 await new Promise(r => setTimeout(r, 40));
             {% endfor %}
             // update the HP bar of the boss, if HP < 40% bar is orange, if HP < 20% bar is red
@@ -383,7 +383,7 @@
             {% for img in boss_info['attack_img_path'] %}
                 boss_img.src = "{{ url_for('static', filename=img)}}";
                 await new Promise(r => setTimeout(r, 40));
-                console.log(boss_img.src);
+                // console.log(boss_img.src);
             {% endfor %}
 
             // move the monster image to the left to make it look like it is being attacked
@@ -434,29 +434,32 @@
                     const monster_name_rewards = document.getElementById("monster_name_rewards");
                     const monster_rarity_rewards = document.getElementById("monster_rarity_rewards");
                     const monster_cards_rewards = document.getElementById("monster_cards_rewards");
+                    const reward_monster_name = data["monster_name"];
+                    const reward_monster_amount = data["amount_cards"];
                     coins_rewards.innerHTML = "+" + {{ GameConfig.BOSS_CONFIG[boss_info['rarity']]["Reward"] }} +" coins";
                     img_monster_rewards.src = data["monster"]["img_path"];
                     monster_name_rewards.innerHTML = data["monster_name"];
                     monster_rarity_rewards.innerHTML = data["monster"]["rarity"];
                     monster_cards_rewards.innerHTML = "+" + data["amount_cards"] + " cards"
+
+                    // display a pop-up window that tells the user that he has won the game
+                    window.scrollTo(0, 0);
+                    const popup = document.getElementById('win-popup');
+                    popup.style.display = 'block';
+                    // update match history by requesting /api/add_match_history_boss/<string:opponent>/y/reward_monster_name/reward_monster_amount via AJAX
+                    $.ajax({
+                        url: "/api/add_match_history_boss/{{ opponent.replace(' ', '_') }}/y/"+reward_monster_name+"/"+reward_monster_amount,
+                        type: "GET",
+                        success: function (data) {
+                            console.log("success in updating match history");
+                        },
+                        error: function (data) {
+                            console.log("error in updating match history");
+                        }
+                    });
                 },
                 error: function (data) {
                     console.log("error in getting reward");
-                }
-            });
-            // display a pop-up window that tells the user that he has won the game
-            window.scrollTo(0, 0);
-            const popup = document.getElementById('win-popup');
-            popup.style.display = 'block';
-            // update match history by requesting /api/add_match_history_boss/<string:opponent>/y via AJAX
-            $.ajax({
-                url: "/api/add_match_history_boss/{{ opponent.replace(' ', '_') }}/y",
-                type: "GET",
-                success: function (data) {
-                    console.log("success in updating match history");
-                },
-                error: function (data) {
-                    console.log("error in updating match history");
                 }
             });
         }

@@ -39,7 +39,7 @@
                     <div class="upcoming_gaming_text">
                         <p>{% if games.win == "y" %}Victory {% else %}Lose{% endif %}</p>
                         <h3>Game {% if type_oppo == "dungeon" %}in{% else %}against{% endif %} {{games.opponent}}</h3>
-                        <span>{{ games.reward_coin }} coins earned</span>
+                        <span>{{ games.reward_coin }} coins earned - <b>{% if games.win == "y" %}{{games.reward_monster_amount}} {{games.reward_monster_name }} cards won{% else %}0 cards won{% endif %}</b></span>
                     </div>
                     <div class="upcoming_gaming_thumb d-flex align-items-center">
                         <div class="single_upcoming_thumb">
