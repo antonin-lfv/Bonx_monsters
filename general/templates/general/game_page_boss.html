@@ -336,6 +336,8 @@
 
         // enter the while loop that ends when the game is over, i.e. when all the monsters are dead (defense <= 0)
         // or when the boss has no more life points
+        // go to the bottom of the window
+        window.scrollTo(0, document.body.scrollHeight);
         await new Promise(r => setTimeout(r, 1000));
         while (boss_stats["defense"] > 0 && total_defense_deck(monsters_stats) > 0) {
             // the monsters attack the boss one by one if they are still alive
@@ -404,6 +406,15 @@
                     MonsterBar[i].style.backgroundColor = "red";
                 }
             }
+            // if the monster is dead
+            if (monsters_stats[random_monster]["defense"] <= 0) {
+                // Dead animation of the monster
+                // cross out the name of the opponent, the id is ${random_opponent}_name
+                document.getElementById(random_monster.replace(/ /g, '_') + "_name").style.textDecoration = "line-through";
+                // rotate the image of the opponent, the id is ${random_opponent}_image
+                document.getElementById(random_monster.replace(/ /g, '_') + "_img").style.transform = "rotate(90deg)";
+                document.getElementById(random_monster.replace(/ /g, '_') + "_img").style.scale = "0.5";
+            }
             // wait 1 second if game is not over
             if (boss_stats["defense"] > 0 && total_defense_deck(monsters_stats) > 0) {
                 await new Promise(r => setTimeout(r, 2000));
@@ -448,7 +459,7 @@
                     popup.style.display = 'block';
                     // update match history by requesting /api/add_match_history_boss/<string:opponent>/y/reward_monster_name/reward_monster_amount via AJAX
                     $.ajax({
-                        url: "/api/add_match_history_boss/{{ opponent.replace(' ', '_') }}/y/"+reward_monster_name+"/"+reward_monster_amount,
+                        url: "/api/add_match_history_boss/{{ opponent.replace(' ', '_') }}/y/" + reward_monster_name + "/" + reward_monster_amount,
                         type: "GET",
                         success: function (data) {
                             console.log("success in updating match history");

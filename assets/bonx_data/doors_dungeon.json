@@ -5,7 +5,7 @@
     "description": "A treacherous canyon filled with menacing gargoyles perched on jagged rocks. Brave adventurers must navigate narrow paths and avoid the stony glare of these fearsome guardians.",
     "monster_name": "Obsidian owl",
     "level": "5",
-    "reward": 20000
+    "reward": 10000
   },
   "Chimera Cavern": {
     "num": "2",
@@ -13,7 +13,7 @@
     "description": "This dark, winding cave system is home to the terrifying chimeras. Combining features of various creatures, they prowl the shadows waiting to ambush unwary explorers.",
     "monster_name": "Ice cyclops",
     "level": "25",
-    "reward": 40000
+    "reward": 30000
   },
   "Werewolf Maze": {
     "num": "3",
@@ -21,7 +21,7 @@
     "description": "Lost within a dense forest, the Werewolf Maze challenges adventurers to escape its twisted paths while evading the fierce werewolves that hunt under the full moon.",
     "monster_name": "Maleficent tricera",
     "level": "50",
-    "reward": 60000
+    "reward": 50000
   },
   "The Great Hall": {
     "num": "4",
@@ -29,7 +29,7 @@
     "description": "Hidden beneath the ocean's surface, the Kraken Crypt is a submerged temple protected by monstrous krakens. Daring heroes must hold their breath and navigate treacherous waters.",
     "monster_name": "Dark groot",
     "level": "75",
-    "reward": 80000
+    "reward": 75000
   },
   "Specter Sanctuary": {
     "num": "5",
@@ -61,6 +61,6 @@
     "description": "This forsaken ruin is a haven for eerie specters and lost souls. The chilling whispers of the dead echo throughout, sapping the courage and strength of all who dare to enter.",
     "monster_name": "Dark knight",
     "level": "150",
-    "reward": 160000
+    "reward": 150000
   }
 }

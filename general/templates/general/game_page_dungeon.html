@@ -377,6 +377,8 @@
 
         // enter the while loop that ends when the game is over, i.e. when all the monsters are dead (defense <= 0)
         // or when all the opponents are dead (defense <= 0)
+        // go to the bottom of the window
+        window.scrollTo(0, document.body.scrollHeight);
         await new Promise(r => setTimeout(r, 1000));
         while (total_defense_deck(monsters_stats) > 0 && total_defense_deck(opponents_stats) > 0) {
             // All the monsters attack the opponents (One random alive monster attacks one random opponent alive)
