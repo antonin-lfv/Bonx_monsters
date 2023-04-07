@@ -142,6 +142,15 @@ _This will delete all the data in the database (users, monsters, cards, etc.)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- ROADMAP -->
+## Roadmap
+
+- [x] Add Changelog
+- [ ] Add sorting system during monster selection in battle
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- LICENSE -->
 
