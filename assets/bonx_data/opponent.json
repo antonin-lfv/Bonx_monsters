@@ -74,7 +74,7 @@
   "Throgg": {
     "level": 300,
     "defense": 300000,
-    "attack": 7500,
+    "attack": 10000,
     "rarity": "Hard",
     "img_path": "Bosses/3_ORK/IDLE/IDLE_000.png",
     "attack_img_path": [
