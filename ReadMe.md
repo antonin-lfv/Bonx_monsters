@@ -111,6 +111,8 @@ _Follow the steps below to set up a local copy of the project and get it running
    ```sh
    ./install_requirements.sh
    ```
+   
+_If you're using Linux, consider using `sudo apt install gunicorn` to install **gunicorn**._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

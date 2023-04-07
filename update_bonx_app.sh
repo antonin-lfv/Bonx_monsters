@@ -8,6 +8,6 @@ DIFF_OUTPUT="$(git diff HEAD @{u})"
 if [ -z "$DIFF_OUTPUT" ]; then
     echo "No update available"
 else
+    echo "Updating..."
     git pull
-    echo "Update done successfully !"
 fi
