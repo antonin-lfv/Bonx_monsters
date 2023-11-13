@@ -40,7 +40,7 @@ def registration():
             new_user = User()
             new_user.email = email
             new_user.name = name
-            new_user.password = generate_password_hash(password, method='sha256')
+            new_user.password = generate_password_hash(password, method='scrypt')
             new_user.level = 0
             new_user.coins = GameConfig.USER_STARTING_COINS
             new_user.nb_games = 0
