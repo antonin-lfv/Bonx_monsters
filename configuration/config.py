@@ -19,7 +19,7 @@ class GameConfig(Config):
     REWARD_CONFIG = chance to get each card type
     DUNGON_MONSTER_AMOUNT = number of monsters in each dungeon
     """
-    USER_STARTING_COINS = 30000
+    USER_STARTING_COINS = 60000
     USER_STARTING_NUMBER_OF_MONSTERS = 6
     MAX_COINS = 1000000
     MAX_MONSTER_LEVEL = 200
@@ -77,7 +77,7 @@ class GameConfig(Config):
     }
     BOSS_CONFIG = {
         "Easy": {
-            "Reward": 5000,
+            "Reward": 10000,
         },
         "Medium": {
             "Reward": 35000,
@@ -89,19 +89,19 @@ class GameConfig(Config):
     REWARD_CONFIG = {
         "Common": {
             "chance_to_get": 0.5,
-            "max_cards": 10,
+            "max_cards": 40,
         },
         "Rare": {
             "chance_to_get": 0.3,
-            "max_cards": 5,
+            "max_cards": 20,
         },
         "Epic": {
             "chance_to_get": 0.1,
-            "max_cards": 5,
+            "max_cards": 30,
         },
         "Legendary": {
             "chance_to_get": 0.1,
-            "max_cards": 5,
+            "max_cards": 20,
         }
     }
     DUNGON_MONSTER_AMOUNT = 5
