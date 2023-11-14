@@ -118,27 +118,8 @@ def game_page(opponent):
     monsters_json = all_monsters_from_json()
     # Get the users' monsters to display them in the game page to choose the monsters to fight with
     monsters = Monster.query.filter_by(user_id=current_user.id).all()
-    # sort the monsters by rarity by adding them to different lists
-    legendary_monsters = []
-    epic_monsters = []
-    rare_monsters = []
-    common_monsters = []
-    for monster in monsters:
-        if monster.rarity == "Legendary":
-            legendary_monsters.append(monster)
-        elif monster.rarity == "Epic":
-            epic_monsters.append(monster)
-        elif monster.rarity == "Rare":
-            rare_monsters.append(monster)
-        elif monster.rarity == "Common":
-            common_monsters.append(monster)
-    # Sort the lists by the monsters' name
-    legendary_monsters.sort(key=lambda x: x.name)
-    epic_monsters.sort(key=lambda x: x.name)
-    rare_monsters.sort(key=lambda x: x.name)
-    common_monsters.sort(key=lambda x: x.name)
-    # create the final list of monsters
-    monsters = legendary_monsters + epic_monsters + rare_monsters + common_monsters
+    # sort the monsters by attack
+    monsters = sorted(monsters, key=lambda x: x.attack, reverse=True)
     if opponent in bosses.keys():
         # We fight a boss
         return render_template('general/game_page_boss.html',

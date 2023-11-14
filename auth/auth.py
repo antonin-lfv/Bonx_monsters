@@ -8,6 +8,11 @@ from app import db
 from configuration.utils import all_monsters_from_json, create_and_add_new_monster_from_json
 from configuration.config import GameConfig
 
+# disable the warning
+import warnings
+
+warnings.filterwarnings('ignore')
+
 BLP_auth = Blueprint('BLP_auth', __name__,
                      template_folder='templates',
                      static_folder='static')
