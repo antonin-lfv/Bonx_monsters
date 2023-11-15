@@ -67,12 +67,12 @@ class GameConfig(Config):
             "Max_per_day": 20
         },
         "Epic": {
-            "Price": 10000,
-            "Max_per_day": 10
+            "Price": 100000,
+            "Max_per_day": 20
         },
         "Legendary": {
-            "Price": 20000,
-            "Max_per_day": 10
+            "Price": 250000,
+            "Max_per_day": 20
         }
     }
     BOSS_CONFIG = {

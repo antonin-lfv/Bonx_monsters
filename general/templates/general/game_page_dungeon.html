@@ -522,11 +522,20 @@
                     const monster_cards_rewards = document.getElementById("monster_cards_rewards");
                     const reward_monster_name = data["monster_name"];
                     const reward_monster_amount = data["amount_cards"];
-                    coins_rewards.innerHTML = "+" + {{ dungeon_info["reward"] }} +" coins";
+                    // test if a monster is rewarded (None if all monsters are max level)
+                    if (data['monster_name'] === null) {
+                        img_monster_rewards.style.display = "none";
+                        monster_name_rewards.style.display = "none";
+                        monster_rarity_rewards.style.display = "none";
+                        monster_cards_rewards.style.display = "none";
+                    }
+                    else {
+                        coins_rewards.innerHTML = "+" + {{ dungeon_info["reward"] }} +" coins";
                     img_monster_rewards.src = data["monster"]["img_path"];
                     monster_name_rewards.innerHTML = data["monster_name"];
                     monster_rarity_rewards.innerHTML = data["monster"]["rarity"];
                     monster_cards_rewards.innerHTML = "+" + data["amount_cards"] + " cards"
+                    }
 
                     // display a pop-up window that tells the user that he has won the game
                     window.scrollTo(0, 0);

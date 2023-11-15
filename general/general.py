@@ -386,27 +386,35 @@ def get_reward_after_win():
     selected_rarity = random.choices(rarity, weights=weights, k=1)[0]
     # get the list of monsters of the selected rarity
     monsters = all_monsters_from_json()
-    # filter monsters by rarity
+    # filter monsters by rarity and get only monsters that are not max level
     if selected_rarity == "Legendary":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Legendary"}
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Legendary" and
+                    v["level"] < GameConfig.MAX_MONSTER_LEVEL}
     elif selected_rarity == "Epic":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Epic"}
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Epic" and
+                    v["level"] < GameConfig.MAX_MONSTER_LEVEL}
     elif selected_rarity == "Rare":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Rare"}
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Rare" and
+                    v["level"] < GameConfig.MAX_MONSTER_LEVEL}
     elif selected_rarity == "Common":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Common"}
-    # choose a random key in monsters
-    monster_name = random.choice(list(monsters.keys()))
-    monster = monsters[monster_name]
-    # get the amount of cards
-    amount_cards = random.randint(1, GameConfig.REWARD_CONFIG[selected_rarity]["max_cards"])
-    # get the ulr of the image of the monster and add it to the monster dict
-    monster["img_path"] = url_for('static', filename=monster["img_path"])
-    # add the monster to the user's monsters as many times as the amount of cards
-    for i in range(amount_cards):
-        create_and_add_new_monster_from_json(monster_name, current_user.id)
-    # return the result of the transaction as json
-    return jsonify({"monster": monster, "monster_name": monster_name, "amount_cards": amount_cards})
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Common" and
+                    v["level"] < GameConfig.MAX_MONSTER_LEVEL}
+    if monsters:
+        # choose a random key in monsters
+        monster_name = random.choice(list(monsters.keys()))
+        monster = monsters[monster_name]
+        # get the amount of cards
+        amount_cards = random.randint(1, GameConfig.REWARD_CONFIG[selected_rarity]["max_cards"])
+        # get the ulr of the image of the monster and add it to the monster dict
+        monster["img_path"] = url_for('static', filename=monster["img_path"])
+        # add the monster to the user's monsters as many times as the amount of cards
+        for i in range(amount_cards):
+            create_and_add_new_monster_from_json(monster_name, current_user.id)
+        # return the result of the transaction as json
+        return jsonify({"monster": monster, "monster_name": monster_name, "amount_cards": amount_cards})
+    else:
+        # return the result of the transaction as json
+        return jsonify({"monster": None, "monster_name": None, "amount_cards": None})
 
 
 @BLP_general.route('/api/get_dungeon_monsters_stats/<string:dungeon_name>/', methods=['POST', 'GET'])
