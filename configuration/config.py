@@ -21,8 +21,8 @@ class GameConfig(Config):
     """
     USER_STARTING_COINS = 60000
     USER_STARTING_NUMBER_OF_MONSTERS = 6
-    MAX_COINS = 1000000
-    MAX_MONSTER_LEVEL = 200
+    MAX_COINS = 100000000
+    MAX_MONSTER_LEVEL = 300
     MONSTER_CONGIF = {
         "Common": {
             "Defense": 70,
@@ -60,19 +60,19 @@ class GameConfig(Config):
     SHOP_CONFIG = {
         "Common": {
             "Price": 2500,
-            "Max_per_day": 10
+            "Max_per_day": 20
         },
         "Rare": {
             "Price": 4500,
-            "Max_per_day": 5
+            "Max_per_day": 20
         },
         "Epic": {
             "Price": 10000,
-            "Max_per_day": 5
+            "Max_per_day": 10
         },
         "Legendary": {
             "Price": 20000,
-            "Max_per_day": 5
+            "Max_per_day": 10
         }
     }
     BOSS_CONFIG = {
@@ -80,10 +80,10 @@ class GameConfig(Config):
             "Reward": 10000,
         },
         "Medium": {
-            "Reward": 35000,
+            "Reward": 100000,
         },
         "Hard": {
-            "Reward": 75000,
+            "Reward": 1000000,
         }
     }
     REWARD_CONFIG = {
