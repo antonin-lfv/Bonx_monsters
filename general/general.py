@@ -388,17 +388,13 @@ def get_reward_after_win():
     monsters = all_monsters_from_json()
     # filter monsters by rarity and get only monsters that are not max level
     if selected_rarity == "Legendary":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Legendary" and
-                    v["level"] < GameConfig.MAX_MONSTER_LEVEL}
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Legendary"}
     elif selected_rarity == "Epic":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Epic" and
-                    v["level"] < GameConfig.MAX_MONSTER_LEVEL}
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Epic"}
     elif selected_rarity == "Rare":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Rare" and
-                    v["level"] < GameConfig.MAX_MONSTER_LEVEL}
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Rare"}
     elif selected_rarity == "Common":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Common" and
-                    v["level"] < GameConfig.MAX_MONSTER_LEVEL}
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Common"}
     if monsters:
         # choose a random key in monsters
         monster_name = random.choice(list(monsters.keys()))
