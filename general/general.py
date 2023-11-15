@@ -400,9 +400,10 @@ def get_reward_after_win():
         monster_name = random.choice(list(monsters.keys()))
         monster = monsters[monster_name]
         # get the level of the player
-        level = User.query.filter_by(id=current_user.id).first().level
+        power = User.query.filter_by(id=current_user.id).first().power
+        level = int(power / 2000)
         # get the amount of cards multiplied by a factor depending on the level of the player
-        amount_cards = random.randint(1, GameConfig.REWARD_CONFIG[selected_rarity]["max_cards"]*max(1, (level)//20))
+        amount_cards = random.randint(1, GameConfig.REWARD_CONFIG[selected_rarity]["max_cards"] * max(1, level // 20))
         # get the ulr of the image of the monster and add it to the monster dict
         monster["img_path"] = url_for('static', filename=monster["img_path"])
         # add the monster to the user's monsters as many times as the amount of cards
