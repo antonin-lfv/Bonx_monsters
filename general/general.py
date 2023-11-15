@@ -371,9 +371,9 @@ def add_match_history_dungeon(opponent, win, reward_monster_name, reward_monster
     return jsonify({"result": "success"})
 
 
-@BLP_general.route('/api/get_reward_after_win', methods=['POST', 'GET'])
+@BLP_general.route('/api/get_reward_after_win/<string:rarity_reward>', methods=['POST', 'GET'])
 @login_required
-def get_reward_after_win():
+def get_reward_after_win(rarity_reward):
     """
     Get the reward after a win, choose a random monster and a random amount of cards
     Add it/them to the user's monsters
@@ -404,7 +404,15 @@ def get_reward_after_win():
         level = int(power / 2000)
         # get the amount of cards multiplied by a factor depending on the level of the player
         amount_cards = random.randint(1, GameConfig.REWARD_CONFIG[selected_rarity]["max_cards"])
-        amount_cards *= 1 if level < 25 else max(2, level // 20)
+        # using level
+        amount_cards *= 1 if level < 20 else max(2, level // 20)
+        # using config
+        if rarity_reward in ['Easy', 'Medium', 'Hard']:
+            # Boss
+            amount_cards += GameConfig.BOSS_CONFIG[rarity_reward]["Cards_multiplier"]
+        elif rarity_reward in '12345678':
+            # Dungeon
+            amount_cards += int(rarity_reward)
         # get the ulr of the image of the monster and add it to the monster dict
         monster["img_path"] = url_for('static', filename=monster["img_path"])
         # add the monster to the user's monsters as many times as the amount of cards

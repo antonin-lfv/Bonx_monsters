@@ -507,7 +507,8 @@
             await new Promise(r => setTimeout(r, 1000));
             // call /api/get_reward_after_win to get the reward
             $.ajax({
-                url: "/api/get_reward_after_win",
+                // url adding difficulty of the dungeon
+                url: "/api/get_reward_after_win/{{dungeon_info['num']}}",
                 type: "GET",
                 success: function (data) {
                     console.log("success in getting reward");

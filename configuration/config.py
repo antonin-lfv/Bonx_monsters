@@ -78,12 +78,15 @@ class GameConfig(Config):
     BOSS_CONFIG = {
         "Easy": {
             "Reward": 10000,
+            "Cards_multiplier": 1,
         },
         "Medium": {
             "Reward": 100000,
+            "Cards_multiplier": 2,
         },
         "Hard": {
             "Reward": 1000000,
+            "Cards_multiplier": 3,
         }
     }
     REWARD_CONFIG = {
@@ -93,7 +96,7 @@ class GameConfig(Config):
         },
         "Rare": {
             "chance_to_get": 0.3,
-            "max_cards": 20,
+            "max_cards": 30,
         },
         "Epic": {
             "chance_to_get": 0.1,

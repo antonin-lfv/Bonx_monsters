@@ -433,7 +433,8 @@
             await new Promise(r => setTimeout(r, 1000));
             // call /api/get_reward_after_win via AJAX and get the result as a JSON object
             $.ajax({
-                url: "/api/get_reward_after_win",
+                // url adding boss rarity
+                url: "/api/get_reward_after_win/{{ boss_info['rarity'] }}",
                 type: "GET",
                 success: function (data) {
                     console.log("success in getting reward");
