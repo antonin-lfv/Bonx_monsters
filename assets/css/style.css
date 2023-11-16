@@ -7992,6 +7992,7 @@ section.error_section {
     text-align: center;
     line-height: 30px;
     color: black;
+    border-radius: 25px;
 }
 
 .MonsterBar {
@@ -8000,6 +8001,7 @@ section.error_section {
     text-align: center;
     line-height: 30px;
     color: black;
+    border-radius: 25px;
 }
 
 .OppoBar {
@@ -8008,4 +8010,12 @@ section.error_section {
     text-align: center;
     line-height: 30px;
     color: black;
+    border-radius: 25px;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 25px;
+    overflow: hidden;
 }

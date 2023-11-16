@@ -78,17 +78,21 @@
             <p style="text-align: center"><b id="coins_rewards"></b></p>
             <div class="top" style="text-align: center">
                 <a class="image">
-                    <img class="object_moving" id="img_monster_rewards"
+                    <img class="object_moving" id="img_monster_rewards" src=""
                          alt=""></a>
             </div>
             <div class="content" style="text-align: center">
-                <h4 class="title"><a id="monster_name_rewards"></a>
-                </h4>
-                <h6 class="level-text" id="monster_rarity_rewards"></h6>
-                <h6 class="level-text" id="monster_cards_rewards"></h6>
+                <h3 class="title"><a id="monster_name_rewards"></a>
+                </h3>
+                <h4 class="level-text" id="monster_rarity_rewards"></h4>
+                <h4 class="level-text" id="monster_cards_rewards"></h4>
+                <h5 class="level-text" id="monster_levels_gained"></h5>
+                <h5 class="level-text" id="monster_current_level"></h5>
+
             </div>
         </div>
     </div>
+
 
     <!-- HTML code for the pop-up window to show the result of the battle in case you loose -->
     <div id="lose-popup"
@@ -120,7 +124,7 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
-                                            <div style="width: 100%; background-color: #ddd">
+                                            <div class="progress-container">
                                                 <div class="MonsterBar"></div>
                                             </div>
                                         </div>
@@ -133,7 +137,7 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
-                                            <div style="width: 100%; background-color: #ddd">
+                                            <div class="progress-container">
                                                 <div class="MonsterBar"></div>
                                             </div>
                                         </div>
@@ -146,7 +150,7 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
-                                            <div style="width: 100%; background-color: #ddd">
+                                            <div class="progress-container">
                                                 <div class="MonsterBar"></div>
                                             </div>
                                         </div>
@@ -159,7 +163,7 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
-                                            <div style="width: 100%; background-color: #ddd">
+                                            <div class="progress-container">
                                                 <div class="MonsterBar"></div>
                                             </div>
                                         </div>
@@ -172,7 +176,7 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
-                                            <div style="width: 100%; background-color: #ddd">
+                                            <div class="progress-container">
                                                 <div class="MonsterBar"></div>
                                             </div>
                                         </div>
@@ -185,7 +189,7 @@
                                                              class="monster-img"></a>
                                             <h4 class="monster-h4" style="text-align: center"></h4>
                                             <h5 class="monster-h5" style="text-align: center"></h5>
-                                            <div style="width: 100%; background-color: #ddd">
+                                            <div class="progress-container">
                                                 <div class="MonsterBar"></div>
                                             </div>
                                         </div>
@@ -204,7 +208,7 @@
                                             <a href="#"><img id="boss-img" width="170" height="170"
                                                              src="{{ url_for('static', filename=boss_info["img_path"]) }}"
                                                              alt=""></a>
-                                            <div style="width: 100%; background-color: #ddd">
+                                            <div class="progress-container">
                                                 <div class="BossBar">{{ boss_info["defense"] }}</div>
                                             </div>
                                         </div>
@@ -447,13 +451,38 @@
                     const monster_name_rewards = document.getElementById("monster_name_rewards");
                     const monster_rarity_rewards = document.getElementById("monster_rarity_rewards");
                     const monster_cards_rewards = document.getElementById("monster_cards_rewards");
+                    const monster_levels_gained = document.getElementById("monster_levels_gained");
+                    const monster_current_level = document.getElementById("monster_current_level");
                     const reward_monster_name = data["monster_name"];
                     const reward_monster_amount = data["amount_cards"];
-                    coins_rewards.innerHTML = "+" + {{ GameConfig.BOSS_CONFIG[boss_info['rarity']]["Reward"] }} +" coins";
-                    img_monster_rewards.src = data["monster"]["img_path"];
-                    monster_name_rewards.innerHTML = data["monster_name"];
-                    monster_rarity_rewards.innerHTML = data["monster"]["rarity"];
-                    monster_cards_rewards.innerHTML = "+" + data["amount_cards"] + " cards"
+                    const reward_levels_gained = data["total_levels_gained"];
+                    const reward_monster_level = data["new_level"];
+                    // test if a monster is rewarded (None if all monsters are max level)
+                    if (data['monster_name'] === null) {
+                        img_monster_rewards.style.display = "none";
+                        monster_name_rewards.style.display = "none";
+                        monster_rarity_rewards.style.display = "none";
+                        monster_cards_rewards.style.display = "none";
+                    }
+                    else {
+                        coins_rewards.innerHTML = "+" + {{ GameConfig.BOSS_CONFIG[boss_info['rarity']]["Reward"] }} + " coins";
+                        img_monster_rewards.src = data["monster"]["img_path"];
+                        monster_name_rewards.innerHTML = reward_monster_name;
+                        monster_rarity_rewards.innerHTML = data["monster"]["rarity"];
+                        // if data['amount_cards'] == 0, it's because the monster is max level
+                        if (reward_monster_amount === 0) {
+                            monster_cards_rewards.innerHTML = "Max level"
+                        } else{
+                            monster_cards_rewards.innerHTML = "+" + reward_monster_amount + " cards";
+                        }
+                        // if data['total_levels_gained'] == 0, it's because the monster is max level
+                        if (reward_levels_gained === 0) {
+                            monster_levels_gained.style.display = "none";
+                        } else{
+                            monster_levels_gained.innerHTML = reward_levels_gained + " levels gained";
+                        }
+                        monster_current_level.innerHTML = "Level " + reward_monster_level;
+                    }
 
                     // display a pop-up window that tells the user that he has won the game
                     window.scrollTo(0, 0);

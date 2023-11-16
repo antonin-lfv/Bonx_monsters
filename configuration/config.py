@@ -18,8 +18,9 @@ class GameConfig(Config):
     BOSS_CONFIG = reward for each boss type
     REWARD_CONFIG = chance to get each card type
     DUNGON_MONSTER_AMOUNT = number of monsters in each dungeon
+    GAME_SPEED = To multiply the number of cards earned in each dungeon and boss
     """
-    USER_STARTING_COINS = 60000
+    USER_STARTING_COINS = 500000
     USER_STARTING_NUMBER_OF_MONSTERS = 6
     MAX_COINS = 100000000
     MAX_MONSTER_LEVEL = 300
@@ -108,6 +109,7 @@ class GameConfig(Config):
         }
     }
     DUNGON_MONSTER_AMOUNT = 5
+    GAME_SPEED = 10  # 1 for normal, 2 for fast, 4 for superfast
 
 
 app_config = Config

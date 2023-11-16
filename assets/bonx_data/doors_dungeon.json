@@ -13,54 +13,54 @@
     "description": "This dark, winding cave system is home to the terrifying chimeras. Combining features of various creatures, they prowl the shadows waiting to ambush unwary explorers.",
     "monster_name": "Ice cyclops",
     "level": "25",
-    "reward": 100000
+    "reward": 250000
   },
   "Werewolf Maze": {
     "num": "3",
     "img_path": "doors/door_3.png",
     "description": "Lost within a dense forest, the Werewolf Maze challenges adventurers to escape its twisted paths while evading the fierce werewolves that hunt under the full moon.",
     "monster_name": "Maleficient tricera",
-    "level": "50",
-    "reward": 150000
+    "level": "75",
+    "reward": 600000
   },
   "The Great Hall": {
     "num": "4",
     "img_path": "doors/door_4.png",
     "description": "Hidden beneath the ocean's surface, the Kraken Crypt is a submerged temple protected by monstrous krakens. Daring heroes must hold their breath and navigate treacherous waters.",
     "monster_name": "Dark groot",
-    "level": "75",
-    "reward": 200000
+    "level": "125",
+    "reward": 800000
   },
   "Specter Sanctuary": {
     "num": "5",
     "img_path": "doors/door_5.png",
     "description": "An ancient, haunted burial ground, the Revenant Hideout is teeming with vengeful spirits. These restless souls seek to protect their crypts from would-be intruders.",
     "monster_name": "Dark pumpkin",
-    "level": "100",
-    "reward": 300000
+    "level": "150",
+    "reward": 900000
   },
   "Basilisk Grove": {
     "num": "6",
     "img_path": "doors/door_6.png",
     "description": "In this eerie, fog-shrouded forest, deadly basilisks lie in wait. Their petrifying gaze can turn even the most skilled adventurer into stone with a single glance.",
     "monster_name": "Dark grimlock",
-    "level": "100",
-    "reward": 400000
+    "level": "175",
+    "reward": 1000000
   },
   "Revenant Hideout": {
     "num": "7",
     "img_path": "doors/door_7.png",
     "description": "A towering fortress stretching towards the sky, Titan Tower is guarded by colossal beings of immense power. Conquering this stronghold requires cunning, strength, and determination.",
     "monster_name": "Brown harpy",
-    "level": "100",
-    "reward": 500000
+    "level": "200",
+    "reward": 2000000
   },
   "Knight Crypt": {
     "num": "8",
     "img_path": "doors/door_8.png",
     "description": "This forsaken ruin is a haven for eerie specters and lost souls. The chilling whispers of the dead echo throughout, sapping the courage and strength of all who dare to enter.",
     "monster_name": "Dark knight",
-    "level": "150",
-    "reward": 600000
+    "level": "225",
+    "reward": 3000000
   }
 }

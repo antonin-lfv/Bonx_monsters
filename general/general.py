@@ -403,28 +403,32 @@ def get_reward_after_win(rarity_reward):
         power = User.query.filter_by(id=current_user.id).first().power
         level = int(power / 2000)
         # get the amount of cards multiplied by a factor depending on the level of the player
-        amount_cards = random.randint(1, GameConfig.REWARD_CONFIG[selected_rarity]["max_cards"])
+        amount_cards = random.randint(1, GameConfig.REWARD_CONFIG[selected_rarity]["max_cards"]) * GameConfig.GAME_SPEED
         # using level
         amount_cards *= 1 if level < 20 else max(2, level // 20)
         # using config
         if rarity_reward in ['Easy', 'Medium', 'Hard']:
             # Boss
-            amount_cards += GameConfig.BOSS_CONFIG[rarity_reward]["Cards_multiplier"]
+            amount_cards *= GameConfig.BOSS_CONFIG[rarity_reward]["Cards_multiplier"]
         elif rarity_reward in '12345678':
             # Dungeon
-            amount_cards += int(rarity_reward)
+            amount_cards *= int(rarity_reward)
         else:
             print("[WARNING]: Wrong rarity_reward in get_reward_after_win")
         # get the ulr of the image of the monster and add it to the monster dict
         monster["img_path"] = url_for('static', filename=monster["img_path"])
-        # add the monster to the user's monsters as many times as the amount of cards
-        for i in range(amount_cards):
-            create_and_add_new_monster_from_json(monster_name, current_user.id)
+        # add the monster to the user's monsters as many times as the amount of cards if the monster is not max level
+        if Monster.query.filter_by(user_id=current_user.id, name=monster_name).first().level < GameConfig.MAX_MONSTER_LEVEL:
+            total_levels_gained, new_level = create_and_add_new_monster_from_json(monster_name, current_user.id, amount_cards)
+        else:
+            total_levels_gained = 0
+            amount_cards = 0
+            new_level = GameConfig.MAX_MONSTER_LEVEL
         # return the result of the transaction as json
-        return jsonify({"monster": monster, "monster_name": monster_name, "amount_cards": amount_cards})
+        return jsonify({"monster": monster, "monster_name": monster_name, "amount_cards": amount_cards,
+                        "total_levels_gained": total_levels_gained, "new_level": new_level})
     else:
-        # return the result of the transaction as json
-        return jsonify({"monster": None, "monster_name": None, "amount_cards": None})
+        raise ValueError("No monster of this rarity")
 
 
 @BLP_general.route('/api/get_dungeon_monsters_stats/<string:dungeon_name>/', methods=['POST', 'GET'])

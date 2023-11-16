@@ -57,27 +57,42 @@ def get_monster_stats_of_level(monster_name, level):
     return stats
 
 
-def create_and_add_new_monster_from_json(monster_name, id_user):
-    """Create and add monster if user don't already have it, else amount += 1"""
+def create_and_add_new_monster_from_json(monster_name, id_user, number_of_cards=1):
+    """
+    Create and add monster if user don't already have it, else amount += number_of_cards
+
+    Parameters:
+        - monster_name (str): name of the monster
+        - id_user (int): id of the user
+        - number_of_cards (int): number of cards to add (default 1)
+
+    Return:
+        - total_levels_gained (int): total levels gained by the monster
+        - new_level (int): new level of the monster
+    """
+
     if m := Monster.query.filter_by(user_id=id_user, name=monster_name).first():
-        # if exists
-        m.amount += 1
-        if m.amount >= GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"] and \
-                m.level < GameConfig.MAX_MONSTER_LEVEL:
-            # if monster can be upgraded, so if amount >= number of cards to upgrade and level < max level
+        init_level = m.level
+        m.amount += number_of_cards
+        if m.level < GameConfig.MAX_MONSTER_LEVEL:
             levels_to_add = m.amount // GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]
-            m.level += levels_to_add
-            m.level = min(m.level, GameConfig.MAX_MONSTER_LEVEL)
+            m.level = min(m.level + levels_to_add, GameConfig.MAX_MONSTER_LEVEL)
+            m.amount %= GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]
             m.defense = int(math.sqrt(m.level) * GameConfig.MONSTER_CONGIF[m.rarity]["Update defense"] +
                             GameConfig.MONSTER_CONGIF[m.rarity]["Defense"])
             m.attack = int(math.sqrt(m.level) * GameConfig.MONSTER_CONGIF[m.rarity]["Update attack"] +
                            GameConfig.MONSTER_CONGIF[m.rarity]["Attack"])
             m.power = GameConfig.MONSTER_CONGIF[m.rarity]["Power"] * m.level
-            m.amount = m.amount % GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]
         if m.level == GameConfig.MAX_MONSTER_LEVEL:
             # if monster is max level
             m.amount = GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]
         db.session.commit()
+
+        # Compute the total levels gained by the monster
+        total_levels_gained = min(m.level - init_level, GameConfig.MAX_MONSTER_LEVEL)
+        # Compute the new level of the monster
+        new_level = m.level
+
     else:
         # if not exists in db => create and add
         monsters = all_monsters_from_json()
@@ -94,7 +109,15 @@ def create_and_add_new_monster_from_json(monster_name, id_user):
         new_monster.user_id = id_user
         db.session.add(new_monster)
         db.session.commit()
+
+        # Call the function again to update the monster with number_of_cards - 1
+        if number_of_cards > 1:
+            return create_and_add_new_monster_from_json(monster_name, id_user, number_of_cards - 1)
+        total_levels_gained = 1
+        new_level = 1
+
     update_power_user(id_user)
+    return total_levels_gained, new_level
 
 
 def create_and_add_new_match_in_history(id_user, opponent, reward_coin, win,
