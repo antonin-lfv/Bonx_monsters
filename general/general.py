@@ -413,6 +413,8 @@ def get_reward_after_win(rarity_reward):
         elif rarity_reward in '12345678':
             # Dungeon
             amount_cards += int(rarity_reward)
+        else:
+            print("[WARNING]: Wrong rarity_reward in get_reward_after_win")
         # get the ulr of the image of the monster and add it to the monster dict
         monster["img_path"] = url_for('static', filename=monster["img_path"])
         # add the monster to the user's monsters as many times as the amount of cards

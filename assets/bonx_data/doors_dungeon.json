@@ -19,7 +19,7 @@
     "num": "3",
     "img_path": "doors/door_3.png",
     "description": "Lost within a dense forest, the Werewolf Maze challenges adventurers to escape its twisted paths while evading the fierce werewolves that hunt under the full moon.",
-    "monster_name": "Maleficent tricera",
+    "monster_name": "Maleficient tricera",
     "level": "50",
     "reward": 150000
   },
