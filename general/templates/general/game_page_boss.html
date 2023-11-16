@@ -86,7 +86,6 @@
                 </h3>
                 <h4 class="level-text" id="monster_rarity_rewards"></h4>
                 <h4 class="level-text" id="monster_cards_rewards"></h4>
-                <h5 class="level-text" id="monster_levels_gained"></h5>
                 <h5 class="level-text" id="monster_current_level"></h5>
 
             </div>
@@ -451,7 +450,6 @@
                     const monster_name_rewards = document.getElementById("monster_name_rewards");
                     const monster_rarity_rewards = document.getElementById("monster_rarity_rewards");
                     const monster_cards_rewards = document.getElementById("monster_cards_rewards");
-                    const monster_levels_gained = document.getElementById("monster_levels_gained");
                     const monster_current_level = document.getElementById("monster_current_level");
                     const reward_monster_name = data["monster_name"];
                     const reward_monster_amount = data["amount_cards"];
@@ -471,17 +469,12 @@
                         monster_rarity_rewards.innerHTML = data["monster"]["rarity"];
                         // if data['amount_cards'] == 0, it's because the monster is max level
                         if (reward_monster_amount === 0) {
-                            monster_cards_rewards.innerHTML = "Max level"
+                            monster_cards_rewards.style.display = "none";
+                            monster_current_level.innerHTML = "Level " + reward_monster_level + " (Max level)";
                         } else{
                             monster_cards_rewards.innerHTML = "+" + reward_monster_amount + " cards";
+                            monster_current_level.innerHTML = "Level " + reward_monster_level + " (+" + reward_levels_gained + ")";
                         }
-                        // if data['total_levels_gained'] == 0, it's because the monster is max level
-                        if (reward_levels_gained === 0) {
-                            monster_levels_gained.style.display = "none";
-                        } else{
-                            monster_levels_gained.innerHTML = reward_levels_gained + " levels gained";
-                        }
-                        monster_current_level.innerHTML = "Level " + reward_monster_level;
                     }
 
                     // display a pop-up window that tells the user that he has won the game
