@@ -26,14 +26,8 @@ def home():
 def monsters(rarity):
     monsters = all_monsters_from_json()
     # filter monsters by rarity
-    if rarity == "Legendary":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Legendary"}
-    elif rarity == "Epic":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Epic"}
-    elif rarity == "Rare":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Rare"}
-    elif rarity == "Common":
-        monsters = {k: v for k, v in monsters.items() if v['rarity'] == "Common"}
+    if rarity != "All":
+        monsters = {k: v for k, v in monsters.items() if v['rarity'] == rarity}
 
     return render_template('general/monsters.html', monsters=monsters, len=len, int=int, rarity=rarity)
 
@@ -418,9 +412,18 @@ def get_reward_after_win(rarity_reward):
         # get the ulr of the image of the monster and add it to the monster dict
         monster["img_path"] = url_for('static', filename=monster["img_path"])
         # add the monster to the user's monsters as many times as the amount of cards if the monster is not max level
-        if Monster.query.filter_by(user_id=current_user.id, name=monster_name).first().level < GameConfig.MAX_MONSTER_LEVEL:
-            total_levels_gained, new_level = create_and_add_new_monster_from_json(monster_name, current_user.id, amount_cards)
+        print("monster_name", monster_name)
+        if not Monster.query.filter_by(user_id=current_user.id, name=monster_name).first():
+            # if not exists in db => create and add
+            total_levels_gained, new_level = create_and_add_new_monster_from_json(monster_name, current_user.id,
+                                                                                  amount_cards)
+        elif (Monster.query.filter_by(user_id=current_user.id, name=monster_name).first().level
+              < GameConfig.MAX_MONSTER_LEVEL):
+            # if exists in db and not max level => add
+            total_levels_gained, new_level = create_and_add_new_monster_from_json(monster_name, current_user.id,
+                                                                                  amount_cards)
         else:
+            # if exists in db and max level => do nothing
             total_levels_gained = 0
             amount_cards = 0
             new_level = GameConfig.MAX_MONSTER_LEVEL
@@ -448,3 +451,24 @@ def get_dungeon_monsters_stats(dungeon_name):
     stats = get_monster_stats_of_level(monster_name, monster_level)
     # return the stats of the monsters of the dungeon as json
     return jsonify(stats)
+
+
+# ====== TESTS ======
+from app import create_app
+
+
+def test_reward_all_monsters():
+    """
+    Test the reward of all monsters, using the create_and_add_new_monster_from_json function
+    """
+    app = create_app()
+    with app.app_context():
+        # login
+        user = User.query.filter_by(email="antoninlefevre45@icloud.com").first()
+
+        monsters = all_monsters_from_json()
+        for monster_name, monster in monsters.items():
+            amount_cards = 100000
+            # add the monster to the user's monsters as many times as the amount of cards if the monster is not max
+            # level
+            _, _ = create_and_add_new_monster_from_json(monster_name, user.id, amount_cards)
