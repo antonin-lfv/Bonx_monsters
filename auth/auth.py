@@ -56,7 +56,9 @@ def registration():
             # Add 6 random cards to the user
             # select 6 random monsters from the json file
             monsters = all_monsters_from_json().keys()
-            monsters_random_name = random.sample(monsters, GameConfig.USER_STARTING_NUMBER_OF_MONSTERS)
+            print(monsters)
+            monsters_random_name = random.sample(sorted(monsters), GameConfig.USER_STARTING_NUMBER_OF_MONSTERS)
+            print(monsters_random_name)
             # create 6 new monsters and add them to the database
             for monster_name in monsters_random_name:
                 create_and_add_new_monster_from_json(monster_name, new_user.id)
