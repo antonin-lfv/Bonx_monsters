@@ -1,7 +1,7 @@
 flask==2.3.2
-flask_login==0.6.2
+flask-login==0.6.2
 flask_sqlalchemy==3.0.2
-flask_nav==0.6
+flask-nav==0.6
 numpy==1.23.5
 plotly==5.4.0
 jsons==1.6.3
