@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.2.0
+
+### Added or Changed
+- Monsters are now ordered by attack in monsters selection
+- Installation now check pip version (pip or pip3)
+- Python 11 now supported
+
+
 ## v1.1.0
 
 ### Added or Changed
