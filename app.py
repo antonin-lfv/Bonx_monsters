@@ -1,44 +1,48 @@
 from configuration.config import app_config
 from flask import Flask, render_template
-from flask_login import LoginManager
-from flask_sqlalchemy import SQLAlchemy
 from os import path
-
-db = SQLAlchemy()
+from extensions import (
+    db,
+    login_manager,
+)  # Importer db et login_manager depuis extensions
 
 
 def create_app():
-    # ===== Flask app
-    app = Flask(__name__, template_folder='templates', static_folder='assets')
+    app = Flask(__name__, template_folder="templates", static_folder="assets")
     app.config.from_object(app_config)
-    # ===== Blueprint
+
+    # Importer les blueprints après la création de l'application
     from auth.auth import BLP_auth
     from general.general import BLP_general
+
     app.register_blueprint(BLP_auth)
     app.register_blueprint(BLP_general)
-    # ===== init SQLAlchemy
+
+    # Initialiser les extensions avec l'application
     db.init_app(app)
+    login_manager.init_app(app)
+
     if not path.exists("db.sqlite"):
         with app.app_context():
             db.create_all()
-    # ===== Login manager
-    login_manager = LoginManager()
-    login_manager.login_view = 'BLP_auth.login'
-    login_manager.init_app(app)
 
+    # Déplacer l'import de User ici pour éviter les imports circulaires
     from models import User
 
     @login_manager.user_loader
     def load_user(user_id):
-        # since the user_id is just the primary key of our user table, use it in the query for the user
         return User.query.get(int(user_id))
 
-    # ===== error page
     @app.errorhandler(404)
     def forbidden(error):
-        return render_template('errors/404.html')
+        return render_template("errors/404.html")
 
     return app
 
 
 app = create_app()
+
+
+if __name__ == "__main__":
+    app = create_app()
+    app.run(host="0.0.0.0", port=8000)

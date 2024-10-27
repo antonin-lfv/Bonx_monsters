@@ -1,4 +1,4 @@
-from app import db
+from extensions import db
 from flask_login import UserMixin
 
 
@@ -11,8 +11,8 @@ class User(UserMixin, db.Model):
     coins = db.Column(db.Integer)
     nb_games = db.Column(db.Integer)
     nb_wins = db.Column(db.Integer)
-    monsters = db.relationship('Monster', backref='user', lazy=True)
-    match_history = db.relationship('Match', backref='user', lazy=True)
+    monsters = db.relationship("Monster", backref="user", lazy=True)
+    match_history = db.relationship("Match", backref="user", lazy=True)
 
 
 class Monster(db.Model):
@@ -26,7 +26,9 @@ class Monster(db.Model):
     img_path = db.Column(db.String(1000))
     description = db.Column(db.String(1000))
     amount = db.Column(db.Integer)  # number of this monster in the deck
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # id of the user that owns this monster
+    user_id = db.Column(
+        db.Integer, db.ForeignKey("user.id"), nullable=False
+    )  # id of the user that owns this monster
 
 
 class Match(db.Model):
@@ -34,9 +36,13 @@ class Match(db.Model):
     opponent = db.Column(db.String(100))
     reward_coin = db.Column(db.Integer)
     win = db.Column(db.String(1))  # y or n
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    reward_monster_name = db.Column(db.String(1000))  # name of the monster that the user won
-    reward_monster_amount = db.Column(db.Integer)  # number of this monster that the user won
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    reward_monster_name = db.Column(
+        db.String(1000)
+    )  # name of the monster that the user won
+    reward_monster_amount = db.Column(
+        db.Integer
+    )  # number of this monster that the user won
 
 
 class ShopItem(db.Model):
@@ -46,5 +52,7 @@ class ShopItem(db.Model):
     monster_name = db.Column(db.String(100))
     monster_rarity = db.Column(db.String(100))
     monster_img_path = db.Column(db.String(1000))
-    monster_bought = db.Column(db.Integer)  # number of times this monster has been bought today
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    monster_bought = db.Column(
+        db.Integer
+    )  # number of times this monster has been bought today
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)

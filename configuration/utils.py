@@ -1,5 +1,5 @@
 import json
-from app import db
+from extensions import db
 from models import User, Monster, Match, ShopItem
 from configuration.config import GameConfig
 import math
@@ -12,7 +12,7 @@ def all_monsters_from_json():
     Return all monsters from json file
     :return: dict of monsters
     """
-    with open('assets/bonx_data/monsters.json', 'r') as f:
+    with open("assets/bonx_data/monsters.json", "r") as f:
         monsters = json.load(f)
     return monsters
 
@@ -22,7 +22,7 @@ def all_bosses_from_json():
     Return all bosses from json file
     :return: dict of bosses
     """
-    with open('assets/bonx_data/opponent.json', 'r') as f:
+    with open("assets/bonx_data/opponent.json", "r") as f:
         bosses = json.load(f)
     return bosses
 
@@ -32,7 +32,7 @@ def all_doors_from_json():
     Return all doors (dungeons) from json file
     :return: dict of doors
     """
-    with open('assets/bonx_data/doors_dungeon.json', 'r') as f:
+    with open("assets/bonx_data/doors_dungeon.json", "r") as f:
         doors = json.load(f)
     return doors
 
@@ -48,11 +48,15 @@ def get_monster_stats_of_level(monster_name, level):
     rarity = monsters[monster_name]["rarity"]
     level = int(level)
     stats = {
-        "defense": int(math.sqrt(level) * GameConfig.MONSTER_CONGIF[rarity]["Update defense"] +
-                       GameConfig.MONSTER_CONGIF[rarity]["Defense"]),
-        "attack": int(math.sqrt(level) * GameConfig.MONSTER_CONGIF[rarity]["Update attack"] +
-                      GameConfig.MONSTER_CONGIF[rarity]["Attack"]),
-        "power": GameConfig.MONSTER_CONGIF[rarity]["Power"] * level
+        "defense": int(
+            math.sqrt(level) * GameConfig.MONSTER_CONGIF[rarity]["Update defense"]
+            + GameConfig.MONSTER_CONGIF[rarity]["Defense"]
+        ),
+        "attack": int(
+            math.sqrt(level) * GameConfig.MONSTER_CONGIF[rarity]["Update attack"]
+            + GameConfig.MONSTER_CONGIF[rarity]["Attack"]
+        ),
+        "power": GameConfig.MONSTER_CONGIF[rarity]["Power"] * level,
     }
     return stats
 
@@ -75,13 +79,24 @@ def create_and_add_new_monster_from_json(monster_name, id_user, number_of_cards=
         init_level = m.level
         m.amount += number_of_cards
         if m.level < GameConfig.MAX_MONSTER_LEVEL:
-            levels_to_add = m.amount // GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]
+            levels_to_add = (
+                m.amount
+                // GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]
+            )
             m.level = min(m.level + levels_to_add, GameConfig.MAX_MONSTER_LEVEL)
-            m.amount %= GameConfig.MONSTER_CONGIF[m.rarity]["Number of Cards to Upgrade"]
-            m.defense = int(math.sqrt(m.level) * GameConfig.MONSTER_CONGIF[m.rarity]["Update defense"] +
-                            GameConfig.MONSTER_CONGIF[m.rarity]["Defense"])
-            m.attack = int(math.sqrt(m.level) * GameConfig.MONSTER_CONGIF[m.rarity]["Update attack"] +
-                           GameConfig.MONSTER_CONGIF[m.rarity]["Attack"])
+            m.amount %= GameConfig.MONSTER_CONGIF[m.rarity][
+                "Number of Cards to Upgrade"
+            ]
+            m.defense = int(
+                math.sqrt(m.level)
+                * GameConfig.MONSTER_CONGIF[m.rarity]["Update defense"]
+                + GameConfig.MONSTER_CONGIF[m.rarity]["Defense"]
+            )
+            m.attack = int(
+                math.sqrt(m.level)
+                * GameConfig.MONSTER_CONGIF[m.rarity]["Update attack"]
+                + GameConfig.MONSTER_CONGIF[m.rarity]["Attack"]
+            )
             m.power = GameConfig.MONSTER_CONGIF[m.rarity]["Power"] * m.level
         if m.level == GameConfig.MAX_MONSTER_LEVEL:
             # if monster is max level
@@ -112,7 +127,9 @@ def create_and_add_new_monster_from_json(monster_name, id_user, number_of_cards=
 
         # Call the function again to update the monster with number_of_cards - 1
         if number_of_cards > 1:
-            return create_and_add_new_monster_from_json(monster_name, id_user, number_of_cards - 1)
+            return create_and_add_new_monster_from_json(
+                monster_name, id_user, number_of_cards - 1
+            )
         total_levels_gained = 1
         new_level = 1
 
@@ -120,8 +137,9 @@ def create_and_add_new_monster_from_json(monster_name, id_user, number_of_cards=
     return total_levels_gained, new_level
 
 
-def create_and_add_new_match_in_history(id_user, opponent, reward_coin, win,
-                                        reward_monster_name, reward_monster_amount):
+def create_and_add_new_match_in_history(
+    id_user, opponent, reward_coin, win, reward_monster_name, reward_monster_amount
+):
     """
     Add match in history + add coins in user wallet
     :param id_user: id of the user
@@ -203,14 +221,18 @@ def update_shop(user_id):
         rare_monsters.sort()
         epic_monsters.sort()
         legendary_monsters.sort()
-        monster_names_to_add = legendary_monsters + epic_monsters + rare_monsters + common_monsters
+        monster_names_to_add = (
+            legendary_monsters + epic_monsters + rare_monsters + common_monsters
+        )
 
         for m in monster_names_to_add:
             new_shop_item = ShopItem(user_id=user_id)
             new_shop_item.monster_name = m
             new_shop_item.monster_img_path = monsters_json[m]["img_path"]
             new_shop_item.monster_rarity = monsters_json[m]["rarity"]
-            new_shop_item.price = GameConfig.SHOP_CONFIG[monsters_json[m]["rarity"]]["Price"]
+            new_shop_item.price = GameConfig.SHOP_CONFIG[monsters_json[m]["rarity"]][
+                "Price"
+            ]
             new_shop_item.last_update = datetime.now()
             new_shop_item.monster_bought = 0
             db.session.add(new_shop_item)
