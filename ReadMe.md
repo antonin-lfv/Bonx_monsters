@@ -87,7 +87,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-Install a recent version of Python (3.9 or higher) and pip.
+Install a recent version of Python (3.11 or higher) and pip.
 
 ### Installation
 
