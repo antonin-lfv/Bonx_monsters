@@ -1,11 +1,14 @@
+from os import environ
+
+
 class Config(object):
     """
     Base config class
     """
-    SECRET_KEY = "uYGBIUJKgUKYGkgukgFDjtfVUFTjJYgugGugYtfyuytfJY"
+    SECRET_KEY = environ.get("SECRET_KEY", "uYGBIUJKgUKYGkgukgFDjtfVUFTjJYgugGugYtfyuytfJY")
     SQLALCHEMY_DATABASE_URI = "sqlite:///db.sqlite"
     SQLALCHEMY_TRACK_MODIFICATIONS = True
-    DEBUG = True  # False for production mode
+    DEBUG = environ.get("FLASK_DEBUG", "false").lower() == "true"  # set FLASK_DEBUG=true for local dev
 
 
 class GameConfig(Config):
